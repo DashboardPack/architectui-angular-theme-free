@@ -1,0 +1,82 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Basic
+      </div>
+      <div class="card-body">
+        <h6>
+          Default pagination:
+        </h6>
+        <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+        <div class="divider"></div>
+        <h6>
+          No direction links:
+        </h6>
+        <ngb-pagination [collectionSize]="70" [(page)]="page" [directionLinks]="false"></ngb-pagination>
+        <div class="divider"></div>
+        <h6>
+          With boundary links:
+        </h6>
+        <ngb-pagination [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+        <div class="divider"></div>
+        <pre>Current page: {{page}}</pre>
+      </div>
+    </div>
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Advanced
+      </div>
+      <div class="card-body">
+        <ngb-pagination [collectionSize]="120" [(page)]="page2" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+        <ngb-pagination [collectionSize]="120" [(page)]="page2" [maxSize]="5" [rotate]="true"
+                        [boundaryLinks]="true"></ngb-pagination>
+        <ngb-pagination [collectionSize]="120" [(page)]="page2" [maxSize]="5" [rotate]="true" [ellipses]="false"
+                        [boundaryLinks]="true"></ngb-pagination>
+        <pre>Current page: {{page2}}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Sizing
+      </div>
+      <div class="card-body">
+        <ngb-pagination [collectionSize]="50" [(page)]="currentPage" size="lg"></ngb-pagination>
+        <ngb-pagination [collectionSize]="50" [(page)]="currentPage"></ngb-pagination>
+        <ngb-pagination [collectionSize]="50" [(page)]="currentPage" size="sm"></ngb-pagination>
+      </div>
+    </div>
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Alignments
+      </div>
+      <div class="card-body">
+        <ngb-pagination class="d-flex justify-content-start" [collectionSize]="70" [(page)]="page3"></ngb-pagination>
+        <ngb-pagination class="d-flex justify-content-center" [collectionSize]="70" [(page)]="page3"></ngb-pagination>
+        <ngb-pagination class="d-flex justify-content-end" [collectionSize]="70" [(page)]="page3"></ngb-pagination>
+      </div>
+    </div>
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Disabled
+      </div>
+      <div class="card-body">
+        <ngb-pagination [collectionSize]="70" [(page)]="page4" [disabled]='isDisabled'></ngb-pagination>
+        <button class="btn btn-sm btn-primary" (click)="toggleDisabled()">
+          Toggle disabled
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<ngb-tabset class="tabs-animated tabs-animated-shadow">
+  <ngb-tab>
+    <ng-template ngbTabTitle><span>Google Maps</span></ng-template>
+    <ng-template ngbTabContent>
+      <div class="card main-card mb-3">
+        <div class="card-body">
+          <agm-map
+            style="height: 450px;"
+            [latitude]="lat"
+            [longitude]="lng"
+            [zoom]="zoom"
+            [disableDefaultUI]="false"
+            [zoomControl]="false"
+            (mapClick)="mapClicked($event)">
+
+            <agm-marker
+              *ngFor="let m of markers; let i = index"
+              (markerClick)="clickedMarker(m.label, i)"
+              [latitude]="m.lat"
+              [longitude]="m.lng"
+              [label]="m.label"
+              [markerDraggable]="m.draggable"
+              (dragEnd)="markerDragEnd(m, $event)">
+
+              <agm-info-window>
+                <strong>InfoWindow content</strong>
+              </agm-info-window>
+
+            </agm-marker>
+
+            <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
+                        [radius]="5000"
+                        [fillColor]="'red'"
+                        [circleDraggable]="true"
+                        [editable]="true">
+            </agm-circle>
+
+          </agm-map>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

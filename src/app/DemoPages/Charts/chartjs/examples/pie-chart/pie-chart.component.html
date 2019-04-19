@@ -1,0 +1,19 @@
+<div class="chart">
+  <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [colors]="pieChartColors"
+          [legend]="pieChartLegend">
+  </canvas>
+</div>
+<div class="divider"></div>
+<div class="text-center">
+  <button mat-button mat-raised-button color="primary" class="mr-2 mb-2" (click)="pieChartLegend=!pieChartLegend">Toggle Legend</button>
+  <button mat-button mat-raised-button color="primary" class="mr-2 mb-2" (click)="changeLabels()">Change Labels</button>
+  <button mat-button mat-raised-button color="primary" class="mr-2 mb-2" (click)="addSlice()">Add Slice</button>
+  <button mat-button mat-raised-button color="primary" class="mr-2 mb-2" (click)="removeSlice()">Remove Slice</button>
+  <button mat-button mat-raised-button color="primary" class="mr-2 mb-2" (click)="changeLegendPosition()">Change Legend Position</button>
+</div>

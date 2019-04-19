@@ -1,0 +1,30 @@
+<div [class]="'app-header header-shadow ' + (config$ | async).headerTheme">
+  <div class="logo-src"></div>
+  <div class="app-header__content">
+    <div class="app-header-left">
+      <app-search-box></app-search-box>
+    </div>
+    <div class="app-header-right">
+      <app-dots></app-dots>
+      <app-user-box></app-user-box>
+    </div>
+  </div>
+  <div class="app-header__mobile-menu">
+    <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+            [ngClass]="{'is-active' : globals.toggleSidebarMobile}" (click)="toggleSidebarMobile()">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+  </div>
+  <div class="app-header__menu">
+    <span>
+        <button class="btn-icon btn-icon-only btn btn-primary" [ngClass]="{'is-active' : globals.toggleHeaderMobile}"
+                (click)="toggleHeaderMobile()">
+            <div class="btn-icon-wrapper">
+                <fa name="ellipsis-v"></fa>
+            </div>
+        </button>
+    </span>
+  </div>
+</div>

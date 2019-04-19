@@ -1,0 +1,24 @@
+<div [ngClass]="{
+'closed-sidebar' : globals.toggleSidebar,
+'closed-sidebar-md' : globals.toggleSidebarMobile,
+'settings-open' : globals.toggleThemeOptions,
+'closed-sidebar-open': globals.sidebarHover || globals.toggleSidebarMobile,
+'header-menu-open' : globals.toggleHeaderMobile,
+'drawer-open' : globals.toggleDrawer,
+'fixed-footer' : globals.toggleFixedFooter
+}" [class]="'app-container app-theme-white'">
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+  <div class="app-main__outer">
+    <div class="app-main__inner">
+      <div [@architectUIAnimation]="o.isActivated ? o.activatedRoute : ''">
+        <router-outlet #o="outlet"></router-outlet>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <app-options-drawer></app-options-drawer>
+  <app-drawer></app-drawer>
+  <div class="sidebar-menu-overlay" (click)="toggleSidebarMobile()"></div>
+</div>
+<ngx-loading-bar [color]="'var(--primary)'"></ngx-loading-bar>

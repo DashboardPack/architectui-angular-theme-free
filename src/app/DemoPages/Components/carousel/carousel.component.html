@@ -1,0 +1,172 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<ngb-tabset class="tabs-animated tabs-animated-shadow">
+  <ngb-tab>
+    <ng-template ngbTabTitle><span>Slideshow</span></ng-template>
+    <ng-template ngbTabContent>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card main-card mb-3">
+            <div class="card-body">
+              <h4 class="card-title">Full Width Slider</h4>
+              <ngx-slick-carousel class="slick-slider slick-dotted" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let slide of slides">
+                  <div class="slider-item">{{ slide.img }}</div>
+                </div>
+              </ngx-slick-carousel>
+            </div>
+          </div>
+          <div class="card main-card mb-3">
+            <div class="card-body">
+              <h4 class="card-title">Center Model</h4>
+              <ngx-slick-carousel class="slick-slider slick-dotted" #slickModal="slick-carousel"
+                                  [config]="slideConfig2">
+                <div ngxSlickItem *ngFor="let slide of slides">
+                  <div class="slider-item">{{ slide.img }}</div>
+                </div>
+              </ngx-slick-carousel>
+            </div>
+          </div>
+          <div class="card main-card mb-3">
+            <div class="card-body">
+              <h4 class="card-title">Responsive</h4>
+              <ngx-slick-carousel class="slick-slider slick-dotted" #slickModal="slick-carousel"
+                                  [config]="slideConfig3">
+                <div ngxSlickItem *ngFor="let slide of slides">
+                  <div class="slider-item">{{ slide.img }}</div>
+                </div>
+              </ngx-slick-carousel>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card main-card mb-3">
+            <div class="card-body">
+              <h4 class="card-title">Multiple Items</h4>
+              <ngx-slick-carousel class="slick-slider slick-dotted" #slickModal="slick-carousel"
+                                  [config]="slideConfig4">
+                <div ngxSlickItem *ngFor="let slide of slides">
+                  <div class="slider-item">{{ slide.img }}</div>
+                </div>
+              </ngx-slick-carousel>
+            </div>
+          </div>
+          <div class="card main-card mb-3">
+            <div class="card-body">
+              <h4 class="card-title">Variable Width</h4>
+              <ngx-slick-carousel class="slick-slider slick-dotted" #slickModal="slick-carousel"
+                                  [config]="slideConfig5">
+                <div ngxSlickItem>
+                  <div class="slider-item" style="width: 100px;">100</div>
+                </div>
+                <div ngxSlickItem>
+                  <div class="slider-item" style="width: 200px;">200</div>
+                </div>
+                <div ngxSlickItem>
+                  <div class="slider-item" style="width: 75px;">75</div>
+                </div>
+                <div ngxSlickItem>
+                  <div class="slider-item" style="width: 225px;">225</div>
+                </div>
+                <div ngxSlickItem>
+                  <div class="slider-item" style="width: 175px;">175</div>
+                </div>
+
+
+
+              </ngx-slick-carousel>
+            </div>
+          </div>
+          <div class="card main-card mb-3">
+            <div class="card-body">
+              <h4 class="card-title">Inverted + Images</h4>
+              <div class="slider-light">
+                <ngx-slick-carousel class="slick-slider slick-dotted" #slickModal="slick-carousel"
+                                    [config]="slideConfig6">
+                  <div ngxSlickItem>
+                    <div
+                      class="p-5 bg-plum-plate">
+                      <div class="slide-img-bg"></div>
+                      <div class="slider-content text-light">
+                        <h3>Perfect Balance</h3>
+                        <p>
+                          ArchitectUI is like a dream. Some think it's too good to be true! Extensive collection of
+                          unified Vue Bootstrap Components and Elements.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div ngxSlickItem>
+                    <div
+                      class="p-5 bg-premium-dark">
+                      <div class="slide-img-bg"></div>
+                      <div class="slider-content text-light">
+                        <h3>Scalable, Modular, Consistent</h3>
+                        <p>
+                          Easily exclude the components you don't require. Lightweight, consistent
+                          Bootstrap based styles across all elements and components
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div ngxSlickItem>
+                    <div
+                      class="p-5 bg-sunny-morning">
+                      <div class="slide-img-bg opacity-6"></div>
+                      <div class="slider-content text-light">
+                        <h3>Complex, but lightweight</h3>
+                        <p>
+                          We've included a lot of components that cover almost all use cases for
+                          any type of application.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </ngx-slick-carousel>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle><span>Carousel</span></ng-template>
+    <ng-template ngbTabContent>
+      <div class="col-md-8 mx-auto">
+        <div class="card">
+          <div class="card-header">
+            Basic
+          </div>
+          <div class="card-body">
+            <ngb-carousel *ngIf="images">
+              <ng-template ngbSlide>
+                <img [src]="images[0]" width="100%" alt="Random first slide">
+                <div class="carousel-caption">
+                  <h3>First slide label</h3>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[1]" width="100%" alt="Random second slide">
+                <div class="carousel-caption">
+                  <h3>Second slide label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[2]" width="100%" alt="Random third slide">
+                <div class="carousel-caption">
+                  <h3>Third slide label</h3>
+                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

@@ -1,0 +1,16 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<ngb-tabset class="tabs-animated tabs-animated-shadow">
+  <ngb-tab>
+    <ng-template ngbTabTitle><span>Regular Tables</span></ng-template>
+    <ng-template ngbTabContent>
+      <app-regular></app-regular>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle><span>Dynamic Tables</span></ng-template>
+    <ng-template ngbTabContent>
+      <app-dynamic></app-dynamic>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

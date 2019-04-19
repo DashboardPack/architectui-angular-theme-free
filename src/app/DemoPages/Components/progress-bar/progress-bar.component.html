@@ -1,0 +1,107 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Basic
+      </div>
+      <div class="card-body">
+        <p>
+          <ngb-progressbar type="success" [value]="25"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="info" [value]="50"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="warning" [value]="75"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="danger" [value]="100"></ngb-progressbar>
+        </p>
+      </div>
+    </div>
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Current Values
+      </div>
+      <div class="card-body">
+        <p>
+          <ngb-progressbar showValue="true" type="success" [value]="25"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar [showValue]="true" type="info" [value]="50"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar showValue="true" type="warning" [value]="150" [max]="200"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar [showValue]="true" type="danger" [value]="150" [max]="150"></ngb-progressbar>
+        </p>
+      </div>
+    </div>
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Striped
+      </div>
+      <div class="card-body">
+        <p>
+          <ngb-progressbar type="success" [value]="25" [striped]="true"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="info" [value]="50" [striped]="true"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="warning" [value]="75" [striped]="true"></ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="danger" [value]="100" [striped]="true"></ngb-progressbar>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Custom Labels
+      </div>
+      <div class="card-body">
+        <p>
+          <ngb-progressbar type="success" [value]="25">25</ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="info" [value]="50">Copying file
+            <b>2 of 4</b>...
+          </ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="warning" [value]="75" [striped]="true" [animated]="true">
+            <i>50%</i>
+          </ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="danger" [value]="100" [striped]="true">Completed!</ngb-progressbar>
+        </p>
+      </div>
+    </div>
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Sizing
+      </div>
+      <div class="card-body">
+        <p>
+          <ngb-progressbar type="success" [value]="25">default</ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="info" [value]="50" height="10px">10px</ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="warning" [value]="75" height=".5rem">.5rem</ngb-progressbar>
+        </p>
+        <p>
+          <ngb-progressbar type="danger" [value]="100" [height]="height">{{height}}</ngb-progressbar>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
