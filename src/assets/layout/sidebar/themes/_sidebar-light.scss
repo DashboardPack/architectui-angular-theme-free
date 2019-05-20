@@ -11,7 +11,7 @@
     }
 
     .logo-src {
-      background: url('./assets/images/logo.png');
+      background: url('/assets/images/logo.png');
     }
 
     .hamburger-inner,
@@ -70,18 +70,13 @@
       }
     }
 
-    .ps > .ps__scrollbar-y-rail > .ps__scrollbar-y {
-      background: rgba(255, 255, 255, 0.35);
+    perfect-scrollbar > .ps.ps--scrolling-y > .ps__rail-y,
+    .ps .ps__rail-y:hover {
+      background-color: rgba(255,255,255,.15) !important;
     }
 
-    .ps.ps--in-scrolling.ps--y:hover > .ps__scrollbar-y-rail,
-    .ps.ps--in-scrolling.ps--y > .ps__scrollbar-y-rail,
-    .ps:hover > .ps__scrollbar-y-rail:hover {
-      background-color: rgba(255, 255, 255, .1) !important;
-
-      & > .ps__scrollbar-y {
-        background-color: rgba(255, 255, 255, .25) !important;
-      }
+    .ps__thumb-y {
+      background-color: rgba(255,255,255,.3) !important;
     }
 
   }

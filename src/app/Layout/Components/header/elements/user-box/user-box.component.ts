@@ -6,9 +6,6 @@ import {ThemeOptions} from '../../../../../theme-options';
   templateUrl: './user-box.component.html',
 })
 export class UserBoxComponent implements OnInit {
-  toggleDrawer() {
-    this.globals.toggleDrawer = !this.globals.toggleDrawer;
-  }
 
   constructor(public globals: ThemeOptions) {
   }

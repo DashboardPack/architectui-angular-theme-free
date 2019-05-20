@@ -1,401 +1,168 @@
 <app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
-
-<ngb-tabset class="tabs-animated tabs-animated-shadow">
-  <ngb-tab>
-    <ng-template ngbTabTitle><span>Advanced</span></ng-template>
-    <ng-template ngbTabContent>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="main-card mb-3 card">
-            <div class="card-header">Header</div>
-            <div class="card-body"><p>With supporting text below as a natural lead-in to additional content.</p>
-              <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                unknown printer took a galley of type and scrambled.</p></div>
-            <div class="d-block text-right card-footer">
-              <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-              <button class="btn btn-success btn-lg">Save</button>
-            </div>
-          </div>
-          <div class="mb-3 text-white card-border bg-dark card">
-            <div class="card-header"><i class="header-icon lnr-screen icon-gradient bg-warm-flame"> </i>Without Shadow
-              <div class="btn-actions-pane-right">
-                <button class="btn btn-light btn-sm">Actions</button>
-              </div>
-            </div>
-            <div class="card-body"><p>With supporting text below as a natural lead-in to additional content.</p>
-              <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                unknown printer took a galley of type and scrambled.</p></div>
-            <div class="d-block text-right card-footer">
-              <button class="mr-2 text-white btn btn-link btn-sm">No</button>
-              <button class="btn btn-warning btn-lg">Yes</button>
-            </div>
-          </div>
-          <div class="mb-3 card text-white bg-success">
-            <div class="card-header">Header</div>
-            <div class="card-body">With supporting text below as a natural lead-in to additional content.</div>
-            <div class="card-footer">Footer</div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card-hover-shadow-2x mb-3 card">
-            <div class="card-header">Shadow Hover Card</div>
-            <div class="card-body"><p>With supporting text below as a natural lead-in to additional content.</p>
-              <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                unknown printer took a galley of type and scrambled.</p></div>
-            <div class="d-block text-right card-footer">
-              <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-              <button class="btn-shadow-primary btn btn-primary btn-lg">Submit</button>
-            </div>
-          </div>
-          <div class="card-hover-shadow card-border mb-3 card">
-            <div class="card-header">Card Hover Shadow</div>
-            <div class="card-body"><p>With supporting text below as a natural lead-in to additional content.</p>
-              <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                unknown printer took a galley of type and scrambled.</p></div>
-            <div class="d-block text-right card-footer">
-              <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-              <button class="btn-shadow-primary btn btn-primary btn-lg">Submit</button>
-            </div>
-          </div>
-          <div class="mb-3 text-dark card-border card text-white bg-light">
-            <div class="card-header">Header</div>
-            <div class="card-body">With supporting text below as a natural lead-in to additional content.</div>
-            <div class="card-footer">Footer</div>
-          </div>
-        </div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="main-card mb-3 card">
+      <div class="card-body"><h5 class="card-title">Basic Example</h5>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+          massa.</p></div>
+    </div>
+    <div class="main-card mb-3 card">
+      <div class="card-body"><h5 class="card-title">Card with Subtitle</h5><h6 class="card-subtitle">Lorem ipsum
+        dolor sit amet, consectetuer adipiscing elit</h6>
+        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis eni</p>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="main-card mb-3 card">
-            <div class="card-header">
-              <i class="header-icon lnr-laptop-phone icon-gradient bg-plum-plate"> </i>
-              Header Menu
-              <div class="btn-actions-pane-right actions-icon-btn">
-                <button class="btn-icon btn-icon-only btn btn-link"><i class="pe-7s-leaf btn-icon-wrapper"></i></button>
-                <button class="btn-icon btn-icon-only btn btn-link"><i
-                  class="pe-7s-cloud-download btn-icon-wrapper"></i></button>
-                <div class="btn-group" ngbDropdown placement="bottom-right">
-                  <button type="button" ngbDropdownToggle class="btn-icon btn-icon-only btn btn-link"><i
-                    class="pe-7s-menu btn-icon-wrapper"></i></button>
-                  <div ngbDropdownMenu class="dropdown-menu-shadow dropdown-menu-hover-link">
-                    <h6  class="dropdown-header">Header</h6>
-                    <button type="button" class="dropdown-item"><i
-                      class="dropdown-icon lnr-inbox"> </i><span>Menus</span></button>
-                    <button type="button" class="dropdown-item"><i class="dropdown-icon lnr-file-empty"> </i><span>Settings</span>
-                    </button>
-                    <button type="button" class="dropdown-item"><i
-                      class="dropdown-icon lnr-book"> </i><span>Actions</span></button>
-                    <div  class="dropdown-divider"></div>
-                    <div class="p-3 text-right">
-                      <button class="mr-2 btn-shadow btn-sm btn btn-link">View Details</button>
-                      <button class="mr-2 btn-shadow btn-sm btn btn-primary">Action</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body"><p>With supporting text below as a natural lead-in to additional content.</p>
-              <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                unknown printer took a galley of type and scrambled.</p></div>
-            <div class="d-block text-right card-footer">
-              <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-              <button class="btn btn-success btn-lg">Save</button>
-            </div>
-          </div>
-          <div class="main-card mb-3 card">
-            <div class="card-header">
-              <i class="header-icon lnr-bicycle icon-gradient bg-love-kiss"> </i>
-              Header with Tabs
-              <div class="btn-actions-pane-right actions-icon-btn">
-                <div role="group" class="btn-group-sm nav btn-group">
-                  <a [routerLink]="" class="btn-shadow active btn btn-dark">Tab 1</a>
-                  <a [routerLink]="" class="btn-shadow  btn btn-dark">Tab 2</a>
-                  <a [routerLink]="" class="btn-shadow  btn btn-dark">Tab 3</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="tab-content">
-                <div class="tab-pane active show" id="tab-eg3-0" role="tabpanel">
-                  <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop
-                    publishing software like Aldus PageMaker
-                    including versions of Lorem Ipsum.</p></div>
-              </div>
-            </div>
-            <div class="d-block text-right card-footer">
-              <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
-                class="pe-7s-trash btn-icon-wrapper"> </i></button>
-              <button class="btn-wide btn btn-success">Save</button>
-            </div>
-          </div>
-          <div class="main-card mb-3 card">
-            <div class="card-header"><i class="header-icon lnr-gift icon-gradient bg-mixed-hopes"> </i>Alternate Tabs
-              <div class="btn-actions-pane-right actions-icon-btn">
-                <div role="group" class="btn-group-sm nav btn-group">
-                  <a [routerLink]="" class="btn-pill pl-3 active btn btn-focus">Tab 1</a>
-                  <a [routerLink]="" class="btn btn-focus">Tab 2</a>
-                  <a [routerLink]="" class="btn-pill pr-3  btn btn-focus">Tab 3</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="tab-content">
-                <div class="tab-pane active show" id="tab-eg2-0" role="tabpanel"><p>It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                  publishing software like Aldus PageMaker
-                  including versions of Lorem Ipsum.</p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="main-card mb-3 card">
-            <div class="card-header"><i class="header-icon lnr-graduation-hat icon-gradient bg-happy-itmeo"> </i>Header
-              Menu
-              <div class="btn-actions-pane-right actions-icon-btn">
-                <div role="group" class="btn-group-sm btn-group">
-                  <div class="btn-group" ngbDropdown placement="bottom-right">
-                    <button type="button" ngbDropdownToggle class="btn-pill pl-3 dropdown-toggle btn btn-warning">Left
-                    </button>
-                    <div class="dropdown-menu-rounded" ngbDropdownMenu>
-                      <h6  class="dropdown-header">Header</h6>
-                      <button type="button" class="dropdown-item">Menus</button>
-                      <button type="button" class="dropdown-item">Settings</button>
-                      <button type="button" class="dropdown-item">Actions</button>
-                      <div  class="dropdown-divider"></div>
-                      <button type="button" class="dropdown-item">Dividers</button>
-                    </div>
-                  </div>
-                  <button class="btn btn-warning">Middle</button>
-                  <button class="btn-pill pr-3 btn btn-warning">Right</button>
-                </div>
-              </div>
-            </div>
-            <div class="card-body"><p>With supporting text below as a natural lead-in to additional content.</p>
-              <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                unknown printer took a galley of type and scrambled.</p></div>
-            <div class="d-block text-right card-footer">
-              <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-              <button class="btn-wide btn-shadow btn btn-primary">Submit</button>
-            </div>
-          </div>
-          <div class="mb-3 card">
-            <div class="card-header">
-              <ul class="nav">
-                <li class="nav-item"><a [routerLink]="" class="active nav-link">Tab 1</a></li>
-                <li class="nav-item"><a [routerLink]="" class="nav-link">Tab 2</a></li>
-                <li class="nav-item"><a [routerLink]="" class="nav-link">Tab 3</a></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <div class="tab-content">
-                <div class="tab-pane active show" id="tab-eg1-0" role="tabpanel"><p>It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                  publishing software like Aldus PageMaker
-                  including versions of Lorem Ipsum.</p></div>
-              </div>
-            </div>
-            <div class="d-block text-right card-footer">
-              <button class="btn-wide btn-shadow btn btn-danger">Delete</button>
-            </div>
-          </div>
-          <div class="mb-3 card">
-            <div class="card-header">
-              <ul class="nav nav-justified">
-                <li class="nav-item"><a [routerLink]="" class="active nav-link">Tab 1</a></li>
-                <li class="nav-item"><a [routerLink]="" class="nav-link">Tab 2</a></li>
-                <li class="nav-item"><a [routerLink]="" class="nav-link">Tab 3</a></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <div class="tab-content">
-                <div class="tab-pane active show" id="tab-eg-0" role="tabpanel"><p>It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                  publishing software like Aldus PageMaker
-                  including versions of Lorem Ipsum.</p></div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="mb-3 card card-body"><h5 class="card-title">Special Title Treatment</h5>With supporting text below
+      as a natural lead-in to additional content.
+      <button class="btn btn-primary mt-2">Go somewhere</button>
+    </div>
+    <div class="mb-3 text-center card card-body"><h5 class="card-title">Special Title Treatment</h5>With
+      supporting text below as a natural lead-in to additional content.
+      <button class="btn btn-danger mt-2">Go somewhere</button>
+    </div>
+    <div class="mb-3 text-right card card-body"><h5 class="card-title">Special Title Treatment</h5>With supporting
+      text below as a natural lead-in to additional content.
+      <button class="btn btn-outline-focus mt-2">Go somewhere</button>
+    </div>
+    <div class="main-card mb-3 card">
+      <div class="card-header">Header</div>
+      <div class="card-body"><h5 class="card-title">Special Title Treatment</h5>With supporting text below as a
+        natural lead-in to additional content.
+        <button class="btn btn-warning mt-2">Go somewhere</button>
       </div>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab>
-    <ng-template ngbTabTitle><span>Basic</span></ng-template>
-    <ng-template ngbTabContent>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="main-card mb-3 card">
-            <div class="card-body"><h5 class="card-title">Basic Example</h5>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                massa.</p></div>
-          </div>
-          <div class="main-card mb-3 card">
-            <div class="card-body"><h5 class="card-title">Card with Subtitle</h5><h6 class="card-subtitle">Lorem ipsum
-              dolor sit amet, consectetuer adipiscing elit</h6>
-              <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis eni</p>
-            </div>
-          </div>
-          <div class="mb-3 card card-body"><h5 class="card-title">Special Title Treatment</h5>With supporting text below
-            as a natural lead-in to additional content.
-            <button class="btn btn-primary mt-2">Go somewhere</button>
-          </div>
-          <div class="mb-3 text-center card card-body"><h5 class="card-title">Special Title Treatment</h5>With
-            supporting text below as a natural lead-in to additional content.
-            <button class="btn btn-danger mt-2">Go somewhere</button>
-          </div>
-          <div class="mb-3 text-right card card-body"><h5 class="card-title">Special Title Treatment</h5>With supporting
-            text below as a natural lead-in to additional content.
-            <button class="btn btn-outline-focus mt-2">Go somewhere</button>
-          </div>
-          <div class="main-card mb-3 card">
-            <div class="card-header">Header</div>
-            <div class="card-body"><h5 class="card-title">Special Title Treatment</h5>With supporting text below as a
-              natural lead-in to additional content.
-              <button class="btn btn-warning mt-2">Go somewhere</button>
-            </div>
-            <div class="card-footer">Footer</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="main-card mb-3 card"><img width="100%"
-                                                src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97180&amp;w=318&amp;h=180"
-                                                alt="Card image cap" class="card-img-top">
-            <div class="card-body"><h5 class="card-title">Card title</h5><h6 class="card-subtitle">Card subtitle</h6>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-              <br><br>
-              <button class="btn btn-secondary">Button</button>
-            </div>
-          </div>
-          <div class="main-card mb-3 card">
-            <div class="card-body"><h5 class="card-title">Card Title</h5>This is a wider card with supporting text below
-              as a natural lead-in to additional content. This content is a little bit longer.
-              <br><br>
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-            <img width="100%"
-                 src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97180&amp;w=318&amp;h=180"
-                 alt="Card image cap" class="card-img-bottom"></div>
-        </div>
-        <div class="col-md-4">
-          <div class="main-card mb-3 card">
-            <div class="card-body"><h5 class="card-title">Card title</h5><h6 class="mb-0 card-subtitle">Card
-              subtitle</h6></div>
-            <img width="100%"
-                 src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97180&amp;w=318&amp;h=180"
-                 alt="Card image cap">
-            <div class="card-body">Some quick example text to build on the card title and make up the bulk of the card's
-              content.<br><br><a [routerLink]="" class="card-link">Card Link</a><a [routerLink]=""
-                                                                                              class="card-link">Another
-                Link</a></div>
-          </div>
-          <div class="main-card mb-3 card"><img width="100%"
-                                                src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97180&amp;w=318&amp;h=180"
-                                                alt="Card image cap" class="card-img-top">
-            <div class="card-body"><h5 class="card-title">Card Title</h5>This is a wider card with supporting text below
-              as a natural lead-in to additional content. This content is a little bit longer.
-              <br><br>
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-        </div>
+      <div class="card-footer">Footer</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="main-card mb-3 card"><img width="100%"
+                                          src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97180&amp;w=318&amp;h=180"
+                                          alt="Card image cap" class="card-img-top">
+      <div class="card-body"><h5 class="card-title">Card title</h5><h6 class="card-subtitle">Card subtitle</h6>
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        <br><br>
+        <button class="btn btn-secondary">Button</button>
       </div>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab>
-    <ng-template ngbTabTitle><span>Color States</span></ng-template>
-    <ng-template ngbTabContent>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card-shadow-primary border mb-3 card card-body border-primary"><h5 class="card-title">Primary Card
-            Shadow</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-shadow-secondary border mb-3 card card-body border-secondary"><h5 class="card-title">
-            Secondary Card Shadow</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-shadow-warning border mb-3 card card-body border-warning"><h5 class="card-title">Warning Card
-            Shadow</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-shadow-danger border mb-3 card card-body border-danger"><h5 class="card-title">Danger Card
-            Shadow</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-shadow-success border mb-3 card card-body border-success"><h5 class="card-title">Success Card
-            Shadow</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-shadow-info border mb-3 card card-body border-info"><h5 class="card-title">Info Card
-            Shadow</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-shadow-focus border mb-3 card card-body border-focus"><h5 class="card-title">Focus Card
-            Shadow</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-shadow-alternate border mb-3 card card-body border-alternate"><h5 class="card-title">
-            Alternate Card Shadow</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="mb-3 card text-white"><img width="100%"
-                                                 src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97270&amp;w=318&amp;h=270&amp;bg=333333&amp;txtclr=666666"
-                                                 alt="Card image cap" class="card-img">
-            <div class="card-img-overlay"><h5 class="text-white card-title">Card Title</h5>This is a wider card with
-              supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-              <br><br>
-              <small class="text-white">Last updated 3 mins ago</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-border mb-3 card card-body border-primary"><h5 class="card-title">Primary Card Border</h5>
-            With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-border mb-3 card card-body border-secondary"><h5 class="card-title">Secondary Card
-            Border</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-border mb-3 card card-body border-warning"><h5 class="card-title">Warning Card Border</h5>
-            With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-border mb-3 card card-body border-danger"><h5 class="card-title">Danger Card Border</h5>With
-            supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-border mb-3 card card-body border-success"><h5 class="card-title">Success Card Border</h5>
-            With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-border mb-3 card card-body border-info"><h5 class="card-title">Info Card Border</h5>With
-            supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-border mb-3 card card-body border-focus"><h5 class="card-title">Focus Card Border</h5>With
-            supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="card-border mb-3 card card-body border-alternate"><h5 class="card-title">Alternate Card
-            Border</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="mb-3 card text-white bg-primary">
-            <div class="card-header">Header</div>
-            <div class="card-body">With supporting text below as a natural lead-in to additional content.</div>
-            <div class="card-footer">Footer</div>
-          </div>
-          <div class="mb-3 card text-white card-body"
-               style="background-color: rgb(51, 51, 51); border-color: rgb(51, 51, 51);"><h5
+    </div>
+    <div class="main-card mb-3 card">
+      <div class="card-body"><h5 class="card-title">Card Title</h5>This is a wider card with supporting text below
+        as a natural lead-in to additional content. This content is a little bit longer.
+        <br><br>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+      <img width="100%"
+           src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97180&amp;w=318&amp;h=180"
+           alt="Card image cap" class="card-img-bottom"></div>
+  </div>
+  <div class="col-md-4">
+    <div class="main-card mb-3 card">
+      <div class="card-body"><h5 class="card-title">Card title</h5><h6 class="mb-0 card-subtitle">Card
+        subtitle</h6></div>
+      <img width="100%"
+           src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97180&amp;w=318&amp;h=180"
+           alt="Card image cap">
+      <div class="card-body">Some quick example text to build on the card title and make up the bulk of the card's
+        content.<br><br><a [routerLink]="" class="card-link">Card Link</a><a [routerLink]=""
+                                                                             class="card-link">Another
+          Link</a></div>
+    </div>
+    <div class="main-card mb-3 card"><img width="100%"
+                                          src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97180&amp;w=318&amp;h=180"
+                                          alt="Card image cap" class="card-img-top">
+      <div class="card-body"><h5 class="card-title">Card Title</h5>This is a wider card with supporting text below
+        as a natural lead-in to additional content. This content is a little bit longer.
+        <br><br>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card-shadow-primary border mb-3 card card-body border-primary"><h5 class="card-title">Primary Card
+      Shadow</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-shadow-secondary border mb-3 card card-body border-secondary"><h5 class="card-title">
+      Secondary Card Shadow</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-shadow-warning border mb-3 card card-body border-warning"><h5 class="card-title">Warning Card
+      Shadow</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-shadow-danger border mb-3 card card-body border-danger"><h5 class="card-title">Danger Card
+      Shadow</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-shadow-success border mb-3 card card-body border-success"><h5 class="card-title">Success Card
+      Shadow</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-shadow-info border mb-3 card card-body border-info"><h5 class="card-title">Info Card
+      Shadow</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-shadow-focus border mb-3 card card-body border-focus"><h5 class="card-title">Focus Card
+      Shadow</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-shadow-alternate border mb-3 card card-body border-alternate"><h5 class="card-title">
+      Alternate Card Shadow</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="mb-3 card text-white"><img width="100%"
+                                           src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=318%C3%97270&amp;w=318&amp;h=270&amp;bg=333333&amp;txtclr=666666"
+                                           alt="Card image cap" class="card-img">
+      <div class="card-img-overlay"><h5 class="text-white card-title">Card Title</h5>This is a wider card with
+        supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+        <br><br>
+        <small class="text-white">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card-border mb-3 card card-body border-primary"><h5 class="card-title">Primary Card Border</h5>
+      With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-border mb-3 card card-body border-secondary"><h5 class="card-title">Secondary Card
+      Border</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-border mb-3 card card-body border-warning"><h5 class="card-title">Warning Card Border</h5>
+      With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-border mb-3 card card-body border-danger"><h5 class="card-title">Danger Card Border</h5>With
+      supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-border mb-3 card card-body border-success"><h5 class="card-title">Success Card Border</h5>
+      With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-border mb-3 card card-body border-info"><h5 class="card-title">Info Card Border</h5>With
+      supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-border mb-3 card card-body border-focus"><h5 class="card-title">Focus Card Border</h5>With
+      supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="card-border mb-3 card card-body border-alternate"><h5 class="card-title">Alternate Card
+      Border</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="mb-3 card text-white bg-primary">
+      <div class="card-header">Header</div>
+      <div class="card-body">With supporting text below as a natural lead-in to additional content.</div>
+      <div class="card-footer">Footer</div>
+    </div>
+    <div class="mb-3 card text-white card-body"
+         style="background-color: rgb(51, 51, 51); border-color: rgb(51, 51, 51);"><h5
             class="text-white card-title">Special Title Treatment</h5>With supporting text below as a
-            natural lead-in to additional content.
-          </div>
-          <div class="mb-3 card text-white card-body bg-primary"><h5 class="text-white card-title">Special Title
-            Treatment</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="mb-3 card text-white card-body bg-success"><h5 class="text-white card-title">Special Title
-            Treatment</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="mb-3 card text-white card-body bg-danger"><h5 class="text-white card-title">Special Title
-            Treatment</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="mb-3 card text-white card-body bg-info"><h5 class="text-white card-title">Special Title
-            Treatment</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-          <div class="mb-3 card text-white card-body bg-warning"><h5 class="text-white card-title">Special Title
-            Treatment</h5>With supporting text below as a natural lead-in to additional content.
-          </div>
-        </div>
-      </div>
-    </ng-template>
-  </ngb-tab>
-</ngb-tabset>
+      natural lead-in to additional content.
+    </div>
+    <div class="mb-3 card text-white card-body bg-primary"><h5 class="text-white card-title">Special Title
+      Treatment</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="mb-3 card text-white card-body bg-success"><h5 class="text-white card-title">Special Title
+      Treatment</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="mb-3 card text-white card-body bg-danger"><h5 class="text-white card-title">Special Title
+      Treatment</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="mb-3 card text-white card-body bg-info"><h5 class="text-white card-title">Special Title
+      Treatment</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+    <div class="mb-3 card text-white card-body bg-warning"><h5 class="text-white card-title">Special Title
+      Treatment</h5>With supporting text below as a natural lead-in to additional content.
+    </div>
+  </div>
+</div>

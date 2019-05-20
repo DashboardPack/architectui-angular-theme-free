@@ -1,4 +1,4 @@
-### ArchitectUI - Angular 7 Bootstrap 4 & Material Design Admin Dashboard Theme
+### ArchitectUI - Angular 7 Bootstrap 4
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 

@@ -42,7 +42,6 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   box-shadow: $sidebar-box-shadow;
   flex-direction: column;
   transition: all .3s ease;
-  padding: $app-header-height 0 0;
 
   .app-header__logo {
     padding: 0 $layout-spacer-x;
@@ -52,19 +51,38 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     align-items: center;
     transition: width .2s;
     flex-shrink: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 
   .app-sidebar-content {
     flex-grow: 1;
     display: flex;
     width: 100%;
-    height: 100%;
 
     .app-sidebar-scroll {
       width: 100%;
+      height: 100%;
+    }
+  }
+
+  .accordion .card {
+    box-shadow: 0 0 0 0 transparent;
+    border: 0;
+    background: transparent;
+    position: relative;
+    display: block;
+    padding: 0.1rem 0;
+
+    .card-body {
+      padding: 0;
+    }
+
+    .card-header {
+      padding: 0;
+      margin: 0;
+      @include border-radius(0);
+      border: 0;
+      height: auto;
+      background: transparent;
     }
   }
 }
@@ -72,7 +90,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
 .logo-src {
   height: $logo-height;
   width: $logo-width;
-  background: url('./assets/images/logo-inverse.png');
+  background: url('/assets/images/logo-inverse.png');
 }
 
 // Sidebar Menu
@@ -81,54 +99,9 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   width: auto !important;
   padding: 0 $layout-spacer-x $layout-spacer-x;
 
-  & .vsm-item {
-    position: relative;
-    display: block;
-    padding: 0.1rem 0;
-  }
-
-  & .vsm-item.first-item {
-    & > .vsm-link {
-      & > .vsm-icon {
-
-      }
-      &:after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-    }
-  }
-
-  & .vsm-item.mobile-item {
-    & > .vsm-link {
-      & > .vsm-icon {
-        height: 30px;
-        line-height: 30px;
-        width: 30px;
-        text-align: center;
-        border-radius: 3px;
-      }
-    }
-  }
-
   %side-link-hover {
     background: $dropdown-link-hover-bg;
     color: $primary;
-  }
-
-  & .vsm-item.active-item {
-    & > .vsm-link {
-      font-weight: 600;
-      @extend %side-link-hover;
-    }
-  }
-
-  & .vsm-item.parent-active-item,
-    .vsm-item.open-item {
-    & > .vsm-link {
-      font-weight: 600;
-    }
   }
 
   & .vsm-link {
@@ -142,14 +115,35 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     white-space: nowrap;
     transition: all .2s;
     text-decoration: none;
+    border: 0;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+
 
     &:hover {
+      @extend %side-link-hover;
+    }
+
+    &.active-item {
+      font-weight: 600;
       @extend %side-link-hover;
     }
 
     &[disabled] {
       opacity: 0.4;
       pointer-events: none;
+    }
+
+    &.collapsed {
+      font-weight: normal;
+
+      .vsm-arrow {
+        transform: rotate(0deg);
+        font-weight: bold;
+      }
     }
   }
 
@@ -185,14 +179,11 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     font-style: normal;
     opacity: .3;
     transition: all 300ms;
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
 
     &:after {
       content: '\e688';
       font-family: 'Pe-icon-7-stroke';
-    }
-    &.open-arrow {
-      transform: rotate(0deg);
     }
   }
 
@@ -218,37 +209,14 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     .vsm-item {
       .vsm-link {
         padding: 0 ($layout-spacer-x / 1.5);
-        height: 2.1rem;
-        line-height: 2.1rem;
+        height: 1.9rem;
+        line-height: 1.9rem;
+        font-weight: normal;
+
+        &.active-item {
+          font-weight: 600;
+        }
       }
-    }
-  }
-
-  & .expand-enter-active,
-  & .expand-leave-active {
-    transition: height 0.35s ease;
-    overflow: hidden;
-  }
-
-  & .expand-enter,
-  & .expand-leave-to {
-    height: 0 !important;
-  }
-
-  & .slide-animation-enter-active {
-    animation: slide-animation 0.2s;
-  }
-
-  & .slide-animation-leave-active {
-    animation: slide-animation 0.2s reverse;
-  }
-
-  @keyframes slide-animation {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
     }
   }
 
@@ -264,6 +232,54 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
 
   & .collapse-btn {
     display: none;
+  }
+
+  .collapse {
+    transition: all .26s ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    height: auto;
+    max-height: 0;
+    display: block !important;
+  }
+
+  .collapse.show {
+    transform: scaleY(1);
+    max-height: 600px;
+  }
+
+  .vsm-list > .vsm-item {
+    .vsm-link {
+      font-weight: normal;
+
+      &.active-item {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.sidebar-menu-overlay {
+  position: fixed;
+  height: 0%;
+  width: 0%;
+  z-index: 12;
+  background: rgba(0, 0, 0, 0.3);
+  display: block;
+  content: '';
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.closed-sidebar-md.closed-sidebar-open {
+  .sidebar-menu-overlay {
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
   }
 }
 

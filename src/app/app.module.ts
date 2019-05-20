@@ -31,7 +31,6 @@ import {PageTitleComponent} from './Layout/Components/page-title/page-title.comp
 // HEADER
 
 import {HeaderComponent} from './Layout/Components/header/header.component';
-import {DotsComponent} from './Layout/Components/header/elements/dots/dots.component';
 import {SearchBoxComponent} from './Layout/Components/header/elements/search-box/search-box.component';
 import {UserBoxComponent} from './Layout/Components/header/elements/user-box/user-box.component';
 
@@ -60,12 +59,9 @@ import {RegisterBoxedComponent} from './DemoPages/UserPages/register-boxed/regis
 
 import {StandardComponent} from './DemoPages/Elements/Buttons/standard/standard.component';
 import {DropdownsComponent} from './DemoPages/Elements/dropdowns/dropdowns.component';
-import {BadgesComponent} from './DemoPages/Elements/badges/badges.component';
 import {CardsComponent} from './DemoPages/Elements/cards/cards.component';
 import {ListGroupsComponent} from './DemoPages/Elements/list-groups/list-groups.component';
-import {NavigationMenusComponent} from './DemoPages/Elements/navigation-menus/navigation-menus.component';
 import {TimelineComponent} from './DemoPages/Elements/timeline/timeline.component';
-import {UtilitiesComponent} from './DemoPages/Elements/utilities/utilities.component';
 import {IconsComponent} from './DemoPages/Elements/icons/icons.component';
 
 // Components
@@ -73,7 +69,6 @@ import {IconsComponent} from './DemoPages/Elements/icons/icons.component';
 import {AccordionsComponent} from './DemoPages/Components/accordions/accordions.component';
 import {TabsComponent} from './DemoPages/Components/tabs/tabs.component';
 import {CarouselComponent} from './DemoPages/Components/carousel/carousel.component';
-import {MapsComponent} from './DemoPages/Components/maps/maps.component';
 import {ModalsComponent} from './DemoPages/Components/modals/modals.component';
 import {ProgressBarComponent} from './DemoPages/Components/progress-bar/progress-bar.component';
 import {PaginationComponent} from './DemoPages/Components/pagination/pagination.component';
@@ -126,7 +121,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     // HEADER
 
     HeaderComponent,
-    DotsComponent,
     SearchBoxComponent,
     UserBoxComponent,
 
@@ -156,19 +150,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     StandardComponent,
     IconsComponent,
     DropdownsComponent,
-    BadgesComponent,
     CardsComponent,
     ListGroupsComponent,
-    NavigationMenusComponent,
     TimelineComponent,
-    UtilitiesComponent,
 
     // Components
 
     AccordionsComponent,
     TabsComponent,
     CarouselComponent,
-    MapsComponent,
     ModalsComponent,
     ProgressBarComponent,
     PaginationComponent,

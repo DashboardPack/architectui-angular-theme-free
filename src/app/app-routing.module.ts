@@ -20,12 +20,9 @@ import {RegisterBoxedComponent} from './DemoPages/UserPages/register-boxed/regis
 
 import {StandardComponent} from './DemoPages/Elements/Buttons/standard/standard.component';
 import {DropdownsComponent} from './DemoPages/Elements/dropdowns/dropdowns.component';
-import {BadgesComponent} from './DemoPages/Elements/badges/badges.component';
 import {CardsComponent} from './DemoPages/Elements/cards/cards.component';
 import {ListGroupsComponent} from './DemoPages/Elements/list-groups/list-groups.component';
-import {NavigationMenusComponent} from './DemoPages/Elements/navigation-menus/navigation-menus.component';
 import {TimelineComponent} from './DemoPages/Elements/timeline/timeline.component';
-import {UtilitiesComponent} from './DemoPages/Elements/utilities/utilities.component';
 import {IconsComponent} from './DemoPages/Elements/icons/icons.component';
 
 // Components
@@ -33,7 +30,6 @@ import {IconsComponent} from './DemoPages/Elements/icons/icons.component';
 import {AccordionsComponent} from './DemoPages/Components/accordions/accordions.component';
 import {TabsComponent} from './DemoPages/Components/tabs/tabs.component';
 import {CarouselComponent} from './DemoPages/Components/carousel/carousel.component';
-import {MapsComponent} from './DemoPages/Components/maps/maps.component';
 import {ModalsComponent} from './DemoPages/Components/modals/modals.component';
 import {ProgressBarComponent} from './DemoPages/Components/progress-bar/progress-bar.component';
 import {PaginationComponent} from './DemoPages/Components/pagination/pagination.component';
@@ -71,12 +67,9 @@ const routes: Routes = [
       {path: 'elements/buttons-standard', component: StandardComponent, data: {extraParameter: 'elementsMenu'}},
       {path: 'elements/dropdowns', component: DropdownsComponent, data: {extraParameter: 'elementsMenu'}},
       {path: 'elements/icons', component: IconsComponent, data: {extraParameter: 'elementsMenu'}},
-      {path: 'elements/badges-labels', component: BadgesComponent, data: {extraParameter: 'elementsMenu'}},
       {path: 'elements/cards', component: CardsComponent, data: {extraParameter: 'elementsMenu'}},
       {path: 'elements/list-group', component: ListGroupsComponent, data: {extraParameter: 'elementsMenu'}},
-      {path: 'elements/navigation-menu', component: NavigationMenusComponent, data: {extraParameter: 'elementsMenu'}},
       {path: 'elements/timeline', component: TimelineComponent, data: {extraParameter: 'elementsMenu'}},
-      {path: 'elements/utilities', component: UtilitiesComponent, data: {extraParameter: 'elementsMenu'}},
 
       // Components
 
@@ -87,7 +80,6 @@ const routes: Routes = [
       {path: 'components/tooltips-popovers', component: TooltipsPopoversComponent, data: {extraParameter: 'componentsMenu'}},
       {path: 'components/carousel', component: CarouselComponent, data: {extraParameter: 'componentsMenu'}},
       {path: 'components/pagination', component: PaginationComponent, data: {extraParameter: 'componentsMenu'}},
-      {path: 'components/maps', component: MapsComponent, data: {extraParameter: 'componentsMenu'}},
 
       // Tables
 
