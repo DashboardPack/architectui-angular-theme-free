@@ -32,7 +32,7 @@
     "chartjs-plugin-annotation": "^0.5.7",
     "chartjs-plugin-datalabels": "^0.6.0",
     "font-awesome": "^4.7.0",
-    "lodash-es": "^4.17.11",
+    "lodash-es": "^4.17.14",
     "ng-bootstrap": "^1.6.3",
     "ng2-charts": "^2.2.2",
     "ngx-perfect-scrollbar": "^7.2.1",
