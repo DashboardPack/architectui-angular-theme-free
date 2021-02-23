@@ -44,7 +44,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": false,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -93,9 +92,6 @@
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.sass"
             ],
-            "scripts": {
-              "fix-memory-limit": "cross-env LIMIT=2048 increase-memory-limit"
-            },
             "assets": [
               "src/favicon.ico",
               "src/assets"
