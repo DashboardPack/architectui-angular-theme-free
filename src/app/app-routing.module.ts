@@ -28,7 +28,7 @@ import {IconsComponent} from './DemoPages/Elements/icons/icons.component';
 // Components
 
 import {AccordionsComponent} from './DemoPages/Components/accordions/accordions.component';
-import {TabsComponent} from './DemoPages/Components/tabs/tabs.component';
+// import {TabsComponent} from './DemoPages/Components/tabs/tabs.component';
 import {CarouselComponent} from './DemoPages/Components/carousel/carousel.component';
 import {ModalsComponent} from './DemoPages/Components/modals/modals.component';
 import {ProgressBarComponent} from './DemoPages/Components/progress-bar/progress-bar.component';
@@ -73,7 +73,7 @@ const routes: Routes = [
 
       // Components
 
-      {path: 'components/tabs', component: TabsComponent, data: {extraParameter: 'componentsMenu'}},
+      // {path: 'components/tabs', component: TabsComponent, data: {extraParameter: 'componentsMenu'}},
       {path: 'components/accordions', component: AccordionsComponent, data: {extraParameter: 'componentsMenu'}},
       {path: 'components/modals', component: ModalsComponent, data: {extraParameter: 'componentsMenu'}},
       {path: 'components/progress-bar', component: ProgressBarComponent, data: {extraParameter: 'componentsMenu'}},

@@ -1,6 +1,7 @@
 import {Component, HostBinding} from '@angular/core';
 import {select} from '@angular-redux/store';
 import {Observable} from 'rxjs';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import {ThemeOptions} from '../../../theme-options';
 
 @Component({
@@ -8,6 +9,8 @@ import {ThemeOptions} from '../../../theme-options';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
+
+  faEllipsisV = faEllipsisV;
 
   constructor(public globals: ThemeOptions) {
   }
