@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
 
+Pro version for ArchitectUI based on Angular 11 is available [here](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro)
+
 ## ArchitectUI Preview
 
 ![ArchitectUI Angular 11 admin dashboard template](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-angular-free.jpg)
