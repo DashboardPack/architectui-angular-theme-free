@@ -1,6 +1,10 @@
-### ArchitectUI - Angular 11 Bootstrap 4.6
+# ArchitectUI - Angular 11 Bootstrap 4.6
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
+
+## ArchitectUI Preview
+
+![ArchitectUI Angular 11 admin dashboard template](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-angular-free.jpg)
 
 ## Development server
 
