@@ -8,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class ControlsComponent implements OnInit {
 
   heading = 'Form Controls';
-  subheading = 'Wide selection of forms controls, using the Bootstrap 4 code base, but built with Vue.';
+  subheading = 'Wide selection of forms controls, using the Bootstrap 5 code base, but built with Vue.';
   icon = 'pe-7s-display1 icon-gradient bg-premium-dark';
 
   constructor() {

@@ -68,7 +68,7 @@
 }
 
 .alert-dismissible {
-  .close {
+  .btn-close {
     top: 0;
     right: 5px;
     padding: 5px;
@@ -268,4 +268,48 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-info, .btn-success {
+  color:#fff !important;
+}
+
+.bg-warning {
+  color: #212529;
+}
+
+.list-group-item {
+  border: 1px solid rgba(0,0,0,0.125);
+}
+
+.btn-link, a {
+  text-decoration: none !important;
+}
+
+.bg-light {
+  color: #212529;
+  // background: #fff;
+}
+
+.table {
+  --bs-table-accent-bg: none;
+}
+
+.nav-item.nav-item-header {
+  text-transform: uppercase;
+    font-size: 0.73333333rem;
+    color: #6c757d;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.nav-item.nav-item-btn {
+  padding: 0.5rem 1rem;
+}
+
+.nav-item.nav-item-divider {
+  margin: 0.5rem 0;
+  height: 1px;
+  overflow: hidden;
+  background: #dee2e6;
 }
