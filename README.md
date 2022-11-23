@@ -1,6 +1,14 @@
-### ArchitectUI - Angular 7 Bootstrap 4
+# ArchitectUI - Angular 11 Bootstrap 5
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+This admin dashboard was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
+
+ArchitectUI is among the most popular admin panels based on Angular that you can use for any SaaS or webapp. It comes in other versions too, such as [Vue](https://dashboardpack.com/theme-details/architectui-dashboard-vue-pro), [React](https://dashboardpack.com/theme-details/architectui-dashboard-react-pro) and [HTML/jQuery](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/). 
+
+Pro version for ArchitectUI based on Angular 11 is available [here](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro).
+
+## ArchitectUI Preview
+
+![ArchitectUI Angular 11 admin dashboard template](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-angular-free.jpg)
 
 ## Development server
 

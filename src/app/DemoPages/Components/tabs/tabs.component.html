@@ -1,4 +1,4 @@
-<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+<!-- <app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
 
 <div class="row">
   <div class="col-md-6">
@@ -7,8 +7,9 @@
         Tabset
       </div>
       <div class="card-body">
-        <ngb-tabset>
-          <ngb-tab title="Simple">
+        <ul ngbNav #nav="ngbNav" class="nav-tabs">
+          <li ngbNavItem>
+            <a ngbNavLink><span>Simple</span></a>
             <ng-template ngbTabContent>
               <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
                 retro synth
@@ -18,9 +19,9 @@
                 salvia cillum
                 iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
             </ng-template>
-          </ngb-tab>
-          <ngb-tab>
-            <ng-template ngbTabTitle><b>Fancy</b> title</ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink><b>Fancy</b> title</a>
             <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
               coffee squid.
               <p class="mt-3">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
@@ -35,8 +36,9 @@
                 tumblr butcher vero
                 sint qui sapiente accusamus tattooed echo park.</p>
             </ng-template>
-          </ngb-tab>
-          <ngb-tab title="Disabled" [disabled]="true">
+          </li>
+          <li ngbNavItem [disabled]="disabled">
+            <a ngbNavLink><span>Disabled</span></a>
             <ng-template ngbTabContent>
               <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
                 Nulla facilisi.
@@ -52,8 +54,9 @@
                 ultricies in eget neque.
                 Phasellus nec tortor vel tellus pulvinar feugiat.</p>
             </ng-template>
-          </ngb-tab>
-        </ngb-tabset>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="nav"></div>
       </div>
     </div>
     <div class="card main-card mb-3">
@@ -61,8 +64,9 @@
         Pills
       </div>
       <div class="card-body">
-        <ngb-tabset type="pills">
-          <ngb-tab title="Simple">
+        <ul type="pills" ngbNav #nav1="ngbNav" class="nav-tabs">
+          <li ngbNavItem title="Simple">
+            <a ngbNavLink><span>Simple</span></a>
             <ng-template ngbTabContent>
               <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
                 retro synth
@@ -72,9 +76,9 @@
                 salvia cillum
                 iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
             </ng-template>
-          </ngb-tab>
-          <ngb-tab>
-            <ng-template ngbTabTitle><b>Fancy</b> title</ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink><b>Fancy</b> title</a>
             <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
               coffee squid.
               <p class="mt-3">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
@@ -89,8 +93,9 @@
                 tumblr butcher vero
                 sint qui sapiente accusamus tattooed echo park.</p>
             </ng-template>
-          </ngb-tab>
-          <ngb-tab title="Disabled" [disabled]="true">
+          </li>
+          <li ngbNavItem [disabled]="disabled">
+            <a ngbNavLink><span>Disabled</span></a>
             <ng-template ngbTabContent>
               <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
                 Nulla facilisi.
@@ -107,8 +112,9 @@
                 Phasellus nec tortor vel tellus pulvinar feugiat.
               </p>
             </ng-template>
-          </ngb-tab>
-        </ngb-tabset>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="nav1"></div>
       </div>
     </div>
   </div>
@@ -118,8 +124,9 @@
         Justified
       </div>
       <div class="card-body">
-        <ngb-tabset [justify]="currentJustify">
-          <ngb-tab title="Simple">
+        <ul [justify]="currentJustify" ngbNav #nav2="ngbNav" class="nav-tabs">
+          <li ngbNavItem>
+            <a ngbNavLink><span>Simple</span></a>
             <ng-template ngbTabContent>
               <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
                 retro synth
@@ -129,9 +136,9 @@
                 salvia cillum
                 iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
             </ng-template>
-          </ngb-tab>
-          <ngb-tab>
-            <ng-template ngbTabTitle><b>Fancy</b> title</ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink><b>Fancy</b> title</a>
             <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
               coffee squid.
               <p class="mt-3">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
@@ -146,8 +153,9 @@
                 tumblr butcher vero
                 sint qui sapiente accusamus tattooed echo park.</p>
             </ng-template>
-          </ngb-tab>
-          <ngb-tab title="A very long nav title">
+          </li>
+          <li ngbNavItem title="A very long nav title">
+            <a ngbNavLink><span>A very long nav title</span></a>
             <ng-template ngbTabContent>
               <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
                 Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget
@@ -158,8 +166,9 @@
                 montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque.
                 Phasellus nec tortor vel tellus pulvinar feugiat.</p>
             </ng-template>
-          </ngb-tab>
-        </ngb-tabset>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="nav2"></div>
 
         <div class="divider"></div>
 
@@ -189,8 +198,9 @@
         Orientation
       </div>
       <div class="card-body">
-        <ngb-tabset type="pills" [orientation]="currentOrientation">
-          <ngb-tab title="Simple">
+        <ul type="pills" [orientation]="currentOrientation" ngbNav #nav3="ngbNav" class="nav-tabs">
+          <li ngbNavItem>
+            <a ngbNavLink><span>Simple</span></a>
             <ng-template ngbTabContent>
               <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
                 retro synth
@@ -200,9 +210,9 @@
                 salvia cillum
                 iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
             </ng-template>
-          </ngb-tab>
-          <ngb-tab>
-            <ng-template ngbTabTitle><b>Fancy</b> title</ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink><b>Fancy</b> title</a>
             <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
               coffee squid.
               <p class="mt-3">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
@@ -217,8 +227,9 @@
                 tumblr butcher vero
                 sint qui sapiente accusamus tattooed echo park.</p>
             </ng-template>
-          </ngb-tab>
-          <ngb-tab title="Disabled" [disabled]="true">
+          </li>
+          <li ngbNavItem [disabled]="disabled">
+            <a ngbNavLink><span>Disabled</span></a>
             <ng-template ngbTabContent>
               <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
                 Nulla facilisi.
@@ -235,8 +246,9 @@
                 Phasellus nec tortor vel tellus pulvinar feugiat.
               </p>
             </ng-template>
-          </ngb-tab>
-        </ngb-tabset>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="nav3"></div>
 
         <div class="divider"></div>
 
@@ -255,4 +267,4 @@
   </div>
 </div>
 
-
+ -->

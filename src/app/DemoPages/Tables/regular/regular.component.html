@@ -15,7 +15,7 @@
     <tr *ngFor="let country of countries; index as i">
       <th scope="row">{{ i + 1 }}</th>
       <td>
-        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2"
+        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="me-2"
              style="width: 20px">
         {{ country.name }}
       </td>
@@ -46,7 +46,7 @@
         <td>
           <div class="widget-content p-0">
             <div class="widget-content-wrapper">
-              <div class="widget-content-left mr-3">
+              <div class="widget-content-left me-3">
                 <div class="widget-content-left">
                   <img width="40" class="rounded-circle" src="./assets/images/avatars/4.jpg" alt="">
                 </div>
@@ -60,7 +60,7 @@
         </td>
         <td class="text-center">Madrid</td>
         <td class="text-center">
-          <div class="badge badge-warning">Pending</div>
+          <div class="badge bg-warning">Pending</div>
         </td>
         <td class="text-center">
           <button type="button" class="btn btn-primary btn-sm">Details</button>
@@ -71,7 +71,7 @@
         <td>
           <div class="widget-content p-0">
             <div class="widget-content-wrapper">
-              <div class="widget-content-left mr-3">
+              <div class="widget-content-left me-3">
                 <div class="widget-content-left">
                   <img width="40" class="rounded-circle" src="./assets/images/avatars/3.jpg" alt="">
                 </div>
@@ -85,7 +85,7 @@
         </td>
         <td class="text-center">Berlin</td>
         <td class="text-center">
-          <div class="badge badge-success">Completed</div>
+          <div class="badge bg-success">Completed</div>
         </td>
         <td class="text-center">
           <button type="button" class="btn btn-primary btn-sm">Details</button>
@@ -96,7 +96,7 @@
         <td>
           <div class="widget-content p-0">
             <div class="widget-content-wrapper">
-              <div class="widget-content-left mr-3">
+              <div class="widget-content-left me-3">
                 <div class="widget-content-left">
                   <img width="40" class="rounded-circle" src="./assets/images/avatars/2.jpg" alt="">
                 </div>
@@ -110,7 +110,7 @@
         </td>
         <td class="text-center">London</td>
         <td class="text-center">
-          <div class="badge badge-danger">In Progress</div>
+          <div class="badge bg-danger">In Progress</div>
         </td>
         <td class="text-center">
           <button type="button" class="btn btn-primary btn-sm">Details</button>
@@ -121,7 +121,7 @@
         <td>
           <div class="widget-content p-0">
             <div class="widget-content-wrapper">
-              <div class="widget-content-left mr-3">
+              <div class="widget-content-left me-3">
                 <div class="widget-content-left">
                   <img width="40" class="rounded-circle" src="./assets/images/avatars/1.jpg" alt=""></div>
               </div>
@@ -134,7 +134,7 @@
         </td>
         <td class="text-center">Amsterdam</td>
         <td class="text-center">
-          <div class="badge badge-info">On Hold</div>
+          <div class="badge bg-info">On Hold</div>
         </td>
         <td class="text-center">
           <button type="button" class="btn btn-primary btn-sm">Details</button>
@@ -144,7 +144,7 @@
     </table>
   </div>
   <div class="d-block text-center card-footer">
-    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger">
+    <button class="me-2 btn-icon btn-icon-only btn btn-outline-danger">
       <i class="pe-7s-trash btn-icon-wrapper"> </i>
     </button>
     <button class="btn-wide btn btn-success">Save</button>
@@ -152,7 +152,7 @@
 </div>
 <div class="main-card mb-3 card">
   <div class="card-header">
-    <div class="card-header-title font-size-lg text-capitalize font-weight-normal">Company Agents Status</div>
+    <div class="card-header-title font-size-lg text-capitalize fw-normal">Company Agents Status</div>
   </div>
   <div class="table-responsive">
     <table class="align-middle text-truncate mb-0 table table-borderless table-hover">
@@ -177,10 +177,10 @@
         <td class="text-center"><a [routerLink]="">Juan C. Cargill</a></td>
         <td class="text-center"><a [routerLink]="">Micro Electronics</a></td>
         <td class="text-center">
-          <div class="badge badge-pill badge-danger">Canceled</div>
+          <div class="badge rounded-pill bg-danger">Canceled</div>
         </td>
         <td class="text-center">
-                                        <span class="pr-2 opacity-6">
+                                        <span class="pe-2 opacity-6">
                                             <i class="fa fa-business-time"></i>
                                         </span>
           12 Dec
@@ -189,7 +189,7 @@
           <div class="widget-content p-0">
             <div class="widget-content-outer">
               <div class="widget-content-wrapper">
-                <div class="widget-content-left pr-2">
+                <div class="widget-content-left pe-2">
                   <div class="widget-numbers fsize-1 text-danger">71%</div>
                 </div>
                 <div class="widget-content-right w-100">
@@ -217,10 +217,10 @@
         <td class="text-center"><a [routerLink]="">Johnathan Phelan</a></td>
         <td class="text-center"><a [routerLink]="">Hatchworks</a></td>
         <td class="text-center">
-          <div class="badge badge-pill badge-info">On Hold</div>
+          <div class="badge rounded-pill bg-info">On Hold</div>
         </td>
         <td class="text-center">
-                                        <span class="pr-2 opacity-6">
+                                        <span class="pe-2 opacity-6">
                                             <i class="fa fa-business-time"></i>
                                         </span>
           12 Dec
@@ -229,7 +229,7 @@
           <div class="widget-content p-0">
             <div class="widget-content-outer">
               <div class="widget-content-wrapper">
-                <div class="widget-content-left pr-2">
+                <div class="widget-content-left pe-2">
                   <div class="widget-numbers fsize-1 text-warning">54%</div>
                 </div>
                 <div class="widget-content-right w-100">
@@ -257,10 +257,10 @@
         <td class="text-center"><a [routerLink]="">Darrell Lowe</a></td>
         <td class="text-center"><a [routerLink]="">Riddle Electronics</a></td>
         <td class="text-center">
-          <div class="badge badge-pill badge-warning">In Progress</div>
+          <div class="badge rounded-pill bg-warning">In Progress</div>
         </td>
         <td class="text-center">
-                                        <span class="pr-2 opacity-6">
+                                        <span class="pe-2 opacity-6">
                                             <i class="fa fa-business-time"></i>
                                         </span>
           12 Dec
@@ -269,7 +269,7 @@
           <div class="widget-content p-0">
             <div class="widget-content-outer">
               <div class="widget-content-wrapper">
-                <div class="widget-content-left pr-2">
+                <div class="widget-content-left pe-2">
                   <div class="widget-numbers fsize-1 text-success">97%</div>
                 </div>
                 <div class="widget-content-right w-100">
@@ -297,10 +297,10 @@
         <td class="text-center"><a [routerLink]="">George T. Cottrell</a></td>
         <td class="text-center"><a [routerLink]="">Pixelcloud</a></td>
         <td class="text-center">
-          <div class="badge badge-pill badge-success">Completed</div>
+          <div class="badge rounded-pill bg-success">Completed</div>
         </td>
         <td class="text-center">
-                                        <span class="pr-2 opacity-6">
+                                        <span class="pe-2 opacity-6">
                                             <i class="fa fa-business-time"></i>
                                         </span>
           12 Dec
@@ -309,7 +309,7 @@
           <div class="widget-content p-0">
             <div class="widget-content-outer">
               <div class="widget-content-wrapper">
-                <div class="widget-content-left pr-2">
+                <div class="widget-content-left pe-2">
                   <div class="widget-numbers fsize-1 text-info">88%</div>
                 </div>
                 <div class="widget-content-right w-100">
@@ -334,10 +334,10 @@
   </div>
   <div class="d-block p-4 text-center card-footer">
     <button class="btn-pill btn-shadow btn-wide fsize-1 btn btn-dark btn-lg">
-      <span class="mr-2 opacity-7">
+      <span class="me-2 opacity-7">
           <i class="fa fa-cog fa-spin"></i>
       </span>
-      <span class="mr-1">View Complete Report</span>
+      <span class="me-1">View Complete Report</span>
     </button>
   </div>
 </div>
