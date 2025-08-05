@@ -42,6 +42,28 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   box-shadow: $sidebar-box-shadow;
   flex-direction: column;
   transition: all .3s ease;
+  
+  .sidebar-scrollbar {
+    overflow-y: auto;
+    height: 100%;
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
 
   .app-header__logo {
     padding: 0 $layout-spacer-x;

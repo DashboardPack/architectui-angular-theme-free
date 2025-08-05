@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {select} from '@angular-redux/store';
 import {Observable} from 'rxjs';
-import {ConfigActions} from '../../ThemeOptions/store/config.actions';
+import { ConfigService } from '../../ThemeOptions/store/config.service';
 import {ThemeOptions} from '../../theme-options';
 import {animate, query, style, transition, trigger} from '@angular/animations';
 
@@ -36,9 +35,13 @@ import {animate, query, style, transition, trigger} from '@angular/animations';
 
 export class BaseLayoutComponent {
 
-  @select('config') public config$: Observable<any>;
+  public config$: Observable<any>;
 
-  constructor(public globals: ThemeOptions, public configActions: ConfigActions) {
+  constructor(
+    public globals: ThemeOptions,
+    private configService: ConfigService
+  ) {
+    this.config$ = this.configService.config$;
   }
 
   toggleSidebarMobile() {

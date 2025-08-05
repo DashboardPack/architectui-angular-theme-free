@@ -1,7 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {ThemeOptions} from '../../../theme-options';
-import {select} from '@angular-redux/store';
 import {Observable} from 'rxjs';
+import { ConfigService } from '../../../ThemeOptions/store/config.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -11,11 +11,15 @@ import {ActivatedRoute} from '@angular/router';
 export class SidebarComponent implements OnInit {
   public extraParameter: any;
 
-  constructor(public globals: ThemeOptions, private activatedRoute: ActivatedRoute) {
+  public config$: Observable<any>;
 
+  constructor(
+    public globals: ThemeOptions, 
+    private activatedRoute: ActivatedRoute,
+    private configService: ConfigService
+  ) {
+    this.config$ = this.configService.config$;
   }
-
-  @select('config') public config$: Observable<any>;
 
   private newInnerWidth: number;
   private innerWidth: number;
@@ -37,7 +41,7 @@ export class SidebarComponent implements OnInit {
       }
     });
 
-    this.extraParameter = this.activatedRoute.snapshot.firstChild.data.extraParameter;
+    this.extraParameter = this.activatedRoute.snapshot.firstChild?.data['extraParameter'];
 
   }
 

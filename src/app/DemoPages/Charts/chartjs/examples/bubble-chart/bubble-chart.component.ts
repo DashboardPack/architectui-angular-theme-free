@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ChartOptions, ChartType, ChartDataSets} from 'chart.js';
+import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
 import {Color} from 'ng2-charts';
 
 @Component({
@@ -10,7 +10,7 @@ export class BubbleChartComponent implements OnInit {
   public bubbleChartOptions: ChartOptions = {
     responsive: true,
     scales: {
-      xAxes: [
+      x: [
         {
           ticks: {
             min: 0,
@@ -18,7 +18,7 @@ export class BubbleChartComponent implements OnInit {
           }
         }
       ],
-      yAxes: [
+      y: [
         {
           ticks: {
             min: 0,
@@ -31,7 +31,7 @@ export class BubbleChartComponent implements OnInit {
   public bubbleChartType: ChartType = 'bubble';
   public bubbleChartLegend = true;
 
-  public bubbleChartData: ChartDataSets[] = [
+  public bubbleChartData: ChartDataset[] = [
     {
       data: [
         {x: 10, y: 10, r: 10},
@@ -47,7 +47,7 @@ export class BubbleChartComponent implements OnInit {
     },
   ];
 
-  public bubbleChartColors: Color[] = [
+  public bubbleChartColors = [
     {
       backgroundColor: [
         'red',

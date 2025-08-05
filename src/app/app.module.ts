@@ -2,12 +2,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgReduxModule} from '@angular-redux/store';
-import {NgRedux, DevToolsExtension} from '@angular-redux/store';
-import {rootReducer, ArchitectUIState} from './ThemeOptions/store';
-import {ConfigActions} from './ThemeOptions/store/config.actions';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { configReducer } from './ThemeOptions/store/config.reducer.ngrx';
+import { ConfigService } from './ThemeOptions/store/config.service';
+import { environment } from '../environments/environment';
 import {AppRoutingModule} from './app-routing.module';
 import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
+import {LoadingBarModule} from '@ngx-loading-bar/core';
 
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
@@ -16,10 +18,8 @@ import {AppComponent} from './app.component';
 // BOOTSTRAP COMPONENTS
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
-import {PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
-import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
-import {ChartsModule} from 'ng2-charts';
+// PerfectScrollbar removed - not compatible with Angular 20
+import { BaseChartDirective, provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // LAYOUT
@@ -104,9 +104,6 @@ import {DynamicChartComponent} from './DemoPages/Charts/chartjs/examples/dynamic
 import {DoughnutChartComponent} from './DemoPages/Charts/chartjs/examples/doughnut-chart/doughnut-chart.component';
 import {PieChartComponent} from './DemoPages/Charts/chartjs/examples/pie-chart/pie-chart.component';
 
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
 
 @NgModule({
   declarations: [
@@ -198,13 +195,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgReduxModule,
+    StoreModule.forRoot({ config: configReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     CommonModule,
     LoadingBarRouterModule,
+    LoadingBarModule,
 
     // Angular Bootstrap Components
 
-    PerfectScrollbarModule,
     NgbModule,
     FontAwesomeModule,
     FormsModule,
@@ -213,32 +211,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
     // Charts
 
-    ChartsModule,
+    BaseChartDirective,
   ],
   providers: [
-    {
-      provide:
-      PERFECT_SCROLLBAR_CONFIG,
-      // DROPZONE_CONFIG,
-      useValue:
-      DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-      // DEFAULT_DROPZONE_CONFIG,
-    },
-    ConfigActions,
+    ConfigService,
+    provideCharts(withDefaultRegisterables())
   ],
   bootstrap: [AppComponent]
 })
 
-export class AppModule {
-  constructor(private ngRedux: NgRedux<ArchitectUIState>,
-              private devTool: DevToolsExtension) {
-
-    this.ngRedux.configureStore(
-      rootReducer,
-      {} as ArchitectUIState,
-      [],
-      [devTool.isEnabled() ? devTool.enhancer() : f => f]
-    );
-
-  }
-}
+export class AppModule { }

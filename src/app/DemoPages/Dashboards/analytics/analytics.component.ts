@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Color} from 'ng2-charts/ng2-charts';
+// import {Color} from 'ng2-charts/ng2-charts';
 import { faTh, faCheck, faTrash, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -60,7 +60,7 @@ export class AnalyticsComponent implements OnInit {
 
     }
   ];
-  public lineChartColors: Color[] = [
+  public lineChartColors = [
     { // dark grey
       backgroundColor: 'rgba(247, 185, 36, 0.2)',
       borderColor: '#f7b924',
@@ -81,7 +81,7 @@ export class AnalyticsComponent implements OnInit {
     },
   ];
 
-  public lineChartColors2: Color[] = [
+  public lineChartColors2 = [
     { // dark grey
       backgroundColor: 'rgba(48, 177, 255, 0.2)',
       borderColor: '#30b1ff',
@@ -102,7 +102,7 @@ export class AnalyticsComponent implements OnInit {
     },
   ];
 
-  public lineChartColors3: Color[] = [
+  public lineChartColors3 = [
     { // dark grey
       backgroundColor: 'rgba(86, 196, 121, 0.2)',
       borderColor: '#56c479',
@@ -135,7 +135,7 @@ export class AnalyticsComponent implements OnInit {
       }
     },
     scales: {
-      yAxes: [{
+      y: [{
         ticks: {
           display: false,
           beginAtZero: true
@@ -144,7 +144,7 @@ export class AnalyticsComponent implements OnInit {
           display: false
         }
       }],
-      xAxes: [{
+      x: [{
         ticks: {
           display: false
         },

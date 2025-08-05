@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartDataSets, ChartType, ChartOptions } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { ChartDataset, ChartType, ChartOptions } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-scatter-chart',
@@ -12,9 +12,9 @@ export class ScatterChartComponent implements OnInit {
   public scatterChartOptions: ChartOptions = {
     responsive: true,
   };
-  public scatterChartLabels: Label[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
+  public scatterChartLabels: string[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
 
-  public scatterChartData: ChartDataSets[] = [
+  public scatterChartData: ChartDataset[] = [
     {
       data: [
         { x: 1, y: 1 },
