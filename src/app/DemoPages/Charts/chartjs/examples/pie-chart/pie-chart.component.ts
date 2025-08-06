@@ -6,16 +6,17 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  standalone: false,  styleUrls: ['./pie-chart.component.scss']
+  standalone: false,
+  styleUrls: ['./pie-chart.component.scss']
 })
 export class PieChartComponent implements OnInit {
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
-    plugins: { legend: {
-      position: 'top',
-    },
     plugins: {
+      legend: {
+        position: 'top',
+      },
       datalabels: {
         formatter: (value, ctx) => {
           const label = ctx.chart.data.labels[ctx.dataIndex];
@@ -60,7 +61,7 @@ export class PieChartComponent implements OnInit {
   }
 
   addSlice() {
-    this.pieChartLabels.push(['Line 1', 'Line 2', 'Line 3']);
+    this.pieChartLabels.push('New Slice');
     this.pieChartData.push(400);
     this.pieChartColors[0].backgroundColor.push('rgba(196,79,244,0.3)');
   }
@@ -72,6 +73,8 @@ export class PieChartComponent implements OnInit {
   }
 
   changeLegendPosition() {
-    this.pieChartOptions.legend.position = this.pieChartOptions.legend.position === 'left' ? 'top' : 'left';
+    if (this.pieChartOptions.plugins?.legend) {
+      this.pieChartOptions.plugins.legend.position = this.pieChartOptions.plugins.legend.position === 'left' ? 'top' : 'left';
+    }
   }
 }

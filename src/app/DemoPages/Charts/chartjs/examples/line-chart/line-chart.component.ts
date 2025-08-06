@@ -5,8 +5,9 @@ import * as pluginAnnotations from 'chartjs-plugin-annotation';
 
 @Component({
   selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html'
-  standalone: false})
+  templateUrl: './line-chart.component.html',
+  standalone: false
+})
 export class LineChartComponent implements OnInit {
   public lineChartData: ChartDataset[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
@@ -54,32 +55,6 @@ export class LineChartComponent implements OnInit {
       ],
     },
   };
-  // Colors now configured in dataset
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
-    { // red
-      backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    }
-  ];
   public lineChartLegend = true;
   public lineChartType = 'line';
   public lineChartPlugins = [pluginAnnotations];
@@ -128,12 +103,15 @@ export class LineChartComponent implements OnInit {
   }
 
   public changeColor() {
-    this.lineChartColors[2].borderColor = 'green';
-    this.lineChartColors[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+    // Update color directly in the dataset
+    if (this.lineChartData[2]) {
+      this.lineChartData[2].borderColor = 'green';
+      this.lineChartData[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+    }
   }
 
   public changeLabel() {
-    this.lineChartLabels[2] = ['1st Line', '2nd Line'];
+    this.lineChartLabels[2] = 'Updated Label';
     // this.chart.update();
   }
 }
