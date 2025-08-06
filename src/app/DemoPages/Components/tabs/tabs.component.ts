@@ -11,13 +11,9 @@ export class TabsComponent {
   icon = 'pe-7s-drawer icon-gradient bg-happy-itmeo';
 
   currentJustify = 'start';
-  currentJustify2 = 'center';
-  currentJustify3 = 'start';
-
   currentOrientation = 'horizontal';
+  disabled = true; // For disabled tab examples
 
   constructor() {
   }
-
-
 }

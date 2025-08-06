@@ -1,5 +1,9 @@
 {
   "compileOnSave": false,
+  "exclude": [
+    "src/app/DemoPages/Charts/**/*",
+    "src/app/charts.module.ts"
+  ],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

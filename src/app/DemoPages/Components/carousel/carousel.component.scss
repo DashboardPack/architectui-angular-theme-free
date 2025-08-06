@@ -1,0 +1,61 @@
+.picsum-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background: #f8f9fa;
+  
+  img {
+    max-height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  
+  h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+  }
+}
+
+ngb-carousel {
+  .carousel-indicators {
+    button {
+      background-color: rgba(255, 255, 255, 0.5);
+      
+      &.active {
+        background-color: white;
+      }
+    }
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    color: white;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  
+  .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 600;
+  }
+}

@@ -1,15 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { SharedModule } from './shared.module';
 
 // Table Components
 import { RegularComponent } from './DemoPages/Tables/regular/regular.component';
 import { TablesMainComponent } from './DemoPages/Tables/tables-main/tables-main.component';
-
-const routes = [
-  { path: 'tables/regular', component: RegularComponent, data: { extraParameter: 'tablesMenu' } },
-  { path: 'tables/bootstrap', component: TablesMainComponent, data: { extraParameter: 'tablesMenu' } }
-];
 
 @NgModule({
   declarations: [
@@ -17,8 +11,7 @@ const routes = [
     TablesMainComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
+    SharedModule
   ],
   exports: [
     RegularComponent,

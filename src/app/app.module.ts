@@ -21,16 +21,18 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Feature Modules
-import { ChartsModule } from './charts.module';
 import { FormPagesModule } from './forms.module';
 import { TablesModule } from './tables.module';
 import { WidgetsModule } from './widgets.module';
 import { ComponentsModule } from './components.module';
+import { DashboardsModule } from './dashboards.module';
+import { ElementsModule } from './elements.module';
+import { UserPagesModule } from './user-pages.module';
+import { SharedModule } from './shared.module';
 
 // LAYOUT
 import {BaseLayoutComponent} from './Layout/base-layout/base-layout.component';
 import {PagesLayoutComponent} from './Layout/pages-layout/pages-layout.component';
-import {PageTitleComponent} from './Layout/Components/page-title/page-title.component';
 
 // HEADER
 import {HeaderComponent} from './Layout/Components/header/header.component';
@@ -44,27 +46,7 @@ import {LogoComponent} from './Layout/Components/sidebar/elements/logo/logo.comp
 // FOOTER
 import {FooterComponent} from './Layout/Components/footer/footer.component';
 
-// DEMO PAGES
-
-// Dashboards
-import {AnalyticsComponent} from './DemoPages/Dashboards/analytics/analytics.component';
-
-// Pages
-import {ForgotPasswordBoxedComponent} from './DemoPages/UserPages/forgot-password-boxed/forgot-password-boxed.component';
-import {LoginBoxedComponent} from './DemoPages/UserPages/login-boxed/login-boxed.component';
-import {RegisterBoxedComponent} from './DemoPages/UserPages/register-boxed/register-boxed.component';
-
-// Elements
-import {StandardComponent} from './DemoPages/Elements/Buttons/standard/standard.component';
-import {DropdownsComponent} from './DemoPages/Elements/dropdowns/dropdowns.component';
-import {CardsComponent} from './DemoPages/Elements/cards/cards.component';
-import {ListGroupsComponent} from './DemoPages/Elements/list-groups/list-groups.component';
-import {TimelineComponent} from './DemoPages/Elements/timeline/timeline.component';
-import {IconsComponent} from './DemoPages/Elements/icons/icons.component';
-
-// Components
-import {AccordionsComponent} from './DemoPages/Components/accordions/accordions.component';
-import {TabsComponent} from './DemoPages/Components/tabs/tabs.component';
+// All component imports are handled by feature modules
 
 // ThemeOptions
 import {ThemeOptions} from './theme-options';
@@ -75,7 +57,6 @@ import {ThemeOptions} from './theme-options';
     AppComponent,
     BaseLayoutComponent,
     PagesLayoutComponent,
-    PageTitleComponent,
 
     // HEADER
     HeaderComponent,
@@ -89,27 +70,7 @@ import {ThemeOptions} from './theme-options';
     // FOOTER
     FooterComponent,
 
-    // DEMO PAGES
-
-    // Dashboards
-    AnalyticsComponent,
-
-    // User Pages
-    ForgotPasswordBoxedComponent,
-    LoginBoxedComponent,
-    RegisterBoxedComponent,
-
-    // Elements
-    StandardComponent,
-    IconsComponent,
-    DropdownsComponent,
-    CardsComponent,
-    ListGroupsComponent,
-    TimelineComponent,
-
-    // Components
-    AccordionsComponent,
-    TabsComponent,
+    // All page components are declared in feature modules
   ],
   imports: [
     BrowserModule,
@@ -129,7 +90,11 @@ import {ThemeOptions} from './theme-options';
     HttpClientModule,
 
     // Feature Modules
-    ChartsModule,
+    SharedModule,
+    DashboardsModule,
+    ElementsModule,
+    UserPagesModule,
+    // ChartsModule, // Temporarily disabled due to ng2-charts compatibility
     FormPagesModule,
     TablesModule,
     WidgetsModule,

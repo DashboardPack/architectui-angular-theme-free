@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { BaseChartDirective } from 'ng2-charts';
+import { SharedModule } from './shared.module';
 
 // Chart Components
 import { ChartjsComponent } from './DemoPages/Charts/chartjs/chartjs.component';
@@ -14,10 +13,6 @@ import { PolarAreaChartComponent } from './DemoPages/Charts/chartjs/examples/pol
 import { BubbleChartComponent } from './DemoPages/Charts/chartjs/examples/bubble-chart/bubble-chart.component';
 import { ScatterChartComponent } from './DemoPages/Charts/chartjs/examples/scatter-chart/scatter-chart.component';
 import { DynamicChartComponent } from './DemoPages/Charts/chartjs/examples/dynamic-chart/dynamic-chart.component';
-
-const routes = [
-  { path: 'charts/chartjs', component: ChartjsComponent, data: { extraParameter: 'chartsMenu' } }
-];
 
 @NgModule({
   declarations: [
@@ -33,9 +28,8 @@ const routes = [
     DynamicChartComponent
   ],
   imports: [
-    CommonModule,
-    BaseChartDirective,
-    RouterModule.forChild(routes)
+    SharedModule,
+    BaseChartDirective
   ],
   exports: [
     ChartjsComponent,
