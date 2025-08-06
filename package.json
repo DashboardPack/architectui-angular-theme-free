@@ -1,6 +1,7 @@
 {
   "name": "architectui-angular-free",
   "version": "2.0.0",
+  "description": "Modern Angular 20 admin dashboard template with Bootstrap 5, Chart.js, and NgRx",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

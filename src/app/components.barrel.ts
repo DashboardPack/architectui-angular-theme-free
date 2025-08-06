@@ -21,6 +21,9 @@ export { PaginationComponent } from './DemoPages/Components/pagination/paginatio
 export { ProgressBarComponent } from './DemoPages/Components/progress-bar/progress-bar.component';
 export { TooltipsPopoversComponent } from './DemoPages/Components/tooltips-popovers/tooltips-popovers.component';
 
+// Chart components
+export { ChartjsComponent } from './DemoPages/Charts/chartjs/chartjs.component';
+
 // Form components
 export { ControlsComponent } from './DemoPages/Forms/Elements/controls/controls.component';
 export { LayoutComponent } from './DemoPages/Forms/Elements/layout/layout.component';

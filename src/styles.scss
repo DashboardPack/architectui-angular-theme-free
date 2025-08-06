@@ -26,10 +26,35 @@
   left: 0;
 }
 
-/* Force immediate positioning */
-router-outlet + * {
+/* Force immediate positioning for all routed components */
+router-outlet + *,
+.router-outlet-container > *,
+app-accordions,
+app-tabs,
+app-carousel,
+app-modals,
+app-pagination,
+app-progress-bar,
+app-tooltips-popovers {
   position: relative !important;
   top: 0 !important;
   left: 0 !important;
   transform: none !important;
+  display: block !important;
+}
+
+/* Prevent any CSS animations on initial load */
+* {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+/* Re-enable animations after initial load */
+.animations-ready * {
+  animation-duration: initial !important;
+  animation-delay: initial !important;
+  transition-duration: initial !important;
+  transition-delay: initial !important;
 }

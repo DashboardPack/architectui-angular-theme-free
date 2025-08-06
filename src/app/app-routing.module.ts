@@ -40,7 +40,10 @@ import {
   // User pages components
   ForgotPasswordBoxedComponent,
   LoginBoxedComponent,
-  RegisterBoxedComponent
+  RegisterBoxedComponent,
+
+  // Chart components  
+  ChartjsComponent
 } from './components.barrel';
 
 const routes: Routes = [
@@ -69,8 +72,8 @@ const routes: Routes = [
       {path: 'components/progress-bar', component: ProgressBarComponent, data: {extraParameter: 'componentsMenu'}},
       {path: 'components/tooltips-popovers', component: TooltipsPopoversComponent, data: {extraParameter: 'componentsMenu'}},
 
-      // Charts (temporarily disabled)
-      // {path: 'charts/chartjs', component: ChartjsComponent, data: {extraParameter: 'chartsMenu'}},
+      // Charts
+      {path: 'charts/chartjs', component: ChartjsComponent, data: {extraParameter: 'chartsMenu'}},
 
       // Forms
       {path: 'forms/controls', component: ControlsComponent, data: {extraParameter: 'formsMenu'}},

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared.module';
+import { BaseChartDirective } from 'ng2-charts';
 
 // Dashboard Components
 import { AnalyticsComponent } from './DemoPages/Dashboards/analytics/analytics.component';
@@ -9,7 +10,8 @@ import { AnalyticsComponent } from './DemoPages/Dashboards/analytics/analytics.c
     AnalyticsComponent
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    BaseChartDirective
   ],
   exports: [
     AnalyticsComponent

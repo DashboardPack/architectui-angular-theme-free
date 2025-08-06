@@ -39,7 +39,6 @@ export class AccordionsComponent {
 
   public handlePreventToggle() {
     // This demonstrates prevention logic - do nothing
-    console.log('Toggle prevented for this panel');
   }
 
   constructor() {

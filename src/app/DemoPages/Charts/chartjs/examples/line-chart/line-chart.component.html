@@ -1,0 +1,28 @@
+<div class="d-block">
+  <canvas baseChart
+          [data]="chartData"
+          [options]="lineChartOptions"
+          [type]="lineChartType"
+          [plugins]="lineChartPlugins"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+</div>
+<div class="table-responsive">
+  <table class="table mt-3 table-condensed table-hover table-bordered">
+    <thead>
+    <tr>
+      <th *ngFor="let label of chartData.labels">{{label}}</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let d of chartData.datasets; let i=index" [class]="'line-'+i">
+      <td *ngFor="let label of chartData.labels; let j=index">{{d && d.data[j]}}</td>
+    </tr>
+  </table>
+</div>
+<div class="text-center">
+  <button class="btn btn-primary me-2 mb-2" (click)="randomize()">Randomize</button>
+  <button class="btn btn-primary me-2 mb-2" (click)="pushOne()">Push</button>
+  <button class="btn btn-primary me-2 mb-2" (click)="changeColor()">Recolor</button>
+  <button class="btn btn-primary me-2 mb-2" (click)="hideOne()">Toggle Series B</button>
+  <button class="btn btn-primary me-2 mb-2" (click)="changeLabel()">Change Label</button>
+</div>

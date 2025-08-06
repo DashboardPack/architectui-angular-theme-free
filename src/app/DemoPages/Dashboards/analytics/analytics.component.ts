@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faTh, faCheck, faTrash, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { ChartConfiguration } from 'chart.js';
 
 
 @Component({
@@ -27,7 +28,25 @@ export class AnalyticsComponent {
     dots: true,
   };
 
-  public chartData: any;
+  public chartData: ChartConfiguration<'line'>['data'] = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+    datasets: [
+      {
+        label: 'Helpdesk Tickets',
+        data: [65, 59, 80, 81, 56, 55, 40, 48],
+        backgroundColor: 'rgba(247, 185, 36, 0.2)',
+        borderColor: '#f7b924',
+        borderWidth: 4,
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: '#fff',
+        pointBorderColor: '#f7b924',
+        pointBorderWidth: 3,
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }
+    ]
+  };
   
   public datasets = [
     {

@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <div style="display: block">
+      <canvas baseChart
+        [data]="chartData"
+        [type]="scatterChartType"
+        [options]="scatterChartOptions"
+        [plugins]="scatterChartPlugins"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+      </canvas>
+    </div>
+  </div>
+</div>

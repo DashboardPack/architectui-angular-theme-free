@@ -28,6 +28,7 @@ import { ComponentsModule } from './components.module';
 import { DashboardsModule } from './dashboards.module';
 import { ElementsModule } from './elements.module';
 import { UserPagesModule } from './user-pages.module';
+import { ChartsModule } from './charts.module';
 import { SharedModule } from './shared.module';
 
 // LAYOUT
@@ -94,7 +95,7 @@ import {ThemeOptions} from './theme-options';
     DashboardsModule,
     ElementsModule,
     UserPagesModule,
-    // ChartsModule, // Temporarily disabled due to ng2-charts compatibility
+    ChartsModule, // Re-enabled - ng2-charts v6 compatibility confirmed
     FormPagesModule,
     TablesModule,
     WidgetsModule,

@@ -5,29 +5,8 @@ import {animate, query, style, transition, trigger} from '@angular/animations';
   selector: 'app-pages-layout',
   templateUrl: './pages-layout.component.html',
   standalone: false,
-  animations: [
-
-    trigger('architectUIAnimation', [
-      transition('* <=> *', [
-        query(':enter, :leave', [
-          style({
-            opacity: 0,
-            display: 'flex',
-            flex: '1',
-            flexDirection: 'column'
-
-          }),
-        ]),
-        query(':enter', [
-          animate('200ms ease', style({opacity: 1})),
-        ]),
-
-        query(':leave', [
-          animate('200ms ease', style({opacity: 0})),
-        ], {optional: true})
-      ]),
-    ])
-  ]
+  // Disable animations to fix jumping issue and console errors
+  animations: []
 })
 export class PagesLayoutComponent implements OnInit {
 

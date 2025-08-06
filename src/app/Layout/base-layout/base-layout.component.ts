@@ -37,7 +37,10 @@ export class BaseLayoutComponent implements AfterViewInit {
           return new (window as any).bootstrap.Tooltip(tooltipTriggerEl);
         });
       }
-    }, 0);
+      
+      // Re-enable animations after layout is stable
+      document.body.classList.add('animations-ready');
+    }, 100);
   }
 
   toggleSidebarMobile() {

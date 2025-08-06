@@ -1,0 +1,15 @@
+<div>
+  <div>
+    <div style="display: block">
+      <canvas baseChart
+        [data]="chartData"
+        [type]="bubbleChartType"
+        [options]="bubbleChartOptions"
+        [plugins]="bubbleChartPlugins"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+      </canvas>
+    </div>
+    <button class="btn btn-primary" (click)="randomize()">Update</button>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="chart">
+  <canvas baseChart
+          [data]="chartData"
+          [type]="pieChartType"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+  </canvas>
+</div>
+<div class="divider"></div>
+<div class="text-center">
+  <button class="btn btn-primary me-2 mb-2" (click)="changeLabels()">Change Labels</button>
+  <button class="btn btn-primary me-2 mb-2" (click)="addSlice()">Add Slice</button>
+  <button class="btn btn-primary me-2 mb-2" (click)="removeSlice()">Remove Slice</button>
+  <button class="btn btn-primary me-2 mb-2" (click)="changeLegendPosition()">Change Legend Position</button>
+</div>

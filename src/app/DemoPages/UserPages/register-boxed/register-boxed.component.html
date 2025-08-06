@@ -1,74 +1,135 @@
-<div class="h-100 bg-premium-dark">
-  <div class="d-flex h-100 justify-content-center align-items-center">
-    <div class="mx-auto app-login-box col-md-8">
-      <div class="app-logo-inverse mx-auto mb-3"></div>
-      <div class="modal-dialog w-100">
-        <div class="modal-content">
-          <div class="modal-body">
-            <h5 class="modal-title">
-              <h4 class="mt-2">
-                <div>Welcome,</div>
-                <span>It only takes a <span class="text-success">few seconds</span> to create your account</span>
-              </h4>
-            </h5>
-            <div class="divider"></div>
-            <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1__BV_description_" class="mb-3">
-              <div>
-                <input id="exampleInput1" type="email" placeholder="Enter email..." required="required"
-                  aria-required="true" class="form-control" aria-describedby="exampleInputGroup1__BV_description_">
-                <small tabindex="-1" id="exampleInputGroup1__BV_description_" class="form-text text-muted">
-                  We'll never share your email with anyone else.
-                </small>
+<div class="vh-100 bg-premium-dark">
+  <div class="d-flex h-100 justify-content-center align-items-center p-3">
+    <div class="w-100 app-login-box" style="max-width: 600px;">
+      <!-- Logo -->
+      <div class="app-logo-inverse mx-auto mb-4 d-block" style="width: 60px; height: 60px; background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+      
+      <!-- Register Card -->
+      <div class="card shadow-lg border-0">
+        <div class="card-body p-4 p-md-5">
+          <!-- Header -->
+          <div class="text-center mb-4">
+            <h3 class="mb-2 fw-normal">Welcome,</h3>
+            <p class="text-muted mb-0">
+              It only takes a <span class="text-success fw-medium">few seconds</span> to create your account
+            </p>
+          </div>
+
+          <hr class="my-4">
+
+          <!-- Registration Form -->
+          <form id="registerForm" (ngSubmit)="onSubmit()" #registerFormRef="ngForm">
+            <!-- Email Input -->
+            <div class="mb-3">
+              <label for="emailInput" class="form-label visually-hidden">Email address</label>
+              <input 
+                id="emailInput" 
+                type="email" 
+                class="form-control form-control-lg" 
+                placeholder="Enter email..." 
+                name="email"
+                ngModel
+                required 
+                autocomplete="email">
+              <div class="form-text text-muted small">
+                We'll never share your email with anyone else.
               </div>
             </div>
-            <div id="exampleInputGroup12" role="group" class="mb-3">
-              <div>
-                <input id="exampleInput12" type="text" placeholder="Enter username..." required="required"
-                  aria-required="true" class="form-control">
-              </div>
+
+            <!-- Username Input -->
+            <div class="mb-3">
+              <label for="usernameInput" class="form-label visually-hidden">Username</label>
+              <input 
+                id="usernameInput" 
+                type="text" 
+                class="form-control form-control-lg" 
+                placeholder="Enter username..." 
+                name="username"
+                ngModel
+                required 
+                autocomplete="username">
             </div>
+
+            <!-- Password Fields Row -->
             <div class="row">
-              <div class="col-md-6">
-                <div id="exampleInputGroup2" role="group" class="mb-3">
-                  <div>
-                    <input id="exampleInput2" type="password" placeholder="Enter password..." required="required"
-                      aria-required="true" class="form-control">
-                  </div>
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label for="passwordInput" class="form-label visually-hidden">Password</label>
+                  <input 
+                    id="passwordInput" 
+                    type="password" 
+                    class="form-control form-control-lg" 
+                    placeholder="Enter password..." 
+                    name="password"
+                    ngModel
+                    required 
+                    autocomplete="new-password">
                 </div>
               </div>
-              <div class="col-md-6">
-                <div id="exampleInputGroup2" role="group" class="mb-3">
-                  <div>
-                    <input id="exampleInput2" type="password" placeholder="Repeat password..." required="required"
-                      aria-required="true" class="form-control">
-                    </div>
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label for="confirmPasswordInput" class="form-label visually-hidden">Confirm Password</label>
+                  <input 
+                    id="confirmPasswordInput" 
+                    type="password" 
+                    class="form-control form-control-lg" 
+                    placeholder="Repeat password..." 
+                    name="confirmPassword"
+                    ngModel
+                    required 
+                    autocomplete="new-password">
                 </div>
               </div>
             </div>
-            <div class="custom-control custom-checkbox form-check">
-              <input id="exampleCheck" type="checkbox" name="check" autocomplete="off" class="form-check-input" value="true">
-              <label for="exampleCheck" class="form-label form-check-label">
-                Accept our <a [routerLink]="">Terms and Conditions</a>.
+
+            <!-- Terms and Conditions Checkbox -->
+            <div class="form-check mb-3">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="termsCheck" 
+                name="acceptTerms" 
+                ngModel
+                required>
+              <label class="form-check-label" for="termsCheck">
+                Accept our <a href="#" class="text-primary text-decoration-none">Terms and Conditions</a>
               </label>
             </div>
-            <div class="divider"></div>
-            <h6 class="mb-0">
-              Already have an account?
-              <a [routerLink]="" class="text-primary">Sign in</a>
-              |
-              <a [routerLink]="" class="text-primary">Recover
-                Password</a>
-            </h6>
-          </div>
-          <div class="modal-footer d-block text-center">
-            <button type="button" class="btn btn-wide btn-pill btn-shadow btn-hover-shine btn-secondary btn-lg">Create
-              Account
+
+            <!-- Divider -->
+            <hr class="my-4">
+
+            <!-- Sign in links -->
+            <div class="text-center mb-0">
+              <p class="mb-0 small">
+                Already have an account?
+                <a [routerLink]="'/pages/login-boxed'" class="text-primary text-decoration-none fw-medium">Sign in</a>
+                <span class="text-muted mx-2">|</span>
+                <a [routerLink]="'/pages/forgot-password-boxed'" class="text-primary text-decoration-none fw-medium">Recover Password</a>
+              </p>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Footer with create account button -->
+        <div class="card-footer bg-transparent border-0 p-4 pt-0">
+          <div class="d-grid">
+            <button 
+              type="submit" 
+              form="registerForm"
+              class="btn btn-secondary btn-lg rounded-pill shadow-sm">
+              <i class="fa fa-user-plus me-2" aria-hidden="true"></i>
+              Create Account
             </button>
           </div>
         </div>
       </div>
-      <div class="text-center text-white opacity-8 mt-3">
-        Copyright © ArchitectUI 2019
+
+      <!-- Copyright -->
+      <div class="text-center text-white mt-4">
+        <p class="mb-0 opacity-75 small">
+          Copyright © ArchitectUI 2025
+        </p>
       </div>
     </div>
   </div>
