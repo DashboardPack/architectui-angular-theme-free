@@ -5,7 +5,7 @@
     <h6 class="mb-3">
       Basic
     </h6>
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-accordion [activeIds]="['ngb-panel-0']">
       <ngb-panel>
         <ng-template ngbPanelTitle>
           <span class="card-header--title">Simple</span>
@@ -118,7 +118,7 @@
     <h6 class="mb-3">
       Toggle Panels
     </h6>
-    <ngb-accordion #acc11="ngbAccordion">
+    <ngb-accordion>
       <ngb-panel id="toggle-11">
         <ng-template ngbPanelTitle>
           <span class="card-header--title">First panel</span>

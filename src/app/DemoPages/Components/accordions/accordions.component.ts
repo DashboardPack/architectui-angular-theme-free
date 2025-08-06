@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+// import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-accordions',
   templateUrl: './accordions.component.html',
-})
+  standalone: false})
 export class AccordionsComponent implements OnInit {
 
   heading = 'Accordions';
@@ -13,7 +13,7 @@ export class AccordionsComponent implements OnInit {
 
   public isCollapsed = false;
 
-  public beforeChange($event: NgbPanelChangeEvent) {
+  public beforeChange($event: any) {
 
     if ($event.panelId === 'preventchange-2') {
       $event.preventDefault();

@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-// import {Color} from 'ng2-charts/ng2-charts';
 import { faTh, faCheck, faTrash, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
   selector: 'app-analytics',
   templateUrl: './analytics.component.html',
-})
+  standalone: false})
 export class AnalyticsComponent implements OnInit {
 
   faTh = faTh;
@@ -28,6 +27,8 @@ export class AnalyticsComponent implements OnInit {
     dots: true,
   };
 
+  public chartData: any;
+  
   public datasets = [
     {
       label: 'My First dataset',
@@ -58,10 +59,7 @@ export class AnalyticsComponent implements OnInit {
         display: false,
       },
 
-    }
-  ];
-  public lineChartColors = [
-    { // dark grey
+      // Colors now configured in dataset
       backgroundColor: 'rgba(247, 185, 36, 0.2)',
       borderColor: '#f7b924',
       borderCapStyle: 'round',
@@ -78,7 +76,7 @@ export class AnalyticsComponent implements OnInit {
       pointHitRadius: 10,
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: '#f7b924',
-    },
+    }
   ];
 
   public lineChartColors2 = [
@@ -135,32 +133,39 @@ export class AnalyticsComponent implements OnInit {
       }
     },
     scales: {
-      y: [{
+      y: {
         ticks: {
           display: false,
           beginAtZero: true
         },
-        gridLines: {
+        grid: {
           display: false
         }
-      }],
-      x: [{
+      },
+      x: {
         ticks: {
           display: false
         },
-        gridLines: {
+        grid: {
           display: false
         }
-      }]
+      }
     },
-    legend: {
-      display: false
+    plugins: { 
+      legend: {
+        display: false
+      }
     },
     responsive: true,
     maintainAspectRatio: false
   };
 
   ngOnInit() {
+    // Initialize chart data for Chart.js v4
+    this.chartData = {
+      labels: this.labels,
+      datasets: this.datasets
+    };
   }
 
 }

@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-standard',
   templateUrl: './standard.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
 export class StandardComponent implements OnInit {
 

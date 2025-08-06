@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tables-main',
-  templateUrl: './tables-main.component.html'
+  templateUrl: './tables-main.component.html',
+  standalone: false
 })
 export class TablesMainComponent implements OnInit {
 

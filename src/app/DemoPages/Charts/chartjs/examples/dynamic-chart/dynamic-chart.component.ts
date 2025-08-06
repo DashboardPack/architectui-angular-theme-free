@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
-import {Label} from 'ng2-charts';
+// Label type removed in ng2-charts v6
 
 @Component({
   selector: 'app-dynamic-chart',
   templateUrl: './dynamic-chart.component.html',
-})
+  standalone: false})
 export class DynamicChartComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
-    scales: {x: [{}], y: [{}]},
+    scales: {x: {}, y: {}},
   };
   public barChartLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
   public barChartType: ChartType = 'bar';

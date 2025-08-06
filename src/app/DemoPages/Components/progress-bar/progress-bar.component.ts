@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-progress-bar',
   templateUrl: './progress-bar.component.html',
-})
+  standalone: false})
 export class ProgressBarComponent implements OnInit {
 
   height = '20px';

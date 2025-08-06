@@ -4,6 +4,7 @@ import {animate, query, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'app-pages-layout',
   templateUrl: './pages-layout.component.html',
+  standalone: false,
   animations: [
 
     trigger('architectUIAnimation', [

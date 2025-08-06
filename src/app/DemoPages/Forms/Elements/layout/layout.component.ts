@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
 export class LayoutComponent implements OnInit {
 

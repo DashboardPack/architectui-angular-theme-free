@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
 export class IconsComponent implements OnInit {
 

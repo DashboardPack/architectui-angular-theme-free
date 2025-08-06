@@ -7,9 +7,10 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-})
+  standalone: false,})
 export class SidebarComponent implements OnInit {
   public extraParameter: any;
+  public openMenus: string[] = [];
 
   public config$: Observable<any>;
 
@@ -42,7 +43,20 @@ export class SidebarComponent implements OnInit {
     });
 
     this.extraParameter = this.activatedRoute.snapshot.firstChild?.data['extraParameter'];
+    
+    // Initialize open menus based on route
+    if (this.extraParameter) {
+      this.openMenus = [this.extraParameter];
+    }
+  }
 
+  toggleSubmenu(menuId: string) {
+    const index = this.openMenus.indexOf(menuId);
+    if (index > -1) {
+      this.openMenus.splice(index, 1);
+    } else {
+      this.openMenus = [menuId]; // Close others and open this one
+    }
   }
 
   @HostListener('window:resize', ['$event'])

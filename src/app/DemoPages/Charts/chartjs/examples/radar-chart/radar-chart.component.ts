@@ -5,7 +5,7 @@ import { BaseChartDirective } from 'ng2-charts';
 @Component({
   selector: 'app-radar-chart',
   templateUrl: './radar-chart.component.html',
-  styleUrls: ['./radar-chart.component.scss']
+  standalone: false,  styleUrls: ['./radar-chart.component.scss']
 })
 export class RadarChartComponent implements OnInit {
   // Radar

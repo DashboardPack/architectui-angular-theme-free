@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-tooltips-popovers',
   templateUrl: './tooltips-popovers.component.html',
-})
+  standalone: false})
 export class TooltipsPopoversComponent implements OnInit {
 
   heading = 'Tooltips & Popovers';

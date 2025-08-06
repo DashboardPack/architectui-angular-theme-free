@@ -298,11 +298,9 @@
                 <div class="d-block">
                   <canvas baseChart
                           class="chart"
-                          [datasets]="datasets"
-                          [labels]="labels"
-                          [colors]="lineChartColors"
+                          [data]="chartData"
                           [options]="options"
-                          [chartType]="'line'"></canvas>
+                          [type]="'line'"></canvas>
                 </div>
               </div>
             </div>
@@ -353,7 +351,7 @@
         </div>
       </div>
       <div class="scroll-area-lg">
-        <perfect-scrollbar [autoPropagation]="true">
+        <div class="custom-scrollbar">
           <div class="p-4">
             <div
               class="vertical-time-simple vertical-without-time vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
@@ -465,7 +463,7 @@
               </div>
             </div>
           </div>
-        </perfect-scrollbar>
+        </div>
       </div>
       <div class="d-block text-center card-footer">
         <button class="btn-shadow btn-wide btn-pill btn btn-focus">
@@ -502,7 +500,7 @@
         </div>
       </div>
       <div class="scroll-area-lg">
-        <perfect-scrollbar [autoPropagation]="true">
+        <div class="custom-scrollbar">
           <ul class="todo-list-wrapper list-group list-group-flush">
             <li class="list-group-item">
               <div class="todo-indicator bg-warning"></div>
@@ -777,7 +775,7 @@
               </div>
             </li>
           </ul>
-        </perfect-scrollbar>
+        </div>
       </div>
       <div class="d-block text-end card-footer">
         <button class="me-2 btn btn-link btn-sm">Cancel</button>

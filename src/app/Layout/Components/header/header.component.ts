@@ -7,7 +7,7 @@ import {ThemeOptions} from '../../../theme-options';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-})
+  standalone: false,})
 export class HeaderComponent {
 
   faEllipsisV = faEllipsisV;

@@ -6,13 +6,13 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss']
+  standalone: false,  styleUrls: ['./pie-chart.component.scss']
 })
 export class PieChartComponent implements OnInit {
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
-    legend: {
+    plugins: { legend: {
       position: 'top',
     },
     plugins: {
@@ -24,7 +24,7 @@ export class PieChartComponent implements OnInit {
       },
     }
   };
-  public pieChartLabels: string[] = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
+  public pieChartLabels: string[] = ['Downloads', 'In Store Sales', 'Mail Sales'];
   public pieChartData: number[] = [300, 500, 100];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;

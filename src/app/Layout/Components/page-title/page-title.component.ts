@@ -4,6 +4,7 @@ import { faStar, faPlus } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-page-title',
   templateUrl: './page-title.component.html',
+  standalone: false
 })
 export class PageTitleComponent {
 

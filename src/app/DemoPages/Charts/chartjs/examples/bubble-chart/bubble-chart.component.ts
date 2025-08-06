@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
-import {Color} from 'ng2-charts';
 
 @Component({
   selector: 'app-bubble-chart',
   templateUrl: './bubble-chart.component.html',
-})
+  standalone: false})
 export class BubbleChartComponent implements OnInit {
   public bubbleChartOptions: ChartOptions = {
     responsive: true,

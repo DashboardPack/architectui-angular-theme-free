@@ -6,7 +6,7 @@ import * as pluginAnnotations from 'chartjs-plugin-annotation';
 @Component({
   selector: 'app-line-chart',
   templateUrl: './line-chart.component.html'
-})
+  standalone: false})
 export class LineChartComponent implements OnInit {
   public lineChartData: ChartDataset[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
@@ -54,7 +54,7 @@ export class LineChartComponent implements OnInit {
       ],
     },
   };
-  public lineChartColors = [
+  // Colors now configured in dataset
     { // grey
       backgroundColor: 'rgba(148,159,177,0.2)',
       borderColor: 'rgba(148,159,177,1)',

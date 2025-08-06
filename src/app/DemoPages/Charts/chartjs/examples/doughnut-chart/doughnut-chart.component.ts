@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {ChartType} from 'chart.js';
-import {MultiDataSet, Label} from 'ng2-charts';
+// Label type removed in ng2-charts v6
 
 @Component({
   selector: 'app-doughnut-chart',
   templateUrl: './doughnut-chart.component.html',
-})
+  standalone: false})
 export class DoughnutChartComponent implements OnInit {
   // Doughnut
   public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData: MultiDataSet = [
+  public doughnutChartData: number[][] = [
     [350, 450, 100],
     [50, 150, 120],
     [250, 130, 70],

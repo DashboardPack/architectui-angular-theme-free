@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-chartjs',
   templateUrl: './chartjs.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
 export class ChartjsComponent implements OnInit {
   heading = 'ChartJS';

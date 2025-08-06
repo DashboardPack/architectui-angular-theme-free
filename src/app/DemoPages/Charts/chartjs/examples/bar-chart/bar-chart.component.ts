@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
-import {Label} from 'ng2-charts';
+// Label type removed in ng2-charts v6
 
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
-})
+  standalone: false})
 export class BarChartComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,

@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-chart-boxes3',
   templateUrl: './chart-boxes3.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
 export class ChartBoxes3Component implements OnInit {
 

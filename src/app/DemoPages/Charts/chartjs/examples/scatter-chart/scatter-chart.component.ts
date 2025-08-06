@@ -5,7 +5,7 @@ import { BaseChartDirective } from 'ng2-charts';
 @Component({
   selector: 'app-scatter-chart',
   templateUrl: './scatter-chart.component.html',
-  styleUrls: ['./scatter-chart.component.scss']
+  standalone: false,  styleUrls: ['./scatter-chart.component.scss']
 })
 export class ScatterChartComponent implements OnInit {
   // scatter

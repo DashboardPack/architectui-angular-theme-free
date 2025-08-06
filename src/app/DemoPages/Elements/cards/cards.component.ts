@@ -9,7 +9,7 @@ const SecondaryBlue = 'var(--primary)';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
 export class CardsComponent {
 

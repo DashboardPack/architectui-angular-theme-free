@@ -4,7 +4,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-modals',
   templateUrl: './modals.component.html',
-})
+  standalone: false})
 export class ModalsComponent implements OnInit {
 
   heading = 'Modals';

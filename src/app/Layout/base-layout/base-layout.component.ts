@@ -7,6 +7,7 @@ import {animate, query, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'app-base-layout',
   templateUrl: './base-layout.component.html',
+  standalone: false,
   animations: [
 
     trigger('architectUIAnimation', [
