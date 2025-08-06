@@ -9,7 +9,7 @@
   <app-sidebar></app-sidebar>
   <div class="app-main__outer">
     <div class="app-main__inner">
-      <div [@architectUIAnimation]="o.isActivated ? o.activatedRoute : ''">
+      <div class="router-outlet-container">
         <router-outlet #o="outlet"></router-outlet>
       </div>
     </div>

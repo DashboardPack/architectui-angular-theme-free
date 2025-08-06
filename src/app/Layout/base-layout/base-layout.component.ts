@@ -8,30 +8,8 @@ import {animate, query, style, transition, trigger} from '@angular/animations';
   selector: 'app-base-layout',
   templateUrl: './base-layout.component.html',
   standalone: false,
-  animations: [
-
-    trigger('architectUIAnimation', [
-      transition('* <=> *', [
-        query(':enter, :leave', [
-          style({
-            opacity: 0,
-            display: 'flex',
-            flex: '1',
-            transform: 'translateY(-20px)',
-            flexDirection: 'column'
-
-          }),
-        ], { optional: true }),
-        query(':enter', [
-          animate('200ms ease', style({opacity: 1, transform: 'translateY(0)'})),
-        ], { optional: true }),
-
-        query(':leave', [
-          animate('200ms ease', style({opacity: 0, transform: 'translateY(-20px)'})),
-         ], { optional: true })
-      ]),
-    ])
-  ]
+  // Temporarily disable animations to fix jumping issue
+  animations: []
 })
 
 export class BaseLayoutComponent implements AfterViewInit {
@@ -49,6 +27,17 @@ export class BaseLayoutComponent implements AfterViewInit {
   ngAfterViewInit() {
     // Fix ExpressionChangedAfterItHasBeenCheckedError
     this.cdr.detectChanges();
+    
+    // Initialize Bootstrap components after view is stable
+    setTimeout(() => {
+      if (typeof window !== 'undefined' && (window as any).bootstrap) {
+        // Initialize any Bootstrap tooltips, popovers, etc. that might cause layout shifts
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new (window as any).bootstrap.Tooltip(tooltipTriggerEl);
+        });
+      }
+    }, 0);
   }
 
   toggleSidebarMobile() {

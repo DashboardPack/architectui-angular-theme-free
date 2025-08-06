@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared.module';
+import { BaseChartDirective } from 'ng2-charts';
 
 // Widget Components
 import { ChartBoxes3Component } from './DemoPages/Widgets/chart-boxes3/chart-boxes3.component';
@@ -9,7 +10,8 @@ import { ChartBoxes3Component } from './DemoPages/Widgets/chart-boxes3/chart-box
     ChartBoxes3Component
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    BaseChartDirective
   ],
   exports: [
     ChartBoxes3Component
