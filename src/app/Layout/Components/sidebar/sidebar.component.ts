@@ -7,7 +7,33 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  standalone: false,})
+  standalone: false,
+  styles: [`
+    /* Override the existing styles with important to ensure animation works */
+    .vsm-dropdown {
+      max-height: 0 !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+      position: relative !important;
+    }
+    
+    .vsm-dropdown-show {
+      max-height: 500px !important;
+      opacity: 1 !important;
+    }
+    
+    /* Arrow rotation - override existing transform */
+    .vsm-item.has-sub .vsm-arrow {
+      transition: transform 0.3s ease !important;
+      transform: rotate(180deg) !important;
+    }
+    
+    .vsm-item.has-sub.vsm-open .vsm-arrow {
+      transform: rotate(90deg) !important;
+    }
+  `]
+})
 export class SidebarComponent implements OnInit {
   public extraParameter: any;
   public openMenus: string[] = [];

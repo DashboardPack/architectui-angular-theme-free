@@ -58,3 +58,11 @@ app-tooltips-popovers {
   transition-duration: initial !important;
   transition-delay: initial !important;
 }
+
+/* Ensure logo is visible */
+.logo-src {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  display: block !important;
+}

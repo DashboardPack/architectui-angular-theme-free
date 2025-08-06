@@ -1,7 +1,7 @@
 import {
   LoadingBarModule,
   LoadingBarService
-} from "./chunk-7NS6HX7X.js";
+} from "./chunk-4JW3CCQ5.js";
 import {
   NavigationCancel,
   NavigationEnd,
@@ -9,11 +9,11 @@ import {
   NavigationStart,
   Router,
   RouterModule
-} from "./chunk-E7A3STWE.js";
-import "./chunk-WSUKH53J.js";
-import "./chunk-SNYMYFDZ.js";
-import "./chunk-DQJD2QRK.js";
-import "./chunk-GF3M6O2C.js";
+} from "./chunk-KXW2G4A5.js";
+import "./chunk-H6NGG2TL.js";
+import "./chunk-ZF3CJ2O2.js";
+import "./chunk-KO62EB2J.js";
+import "./chunk-DLSM4I4B.js";
 import "./chunk-NDZIWK7R.js";
 import {
   APP_INITIALIZER,
@@ -22,7 +22,8 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-EXSWTI76.js";
+} from "./chunk-7P6CNZTP.js";
+import "./chunk-6KNO4II2.js";
 import "./chunk-WDMUDEB6.js";
 
 // node_modules/@ngx-loading-bar/router/fesm2022/ngx-loading-bar-router.mjs

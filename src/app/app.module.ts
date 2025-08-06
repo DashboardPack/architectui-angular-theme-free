@@ -8,8 +8,6 @@ import { configReducer } from './ThemeOptions/store/config.reducer.ngrx';
 import { ConfigService } from './ThemeOptions/store/config.service';
 import { environment } from '../environments/environment';
 import {AppRoutingModule} from './app-routing.module';
-import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
-import {LoadingBarModule} from '@ngx-loading-bar/core';
 
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
@@ -80,8 +78,6 @@ import {ThemeOptions} from './theme-options';
     StoreModule.forRoot({ config: configReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     CommonModule,
-    LoadingBarRouterModule,
-    LoadingBarModule,
 
     // Angular Bootstrap Components
     NgbModule,

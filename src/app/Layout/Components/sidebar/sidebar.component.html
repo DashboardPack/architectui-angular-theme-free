@@ -27,13 +27,13 @@
             </div>
 
             <!-- Pages -->
-            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'pagesMenu'">
+            <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('pagesMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('pagesMenu')">
                 <i class="vsm-icon pe-7s-browser"></i>
                 <span class="vsm-title">Pages</span>
                 <i class="vsm-arrow"></i>
               </a>
-              <div class="vsm-dropdown" *ngIf="openMenus.includes('pagesMenu')">
+              <div class="vsm-dropdown" [class.vsm-dropdown-show]="openMenus.includes('pagesMenu')">
                 <div class="vsm-list">
                   <div class="vsm-item">
                     <a routerLink="/pages/login-boxed" routerLinkActive="active-item" class="vsm-link">
@@ -57,13 +57,13 @@
             <div class="vsm-header">UI Components</div>
 
             <!-- Elements -->
-            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'elementsMenu'">
+            <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('elementsMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('elementsMenu')">
                 <i class="vsm-icon pe-7s-car"></i>
                 <span class="vsm-title">Elements</span>
                 <i class="vsm-arrow"></i>
               </a>
-              <div class="vsm-dropdown" *ngIf="openMenus.includes('elementsMenu')">
+              <div class="vsm-dropdown" [class.vsm-dropdown-show]="openMenus.includes('elementsMenu')">
                 <div class="vsm-list">
                   <div class="vsm-header">Elements</div>
                   <div class="vsm-item">
@@ -101,13 +101,13 @@
             </div>
 
             <!-- Components -->
-            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'componentsMenu'">
+            <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('componentsMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('componentsMenu')">
                 <i class="vsm-icon pe-7s-diamond"></i>
                 <span class="vsm-title">Components</span>
                 <i class="vsm-arrow"></i>
               </a>
-              <div class="vsm-dropdown" *ngIf="openMenus.includes('componentsMenu')">
+              <div class="vsm-dropdown" [class.vsm-dropdown-show]="openMenus.includes('componentsMenu')">
                 <div class="vsm-list">
                   <div class="vsm-header">Components</div>
                   <div class="vsm-item">
@@ -150,13 +150,13 @@
             </div>
 
             <!-- Tables -->
-            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'tablesMenu'">
+            <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('tablesMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('tablesMenu')">
                 <i class="vsm-icon pe-7s-display2"></i>
                 <span class="vsm-title">Tables</span>
                 <i class="vsm-arrow"></i>
               </a>
-              <div class="vsm-dropdown" *ngIf="openMenus.includes('tablesMenu')">
+              <div class="vsm-dropdown" [class.vsm-dropdown-show]="openMenus.includes('tablesMenu')">
                 <div class="vsm-list">
                   <div class="vsm-header">Tables</div>
                   <div class="vsm-item">
@@ -174,13 +174,13 @@
             </div>
 
             <!-- Forms -->
-            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'formsMenu'">
+            <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('formsMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('formsMenu')">
                 <i class="vsm-icon pe-7s-display1"></i>
                 <span class="vsm-title">Forms</span>
                 <i class="vsm-arrow"></i>
               </a>
-              <div class="vsm-dropdown" *ngIf="openMenus.includes('formsMenu')">
+              <div class="vsm-dropdown" [class.vsm-dropdown-show]="openMenus.includes('formsMenu')">
                 <div class="vsm-list">
                   <div class="vsm-header">Forms</div>
                   <div class="vsm-item">
@@ -198,13 +198,13 @@
             </div>
 
             <!-- Charts -->
-            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'chartsMenu'">
+            <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('chartsMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('chartsMenu')">
                 <i class="vsm-icon pe-7s-graph1"></i>
                 <span class="vsm-title">Charts</span>
                 <i class="vsm-arrow"></i>
               </a>
-              <div class="vsm-dropdown" *ngIf="openMenus.includes('chartsMenu')">
+              <div class="vsm-dropdown" [class.vsm-dropdown-show]="openMenus.includes('chartsMenu')">
                 <div class="vsm-list">
                   <div class="vsm-header">Charts</div>
                   <div class="vsm-item">
@@ -217,13 +217,13 @@
             </div>
 
             <!-- Widgets -->
-            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'widgetsMenu'">
+            <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('widgetsMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('widgetsMenu')">
                 <i class="vsm-icon pe-7s-plugin"></i>
                 <span class="vsm-title">Widgets</span>
                 <i class="vsm-arrow"></i>
               </a>
-              <div class="vsm-dropdown" *ngIf="openMenus.includes('widgetsMenu')">
+              <div class="vsm-dropdown" [class.vsm-dropdown-show]="openMenus.includes('widgetsMenu')">
                 <div class="vsm-list">
                   <div class="vsm-header">Widgets</div>
                   <div class="vsm-item">
