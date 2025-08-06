@@ -8,7 +8,7 @@ import {
   inject,
   signal,
   takeUntil
-} from "./chunk-7P6CNZTP.js";
+} from "./chunk-2ATTO4FH.js";
 
 // node_modules/@angular/core/fesm2022/rxjs-interop.mjs
 function takeUntilDestroyed(destroyRef) {
@@ -91,4 +91,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-Y6UTS3Y5.js.map
+//# sourceMappingURL=chunk-MG5WC2LR.js.map

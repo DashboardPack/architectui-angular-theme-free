@@ -112,7 +112,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
 .logo-src {
   height: $logo-height;
   width: $logo-width;
-  background: url('/assets/images/logo-inverse.png');
+  background-image: url('../../../assets/images/logo-inverse.png');
 }
 
 // Sidebar Menu
@@ -143,6 +143,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     text-align: left;
     cursor: pointer;
     font-weight: 600;
+    font-size: 14px;
 
 
     &:hover {
@@ -234,6 +235,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
         height: 1.9rem;
         line-height: 1.9rem;
         font-weight: normal;
+        font-size: 13px;
 
         &.active-item {
           font-weight: 600;
@@ -244,12 +246,18 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
 
   & .vsm-header {
     text-transform: uppercase;
-    font-size: $font-size-xs;
-    margin: ($layout-spacer-x / 2) 0;
+    font-size: 11px;
+    margin: ($layout-spacer-x * 1.2) 0 ($layout-spacer-x / 2) 0;
     font-weight: bold;
-    color: $primary;
+    color: $gray-500;
     white-space: nowrap;
     position: relative;
+    letter-spacing: 0.5px;
+    padding-left: 5px;
+    
+    &:first-child {
+      margin-top: ($layout-spacer-x / 2);
+    }
   }
 
   & .collapse-btn {

@@ -57,10 +57,24 @@ export class SidebarComponent implements OnInit {
 
   toggleSidebar() {
     this.globals.toggleSidebar = !this.globals.toggleSidebar;
+    // If we're closing the sidebar, also clear the hover state
+    if (this.globals.toggleSidebar) {
+      this.globals.sidebarHover = false;
+    }
   }
 
-  sidebarHover() {
-    this.globals.sidebarHover = !this.globals.sidebarHover;
+  onSidebarMouseEnter() {
+    // Only allow hover to open sidebar if it's in collapsed state
+    if (this.globals.toggleSidebar) {
+      this.globals.sidebarHover = true;
+    }
+  }
+
+  onSidebarMouseLeave() {
+    // Only remove hover state if sidebar is in collapsed state
+    if (this.globals.toggleSidebar) {
+      this.globals.sidebarHover = false;
+    }
   }
 
   ngOnInit() {
@@ -87,6 +101,14 @@ export class SidebarComponent implements OnInit {
       this.openMenus.splice(index, 1);
     } else {
       this.openMenus = [menuId]; // Close others and open this one
+    }
+  }
+
+  onNavigate() {
+    // Close sidebar on mobile when navigating
+    if (window.innerWidth < 1200) {
+      this.globals.toggleSidebarMobile = true;
+      this.globals.sidebarHover = false;
     }
   }
 

@@ -1,5 +1,6 @@
-<div [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme" (mouseover)="sidebarHover()"
-     (mouseout)="sidebarHover()">
+<div [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme" 
+     (mouseenter)="onSidebarMouseEnter()"
+     (mouseleave)="onSidebarMouseLeave()">
   <div class="app-header__logo">
     <div class="logo-src"></div>
     <div class="header__pane ms-auto">
@@ -16,16 +17,18 @@
       <div class="sidebar-scrollbar">
         <div class="v-sidebar-menu vsm-default">
           <div class="vsm-list">
-            <div class="vsm-header">Main Navigation</div>
+            <div class="vsm-header">Navigation</div>
             
             <!-- Dashboards -->
             <div class="vsm-item" [class.vsm-active]="extraParameter === 'dashboardsMenu'">
-              <a routerLink="/dashboards/analytics" routerLinkActive="active-item" class="vsm-link">
+              <a routerLink="/dashboards/analytics" routerLinkActive="active-item" class="vsm-link" (click)="onNavigate()">
                 <i class="vsm-icon pe-7s-rocket"></i>
-                <span class="vsm-title">Dashboards</span>
+                <span class="vsm-title">Dashboard</span>
               </a>
             </div>
 
+            <div class="vsm-header">Pages</div>
+            
             <!-- Pages -->
             <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('pagesMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('pagesMenu')">
@@ -54,7 +57,7 @@
               </div>
             </div>
 
-            <div class="vsm-header">UI Components</div>
+            <div class="vsm-header">UI Elements</div>
 
             <!-- Elements -->
             <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('elementsMenu')">
@@ -149,6 +152,8 @@
               </div>
             </div>
 
+            <div class="vsm-header">Data</div>
+
             <!-- Tables -->
             <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('tablesMenu')">
               <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('tablesMenu')">
@@ -196,6 +201,8 @@
                 </div>
               </div>
             </div>
+
+            <div class="vsm-header">Visualizations</div>
 
             <!-- Charts -->
             <div class="vsm-item has-sub" [class.vsm-open]="openMenus.includes('chartsMenu')">
