@@ -43,26 +43,17 @@ app-tooltips-popovers {
   display: block !important;
 }
 
-/* Prevent any CSS animations on initial load */
-* {
+/* Prevent ONLY route animations on initial load, keep sidebar transitions */
+router-outlet + * {
   animation-duration: 0s !important;
   animation-delay: 0s !important;
-  transition-duration: 0s !important;
-  transition-delay: 0s !important;
 }
 
-/* Re-enable animations after initial load */
-.animations-ready * {
+/* Re-enable route animations after initial load */
+.animations-ready router-outlet + * {
   animation-duration: initial !important;
   animation-delay: initial !important;
-  transition-duration: initial !important;
-  transition-delay: initial !important;
 }
 
-/* Ensure logo is visible */
-.logo-src {
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  display: block !important;
-}
+/* Remove this section - transitions are now defined in component styles */
+

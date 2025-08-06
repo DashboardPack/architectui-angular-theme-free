@@ -29,6 +29,14 @@ export class HeaderComponent {
   isActive: boolean;
 
 
+  toggleSidebar() {
+    this.globals.toggleSidebar = !this.globals.toggleSidebar;
+    // Clear hover state when toggling
+    if (this.globals.toggleSidebar) {
+      this.globals.sidebarHover = false;
+    }
+  }
+
   toggleSidebarMobile() {
     this.globals.toggleSidebarMobile = !this.globals.toggleSidebarMobile;
   }

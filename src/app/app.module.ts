@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule} from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { configReducer } from './ThemeOptions/store/config.reducer.ngrx';
@@ -37,6 +38,8 @@ import {PagesLayoutComponent} from './Layout/pages-layout/pages-layout.component
 import {HeaderComponent} from './Layout/Components/header/header.component';
 import {SearchBoxComponent} from './Layout/Components/header/elements/search-box/search-box.component';
 import {UserBoxComponent} from './Layout/Components/header/elements/user-box/user-box.component';
+import {NotificationsBoxComponent} from './Layout/Components/header/elements/notifications-box/notifications-box';
+import {MessagesBoxComponent} from './Layout/Components/header/elements/messages-box/messages-box';
 
 // SIDEBAR
 import {SidebarComponent} from './Layout/Components/sidebar/sidebar.component';
@@ -61,6 +64,8 @@ import {ThemeOptions} from './theme-options';
     HeaderComponent,
     SearchBoxComponent,
     UserBoxComponent,
+    NotificationsBoxComponent,
+    MessagesBoxComponent,
 
     // SIDEBAR
     SidebarComponent,
@@ -74,6 +79,7 @@ import {ThemeOptions} from './theme-options';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({ config: configReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),

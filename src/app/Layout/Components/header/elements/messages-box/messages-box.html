@@ -1,0 +1,31 @@
+<div class="header-btn-lg">
+  <div ngbDropdown placement="bottom-right">
+    <button type="button" class="btn btn-link p-0 position-relative" ngbDropdownToggle>
+      <i class="pe-7s-mail text-muted" style="font-size: 23px;"></i>
+      <span class="badge rounded-pill bg-warning text-dark position-absolute" style="top: -5px; right: -5px;" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+    </button>
+    <div ngbDropdownMenu class="dropdown-menu-lg">
+      <div class="dropdown-header d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
+        <h6 class="mb-0">Messages</h6>
+        <small class="text-muted">{{ unreadCount }} unread</small>
+      </div>
+      <div style="max-height: 300px; overflow-y: auto;">
+        <a href="#" class="dropdown-item d-flex align-items-center py-2" *ngFor="let message of messages">
+          <img [src]="message.avatar" alt="" class="rounded-circle me-3" width="40">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between">
+              <h6 class="mb-0 small">{{ message.sender }}</h6>
+              <small class="text-muted">{{ message.time }}</small>
+            </div>
+            <p class="mb-0 small text-muted text-truncate" [class.text-dark]="!message.read" [class.fw-normal]="!message.read">
+              {{ message.preview }}
+            </p>
+          </div>
+        </a>
+      </div>
+      <a href="#" class="dropdown-item text-center small text-primary py-2 border-top">
+        View All Messages
+      </a>
+    </div>
+  </div>
+</div>

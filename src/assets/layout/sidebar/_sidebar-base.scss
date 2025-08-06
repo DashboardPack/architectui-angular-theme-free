@@ -41,7 +41,9 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   height: 100vh;
   box-shadow: $sidebar-box-shadow;
   flex-direction: column;
-  transition: all .3s ease;
+  transition: width .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important, 
+              transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important,
+              box-shadow .3s ease !important;
   
   .sidebar-scrollbar {
     overflow-y: auto;
@@ -71,7 +73,8 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     width: $app-sidebar-width;
     display: flex;
     align-items: center;
-    transition: width .2s;
+    transition: width .3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                padding .3s ease;
     flex-shrink: 0;
   }
 
@@ -112,7 +115,39 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
 .logo-src {
   height: $logo-height;
   width: $logo-width;
-  background-image: url('../../../assets/images/logo-inverse.png');
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: width .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  .logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #3f6ad8;
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    transition: transform .3s ease;
+    
+    .logo-full {
+      display: block;
+      opacity: 1;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+    
+    .logo-collapsed {
+      display: none;
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+  }
 }
 
 // Sidebar Menu
@@ -126,6 +161,15 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     color: $primary;
   }
 
+  & .vsm-item:hover .vsm-icon {
+    opacity: .6;
+    transform: scale(1.1);
+  }
+  
+  & .vsm-item .vsm-link.active-item .vsm-icon {
+    opacity: .8;
+  }
+
   & .vsm-link {
     display: block;
     line-height: 2.4rem;
@@ -135,7 +179,10 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     border-radius: .25rem;
     color: $gray-700;
     white-space: nowrap;
-    transition: all .2s;
+    transition: background .25s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                color .25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                padding .3s ease,
+                transform .2s ease;
     text-decoration: none;
     border: 0;
     background: transparent;
@@ -148,6 +195,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
 
     &:hover {
       @extend %side-link-hover;
+      transform: translateX(2px);
     }
 
     &.active-item {
@@ -164,7 +212,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
       font-weight: normal;
 
       .vsm-arrow {
-        transform: rotate(0deg);
+        transform: rotate(-90deg);
         font-weight: bold;
       }
     }
@@ -186,7 +234,9 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     margin-top: -17px;
     font-size: 1.5rem;
     opacity: .3;
-    transition: color 300ms;
+    transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                color .3s ease;
   }
 
   & .vsm-arrow {
@@ -202,7 +252,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     font-style: normal;
     opacity: .3;
     transition: all 300ms;
-    transform: rotate(180deg);
+    transform: rotate(-90deg); // Point right by default
 
     &:after {
       content: '\e688';
@@ -301,7 +351,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   top: 0;
   visibility: hidden;
   opacity: 0;
-  transition: opacity .2s;
+  transition: opacity .3s ease;
 }
 
 .closed-sidebar-md.closed-sidebar-open {

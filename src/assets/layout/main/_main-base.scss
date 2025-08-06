@@ -6,7 +6,7 @@
   display: flex;
   z-index: 8;
   padding: $app-header-height 0 0 $app-sidebar-width;
-  transition: all .2s;
+  transition: padding-left .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 .app-main__inner {

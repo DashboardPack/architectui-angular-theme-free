@@ -1,28 +1,41 @@
-<div class="d-flex">
-  <div class="header-btn-lg pe-0">
-    <div class="widget-content p-0">
-      <div class="widget-content-wrapper">
-        <div class="widget-content-left">
-          <div class="btn-group" ngbDropdown placement="bottom-right">
-            <button type="button" class="btn btn-link p-0 me-2" ngbDropdownToggle>
-              <span>
-                <div class="icon-wrapper icon-wrapper-alt rounded-circle">
-                  <img width="42" src="./assets/images/avatars/1.jpg" alt="" class="rounded-circle">
-                </div>
-              </span>
-            </button>
-            <div ngbDropdownMenu>
-              <button class="dropdown-item">Menus</button>
-              <button class="dropdown-item">Settings</button>
-              <h6 class="dropdown-header">Header</h6>
-              <button class="dropdown-item">Actions</button>
-              <div class="dropdown-divider"></div>
-              <button class="dropdown-item">Dividers</button>
-            </div>
-          </div>
-        </div>
+<div class="header-btn-lg d-flex align-items-center">
+  <div class="widget-content-left me-2">
+    <div class="widget-heading">John Doe</div>
+    <div class="widget-subheading">Senior Developer</div>
+  </div>
+  <div ngbDropdown placement="bottom-right">
+    <button type="button" class="btn btn-link p-0" ngbDropdownToggle>
+      <img width="42" src="./assets/images/avatars/1.jpg" alt="" class="rounded-circle">
+    </button>
+    <div ngbDropdownMenu class="dropdown-menu-sm">
+      <div class="dropdown-header text-center">
+        <img src="./assets/images/avatars/1.jpg" alt="Avatar" class="rounded-circle mb-2" width="60">
+        <h6 class="mb-0">John Doe</h6>
+        <small class="text-muted">john.doe@example.com</small>
       </div>
+      <div class="dropdown-divider"></div>
+      <a href="#" class="dropdown-item">
+        <i class="pe-7s-user me-2"></i>
+        My Profile
+      </a>
+      <a href="#" class="dropdown-item">
+        <i class="pe-7s-settings me-2"></i>
+        Settings
+      </a>
+      <a href="#" class="dropdown-item d-flex align-items-center">
+        <i class="pe-7s-bell me-2"></i>
+        Notifications
+        <span class="badge bg-warning text-dark ms-auto">3</span>
+      </a>
+      <div class="dropdown-divider"></div>
+      <a href="#" class="dropdown-item">
+        <i class="pe-7s-help1 me-2"></i>
+        Help
+      </a>
+      <a href="#" class="dropdown-item text-danger">
+        <i class="pe-7s-power me-2"></i>
+        Sign Out
+      </a>
     </div>
   </div>
 </div>
-
