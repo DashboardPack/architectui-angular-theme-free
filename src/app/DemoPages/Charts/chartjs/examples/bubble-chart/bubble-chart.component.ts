@@ -1,30 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
 
 @Component({
   selector: 'app-bubble-chart',
   templateUrl: './bubble-chart.component.html',
   standalone: false})
-export class BubbleChartComponent implements OnInit {
+export class BubbleChartComponent {
   public bubbleChartOptions: ChartOptions = {
     responsive: true,
     scales: {
-      x: [
-        {
-          ticks: {
-            min: 0,
-            max: 30,
-          }
-        }
-      ],
-      y: [
-        {
-          ticks: {
-            min: 0,
-            max: 30,
-          }
-        }
-      ]
+      x: {
+        min: 0,
+        max: 30
+      },
+      y: {
+        min: 0,
+        max: 30
+      }
     }
   };
   public bubbleChartType: ChartType = 'bubble';
@@ -66,8 +58,6 @@ export class BubbleChartComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
   // events
   public chartClicked({event, active}: { event: MouseEvent, active: {}[] }): void {

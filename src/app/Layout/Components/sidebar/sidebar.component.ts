@@ -11,6 +11,9 @@ import {ActivatedRoute} from '@angular/router';
 export class SidebarComponent implements OnInit {
   public extraParameter: any;
   public openMenus: string[] = [];
+  
+  // Supported menu types: dashboardsMenu, pagesMenu, elementsMenu, componentsMenu, 
+  // tablesMenu, formsMenu, chartsMenu, widgetsMenu
 
   public config$: Observable<any>;
 
@@ -42,15 +45,17 @@ export class SidebarComponent implements OnInit {
       }
     });
 
+    // Get the extraParameter from the route to determine which menu should be open
     this.extraParameter = this.activatedRoute.snapshot.firstChild?.data['extraParameter'];
     
-    // Initialize open menus based on route
+    // Initialize open menus based on current route
     if (this.extraParameter) {
       this.openMenus = [this.extraParameter];
     }
   }
 
   toggleSubmenu(menuId: string) {
+    // Toggle submenu: close if open, open if closed (and close all others)
     const index = this.openMenus.indexOf(menuId);
     if (index > -1) {
       this.openMenus.splice(index, 1);

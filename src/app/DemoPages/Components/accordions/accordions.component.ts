@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 // import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-accordions',
   templateUrl: './accordions.component.html',
   standalone: false})
-export class AccordionsComponent implements OnInit {
+export class AccordionsComponent {
 
   heading = 'Accordions';
   subheading = 'Accordions represent collapsable component with extended functionality.';
@@ -27,7 +27,5 @@ export class AccordionsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

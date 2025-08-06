@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-standard',
   templateUrl: './standard.component.html',
   standalone: false,  styles: []
 })
-export class StandardComponent implements OnInit {
+export class StandardComponent {
 
   heading = 'Standard Buttons';
   subheading = 'Wide selection of buttons that feature different styles for backgrounds, borders and hover options!';
@@ -38,7 +38,5 @@ export class StandardComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-chart-boxes3',
   templateUrl: './chart-boxes3.component.html',
   standalone: false,  styles: []
 })
-export class ChartBoxes3Component implements OnInit {
+export class ChartBoxes3Component {
 
   heading = 'Chart Boxes III';
   subheading = 'Highly configurable boxes best used for showing numbers in an user friendly way.';
@@ -14,7 +14,5 @@ export class ChartBoxes3Component implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

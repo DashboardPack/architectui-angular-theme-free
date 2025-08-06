@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
   standalone: false})
-export class PaginationComponent implements OnInit {
+export class PaginationComponent {
 
   heading = 'Pagination';
   subheading = 'Basic and dynamic pagination for use in your next awesome application.';
@@ -27,7 +27,5 @@ export class PaginationComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

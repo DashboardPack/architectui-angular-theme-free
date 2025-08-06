@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modals',
   templateUrl: './modals.component.html',
   standalone: false})
-export class ModalsComponent implements OnInit {
+export class ModalsComponent {
 
   heading = 'Modals';
   subheading = 'Wide selection of modal dialogs styles and animations available.';
@@ -50,7 +50,5 @@ export class ModalsComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-  }
 
 }

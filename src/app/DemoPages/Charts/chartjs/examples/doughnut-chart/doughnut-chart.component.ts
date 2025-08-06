@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ChartType} from 'chart.js';
 // Label type removed in ng2-charts v6
 
@@ -6,7 +6,7 @@ import {ChartType} from 'chart.js';
   selector: 'app-doughnut-chart',
   templateUrl: './doughnut-chart.component.html',
   standalone: false})
-export class DoughnutChartComponent implements OnInit {
+export class DoughnutChartComponent {
   // Doughnut
   public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
   public doughnutChartData: number[][] = [
@@ -19,8 +19,6 @@ export class DoughnutChartComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
   // events
   public chartClicked({event, active}: { event: MouseEvent, active: {}[] }): void {

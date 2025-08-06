@@ -37,7 +37,7 @@ import {
   __spreadValues
 } from "./chunk-WDMUDEB6.js";
 
-// node_modules/@fortawesome/angular-fontawesome/node_modules/@fortawesome/fontawesome-svg-core/index.mjs
+// node_modules/@fortawesome/fontawesome-svg-core/index.mjs
 function _arrayLikeToArray(r2, a2) {
   (null == a2 || a2 > r2.length) && (a2 = r2.length);
   for (var e2 = 0, n2 = Array(a2); e2 < a2; e2++) n2[e2] = r2[e2];

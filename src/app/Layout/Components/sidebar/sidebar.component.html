@@ -120,6 +120,117 @@
                       <span class="vsm-title">Accordions</span>
                     </a>
                   </div>
+                  <div class="vsm-item">
+                    <a routerLink="/components/modals" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Modals</span>
+                    </a>
+                  </div>
+                  <div class="vsm-item">
+                    <a routerLink="/components/carousel" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Carousel</span>
+                    </a>
+                  </div>
+                  <div class="vsm-item">
+                    <a routerLink="/components/pagination" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Pagination</span>
+                    </a>
+                  </div>
+                  <div class="vsm-item">
+                    <a routerLink="/components/progress-bar" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Progress Bar</span>
+                    </a>
+                  </div>
+                  <div class="vsm-item">
+                    <a routerLink="/components/tooltips-popovers" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Tooltips & Popovers</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tables -->
+            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'tablesMenu'">
+              <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('tablesMenu')">
+                <i class="vsm-icon pe-7s-display2"></i>
+                <span class="vsm-title">Tables</span>
+                <i class="vsm-arrow"></i>
+              </a>
+              <div class="vsm-dropdown" *ngIf="openMenus.includes('tablesMenu')">
+                <div class="vsm-list">
+                  <div class="vsm-header">Tables</div>
+                  <div class="vsm-item">
+                    <a routerLink="/tables/regular" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Regular Tables</span>
+                    </a>
+                  </div>
+                  <div class="vsm-item">
+                    <a routerLink="/tables/bootstrap" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Bootstrap Tables</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Forms -->
+            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'formsMenu'">
+              <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('formsMenu')">
+                <i class="vsm-icon pe-7s-display1"></i>
+                <span class="vsm-title">Forms</span>
+                <i class="vsm-arrow"></i>
+              </a>
+              <div class="vsm-dropdown" *ngIf="openMenus.includes('formsMenu')">
+                <div class="vsm-list">
+                  <div class="vsm-header">Forms</div>
+                  <div class="vsm-item">
+                    <a routerLink="/forms/controls" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Form Controls</span>
+                    </a>
+                  </div>
+                  <div class="vsm-item">
+                    <a routerLink="/forms/layouts" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Form Layouts</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'chartsMenu'">
+              <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('chartsMenu')">
+                <i class="vsm-icon pe-7s-graph1"></i>
+                <span class="vsm-title">Charts</span>
+                <i class="vsm-arrow"></i>
+              </a>
+              <div class="vsm-dropdown" *ngIf="openMenus.includes('chartsMenu')">
+                <div class="vsm-list">
+                  <div class="vsm-header">Charts</div>
+                  <div class="vsm-item">
+                    <a routerLink="/charts/chartjs" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">ChartJS</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widgets -->
+            <div class="vsm-item has-sub" [class.vsm-open]="extraParameter === 'widgetsMenu'">
+              <a href="javascript:void(0);" class="vsm-link" (click)="toggleSubmenu('widgetsMenu')">
+                <i class="vsm-icon pe-7s-plugin"></i>
+                <span class="vsm-title">Widgets</span>
+                <i class="vsm-arrow"></i>
+              </a>
+              <div class="vsm-dropdown" *ngIf="openMenus.includes('widgetsMenu')">
+                <div class="vsm-list">
+                  <div class="vsm-header">Widgets</div>
+                  <div class="vsm-item">
+                    <a routerLink="/widgets/chart-boxes-3" routerLinkActive="active-item" class="vsm-link">
+                      <span class="vsm-title">Chart Boxes 3</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

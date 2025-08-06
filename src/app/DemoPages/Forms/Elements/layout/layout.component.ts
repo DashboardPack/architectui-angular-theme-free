@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   standalone: false,  styles: []
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
   heading = 'Form Layouts';
   subheading = 'Build whatever layout you need with our ArchitectUI framework.';
@@ -14,7 +14,5 @@ export class LayoutComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

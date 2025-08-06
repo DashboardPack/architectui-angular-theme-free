@@ -1,21 +1,24 @@
-import { ConfigActions } from './config.actions';
+import { createReducer, on } from '@ngrx/store';
+import * as ConfigActions from './config.actions.ngrx';
 
-const INITIAL_STATE = {
+export interface ConfigState {
+  headerTheme: string;
+  sidebarTheme: string;
+}
+
+const INITIAL_STATE: ConfigState = {
   headerTheme:  '',
   sidebarTheme:  '',
 }
 
-export function ConfigReducer(state = INITIAL_STATE, action: any): any {
+export const configReducer = createReducer(
+  INITIAL_STATE,
+  on(ConfigActions.getConfig, (state) => ({ ...state })),
+  on(ConfigActions.updateConfig, (state, { config }) => ({ ...state, ...config }))
+);
 
-  switch (action.type) {
-    case ConfigActions.CONFIG_GET:
-      return Object.assign({}, state);
-
-    case ConfigActions.CONFIG_UPDATE:
-      return Object.assign({}, state, {...action.payload});
-
-    default:
-      return state;
-  }
+// For backward compatibility with older Angular versions
+export function ConfigReducer(state: ConfigState | undefined, action: any) {
+  return configReducer(state, action);
 }
 

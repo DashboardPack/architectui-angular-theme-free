@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-tooltips-popovers',
   templateUrl: './tooltips-popovers.component.html',
   standalone: false})
-export class TooltipsPopoversComponent implements OnInit {
+export class TooltipsPopoversComponent {
 
   heading = 'Tooltips & Popovers';
   subheading = 'These Vue components are used to add interaction or extra information for your app\'s content.';
@@ -13,7 +13,5 @@ export class TooltipsPopoversComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
@@ -9,7 +9,7 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
   standalone: false,
   styleUrls: ['./pie-chart.component.scss']
 })
-export class PieChartComponent implements OnInit {
+export class PieChartComponent {
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -38,8 +38,6 @@ export class PieChartComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {

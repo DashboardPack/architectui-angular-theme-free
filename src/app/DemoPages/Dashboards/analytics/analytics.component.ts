@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faTh, faCheck, faTrash, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -6,7 +6,7 @@ import { faTh, faCheck, faTrash, faAngleDown, faAngleUp } from '@fortawesome/fre
   selector: 'app-analytics',
   templateUrl: './analytics.component.html',
   standalone: false})
-export class AnalyticsComponent implements OnInit {
+export class AnalyticsComponent {
 
   faTh = faTh;
   faCheck = faCheck;
@@ -160,12 +160,5 @@ export class AnalyticsComponent implements OnInit {
     maintainAspectRatio: false
   };
 
-  ngOnInit() {
-    // Initialize chart data for Chart.js v4
-    this.chartData = {
-      labels: this.labels,
-      datasets: this.datasets
-    };
-  }
 
 }

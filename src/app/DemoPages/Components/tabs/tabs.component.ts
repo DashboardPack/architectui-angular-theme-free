@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
   standalone: false})
-export class TabsComponent implements OnInit {
+export class TabsComponent {
 
   heading = 'Tabs';
   subheading = 'Tabs are used to split content between multiple sections. Wide variety available.';
@@ -19,7 +19,5 @@ export class TabsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

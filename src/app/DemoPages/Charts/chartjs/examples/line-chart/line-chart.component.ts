@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ChartDataset, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
@@ -8,7 +8,7 @@ import * as pluginAnnotations from 'chartjs-plugin-annotation';
   templateUrl: './line-chart.component.html',
   standalone: false
 })
-export class LineChartComponent implements OnInit {
+export class LineChartComponent {
   public lineChartData: ChartDataset[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
@@ -18,24 +18,23 @@ export class LineChartComponent implements OnInit {
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
     scales: {
-      // We use this empty structure as a placeholder for dynamic theming.
-      x: [{}],
-      y: [
-        {
-          id: 'y-axis-0',
-          position: 'left',
+      x: {
+        display: true
+      },
+      'y-axis-0': {
+        position: 'left',
+        display: true
+      },
+      'y-axis-1': {
+        position: 'right',
+        display: true,
+        grid: {
+          color: 'rgba(255,0,0,0.3)',
         },
-        {
-          id: 'y-axis-1',
-          position: 'right',
-          gridLines: {
-            color: 'rgba(255,0,0,0.3)',
-          },
-          ticks: {
-            fontColor: 'red',
-          }
+        ticks: {
+          color: 'red',
         }
-      ]
+      }
     },
     annotation: {
       annotations: [
@@ -63,8 +62,6 @@ export class LineChartComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
   public randomize(): void {
     for (let i = 0; i < this.lineChartData.length; i++) {

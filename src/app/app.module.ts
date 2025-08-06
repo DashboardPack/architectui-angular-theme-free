@@ -20,6 +20,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+// Feature Modules
+import { ChartsModule } from './charts.module';
+import { FormPagesModule } from './forms.module';
+import { TablesModule } from './tables.module';
+import { WidgetsModule } from './widgets.module';
+import { ComponentsModule } from './components.module';
+
 // LAYOUT
 import {BaseLayoutComponent} from './Layout/base-layout/base-layout.component';
 import {PagesLayoutComponent} from './Layout/pages-layout/pages-layout.component';
@@ -120,6 +127,13 @@ import {ThemeOptions} from './theme-options';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    // Feature Modules
+    ChartsModule,
+    FormPagesModule,
+    TablesModule,
+    WidgetsModule,
+    ComponentsModule,
   ],
   providers: [
     ConfigService,

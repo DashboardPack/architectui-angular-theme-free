@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-forgot-password-boxed',
   templateUrl: './forgot-password-boxed.component.html',
   standalone: false,  styles: []
 })
-export class ForgotPasswordBoxedComponent implements OnInit {
+export class ForgotPasswordBoxedComponent {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

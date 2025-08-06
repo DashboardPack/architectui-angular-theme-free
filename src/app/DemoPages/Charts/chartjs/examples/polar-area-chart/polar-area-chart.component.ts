@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 // Label type removed in ng2-charts v6
 import { ChartType } from 'chart.js';
 
@@ -7,7 +7,7 @@ import { ChartType } from 'chart.js';
   templateUrl: './polar-area-chart.component.html',
   standalone: false,  styleUrls: ['./polar-area-chart.component.scss']
 })
-export class PolarAreaChartComponent implements OnInit {
+export class PolarAreaChartComponent {
   // PolarArea
   public polarAreaChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales', 'Telesales', 'Corporate Sales'];
   public polarAreaChartData: number[] = [300, 500, 100, 40, 120];
@@ -17,8 +17,6 @@ export class PolarAreaChartComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {

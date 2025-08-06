@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 // Label type removed in ng2-charts v6
@@ -7,11 +7,11 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
   standalone: false})
-export class BarChartComponent implements OnInit {
+export class BarChartComponent {
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
-    scales: {x: [{}], y: [{}]},
+    scales: {x: {}, y: {}},
     plugins: {
       datalabels: {
         anchor: 'end',
@@ -32,8 +32,6 @@ export class BarChartComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
   // events
   public chartClicked({event, active}: { event: MouseEvent, active: {}[] }): void {

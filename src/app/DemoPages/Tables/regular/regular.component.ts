@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 interface Country {
   name: string;
@@ -39,7 +39,7 @@ const COUNTRIES: Country[] = [
   templateUrl: './regular.component.html',
   standalone: false,  styles: []
 })
-export class RegularComponent implements OnInit {
+export class RegularComponent {
 
   heading = 'Regular Tables';
   subheading = 'Tables are the backbone of almost all web applications.';
@@ -50,7 +50,5 @@ export class RegularComponent implements OnInit {
 
   countries = COUNTRIES;
 
-  ngOnInit() {
-  }
 
 }

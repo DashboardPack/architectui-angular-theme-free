@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChartDataset, ChartType, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -7,7 +7,7 @@ import { BaseChartDirective } from 'ng2-charts';
   templateUrl: './scatter-chart.component.html',
   standalone: false,  styleUrls: ['./scatter-chart.component.scss']
 })
-export class ScatterChartComponent implements OnInit {
+export class ScatterChartComponent {
   // scatter
   public scatterChartOptions: ChartOptions = {
     responsive: true,
@@ -31,8 +31,6 @@ export class ScatterChartComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
