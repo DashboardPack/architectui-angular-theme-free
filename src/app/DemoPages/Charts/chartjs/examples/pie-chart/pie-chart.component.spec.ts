@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PieChartComponent } from './pie-chart.component';
-import { ChartsModule } from 'ng2-charts';
+import { BaseChartDirective } from 'ng2-charts';
 
 describe('PieChartComponent', () => {
   let component: PieChartComponent;
@@ -11,7 +11,7 @@ describe('PieChartComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PieChartComponent],
       imports: [
-        ChartsModule,
+        BaseChartDirective,
       ],
     })
       .compileComponents();

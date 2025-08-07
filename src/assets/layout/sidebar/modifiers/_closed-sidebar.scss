@@ -1,24 +1,61 @@
 // Closed Sidebar
 
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .closed-sidebar {
   .app-sidebar {
     width: $app-sidebar-width-collapsed;
     min-width: $app-sidebar-width-collapsed;
     flex: 0 0 $app-sidebar-width-collapsed;
     z-index: 13;
+    transition: width .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 
     .app-header__logo {
       width: auto;
     }
 
     .logo-src {
-      width: 20px;
+      width: auto;
       margin: 0 auto;
+      justify-content: center;
+      transition: width .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      
+      .logo-text {
+        .logo-full {
+          display: none;
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        
+        .logo-collapsed {
+          display: block;
+          opacity: 1;
+          transform: scale(1);
+          animation: fadeInScale .3s ease-out;
+        }
+      }
     }
 
-    .header__pane {
-      display: none;
-    }
 
     .v-sidebar-menu {
       padding: 0 ($layout-spacer-x / 3);
@@ -45,6 +82,9 @@
       .vsm-arrow,
       .vsm-title {
         display: none;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: opacity .3s ease, transform .3s ease;
       }
 
       .vsm-icon {
@@ -68,9 +108,6 @@
 
 .closed-sidebar-open.closed-sidebar.closed-sidebar-md {
   .app-sidebar {
-    .header__pane {
-      display: none;
-    }
   }
 }
 
@@ -80,15 +117,29 @@
   &.closed-sidebar {
     .app-sidebar {
       width: $app-sidebar-width;
+      transition: width .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 
       .logo-src {
         width: $logo-width;
         margin: 0;
+        transition: width .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        
+        .logo-text {
+          .logo-full {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+            animation: fadeInScale .3s ease-out;
+          }
+          
+          .logo-collapsed {
+            display: none;
+            opacity: 0;
+            transform: scale(0.8);
+          }
+        }
       }
 
-      .header__pane {
-        display: block;
-      }
 
       .v-sidebar-menu {
         padding: 0 $layout-spacer-x $layout-spacer-x;
@@ -96,6 +147,10 @@
         .vsm-arrow,
         .vsm-title {
           display: block;
+          opacity: 1;
+          transform: translateX(0);
+          transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) .1s,
+                      transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) .1s;
         }
 
         .vsm-header {

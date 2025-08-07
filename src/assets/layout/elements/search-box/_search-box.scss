@@ -5,6 +5,8 @@ $search-box-size: 42px;
 .search-wrapper {
   position: relative;
   margin-right: ($nav-link-padding-x / 1.5);
+  opacity: 0;
+  animation: searchReveal 0.5s ease-out 0.3s forwards;
 
   .input-holder {
     height: $search-box-size;
@@ -159,5 +161,16 @@ $search-box-size: 42px;
       opacity: 0;
     }
 
+  }
+}
+
+@keyframes searchReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

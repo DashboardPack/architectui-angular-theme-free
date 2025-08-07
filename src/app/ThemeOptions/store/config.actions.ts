@@ -1,27 +1,22 @@
 import { Injectable } from '@angular/core';
-import { ArchitectUIState } from './index';
-import { NgRedux } from '@angular-redux/store';
+import { Store } from '@ngrx/store';
+import { AppState } from './config.state';
+import * as ConfigActions from './config.actions.ngrx';
 
-@Injectable()
-export class ConfigActions {
-  static CONFIG_GET = 'CONFIG_GET';
-  static CONFIG_UPDATE = 'CONFIG_UPDATE';
+// Re-export ConfigActions for backward compatibility
+export { ConfigActions };
 
-  constructor(
-    private ngRedux: NgRedux<ArchitectUIState>,
-  ) { }
+@Injectable({
+  providedIn: 'root'
+})
+export class ConfigService {
+  constructor(private store: Store<AppState>) { }
 
   getConfig() {
-    this.ngRedux.dispatch({
-      type: ConfigActions.CONFIG_GET,
-    });
+    this.store.dispatch(ConfigActions.getConfig());
   }
 
-  updateConfig(config): void {
-    this.ngRedux.dispatch({
-      type: ConfigActions.CONFIG_UPDATE,
-      payload: config
-    });
+  updateConfig(config: { headerTheme?: string; sidebarTheme?: string }): void {
+    this.store.dispatch(ConfigActions.updateConfig({ config }));
   }
-
 }

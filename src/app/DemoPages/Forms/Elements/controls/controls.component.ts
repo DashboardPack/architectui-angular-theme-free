@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-controls',
   templateUrl: './controls.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
-export class ControlsComponent implements OnInit {
+export class ControlsComponent {
 
   heading = 'Form Controls';
   subheading = 'Wide selection of forms controls, using the Bootstrap 5 code base, but built with Vue.';
@@ -14,7 +14,5 @@ export class ControlsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

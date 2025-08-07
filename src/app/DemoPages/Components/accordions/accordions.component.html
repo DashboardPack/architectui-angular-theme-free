@@ -5,218 +5,192 @@
     <h6 class="mb-3">
       Basic
     </h6>
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">Simple</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia
-          aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-          tempor,
-          sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-          helvetica,
-          craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-          Leggings occaecat
-          craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-          labore sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">&#9733;
-		    <b>Fancy</b> title &#9733;
-          </span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-          sunt aliqua
-          put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore
-          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-          beer farm-to-table,
-          raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel [disabled]="true">
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">Disabled</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-          3 wolf moon officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-          moon tempor, sunt aliqua put a bird
-          on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore wes anderson cred nesciunt
-          sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-          raw denim aesthetic synth nesciunt you
-          probably haven't heard of them accusamus labore sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" 
+                    (click)="panel1Open = !panel1Open"
+                    [attr.aria-expanded]="panel1Open"
+                    aria-controls="collapseOne">
+              <span class="card-header--title">Simple</span>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" [ngbCollapse]="!panel1Open" class="collapse" aria-labelledby="headingOne">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" 
+                    (click)="panel2Open = !panel2Open"
+                    [attr.aria-expanded]="panel2Open"
+                    aria-controls="collapseTwo">
+              <span class="card-header--title">★ <b>Fancy</b> title ★</span>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" [ngbCollapse]="!panel2Open" class="collapse" aria-labelledby="headingTwo">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed disabled" type="button" disabled>
+              <span class="card-header--title">Disabled</span>
+            </button>
+          </h5>
+        </div>
+      </div>
+    </div>
+    
     <h6 class="mb-3 mt-3">
-      One panel at a time
+      One panel at a time (Accordion)
     </h6>
-    <ngb-accordion [closeOthers]="true" activeIds="static-1">
-      <ngb-panel id="static-1">
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">Simple</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-          sunt aliqua
-          put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore
-          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-          beer farm-to-table,
-          raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel id="static-2">
-        <ng-template ngbPanelTitle>
-               <span>&#9733;
-              <b>Fancy</b> title &#9733;
-              </span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute, non
-          cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-          aliqua put a bird
-          on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-          labore wes anderson cred
-          nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-          farm-to-table, raw denim
-          aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel id="static-3" [disabled]="true">
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">Disabled</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute, non
-          cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-          aliqua put a bird
-          on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-          labore wes anderson
-          cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-          farm-to-table, raw denim aesthetic
-          synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+    <div class="accordion" id="accordionExample2">
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" 
+                    (click)="openAccordionPanel('panel3')"
+                    [attr.aria-expanded]="activePanel === 'panel3'"
+                    aria-controls="collapseFour">
+              <span class="card-header--title">First Panel</span>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFour" [ngbCollapse]="activePanel !== 'panel3'" class="collapse" aria-labelledby="headingFour">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            This accordion only allows one panel open at a time.
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header" id="headingFive">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" 
+                    (click)="openAccordionPanel('panel4')"
+                    [attr.aria-expanded]="activePanel === 'panel4'"
+                    aria-controls="collapseFive">
+              ★ <b>Second Panel</b> ★
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFive" [ngbCollapse]="activePanel !== 'panel4'" class="collapse" aria-labelledby="headingFive">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            Only one panel can be open at a time in this accordion.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-md-6">
     <h6 class="mb-3">
-      Toggle Panels
+      Toggle Panels (Independent)
     </h6>
-    <ngb-accordion #acc11="ngbAccordion">
-      <ngb-panel id="toggle-11">
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">First panel</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-          sunt aliqua
-          put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer
-          labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft
-          beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-          sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel id="toggle-22">
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">Second</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-          sunt aliqua
-          put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer
-          labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft
-          beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-          sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+    <div class="accordion" id="accordionToggle">
+      <div class="card">
+        <div class="card-header" id="headingSix">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" 
+                    (click)="toggle1Open = !toggle1Open"
+                    [attr.aria-expanded]="toggle1Open"
+                    aria-controls="toggleOne">
+              <span class="card-header--title">First panel</span>
+            </button>
+          </h5>
+        </div>
+        <div id="toggleOne" [ngbCollapse]="!toggle1Open" class="collapse" aria-labelledby="headingSix">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            This panel can be toggled independently.
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header" id="headingSeven">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" 
+                    (click)="toggle2Open = !toggle2Open"
+                    [attr.aria-expanded]="toggle2Open"
+                    aria-controls="toggleTwo">
+              <span class="card-header--title">Second</span>
+            </button>
+          </h5>
+        </div>
+        <div id="toggleTwo" [ngbCollapse]="!toggle2Open" class="collapse" aria-labelledby="headingSeven">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            This panel is also independent.
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="divider"></div>
     <div class="text-center">
-      <button class="btn btn-primary me-2" (click)="acc11.toggle('toggle-11')">Toggle first</button>
-      <button class="btn btn-info" (click)="acc11.toggle('toggle-22')">Toggle second</button>
+      <button class="btn btn-primary me-2" (click)="toggle1Open = !toggle1Open">Toggle first</button>
+      <button class="btn btn-info" (click)="toggle2Open = !toggle2Open">Toggle second</button>
     </div>
+
     <h6 class="mb-3 mt-3">
-      Prevent panel toggle
+      Prevention Example
     </h6>
-    <ngb-accordion (panelChange)="beforeChange($event)">
-      <ngb-panel id="preventchange-1">
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">Simple</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-          sunt aliqua
-          put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer
-          labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer
-          farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-          sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel id="preventchange-2">
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">I can't be toggled...</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-          sunt aliqua
-          put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore
-          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-          beer farm-to-table,
-          raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel id="preventchange-3">
-        <ng-template ngbPanelTitle>
-          <span class="card-header--title">I can be opened, but not closed..."</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-          officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-          sunt aliqua
-          put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore
-          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-          beer farm-to-table,
-          raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+    <div class="accordion" id="accordionPrevent">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" 
+                    (click)="prevent1Open = !prevent1Open"
+                    [attr.aria-expanded]="prevent1Open">
+              <span class="card-header--title">Can be toggled</span>
+            </button>
+          </h5>
+        </div>
+        <div [ngbCollapse]="!prevent1Open" class="collapse">
+          <div class="card-body">
+            This panel can be opened and closed normally.
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" 
+                    (click)="handlePreventToggle()"
+                    [attr.aria-expanded]="prevent2Open">
+              <span class="card-header--title">I can't be toggled...</span>
+            </button>
+          </h5>
+        </div>
+        <div [ngbCollapse]="!prevent2Open" class="collapse">
+          <div class="card-body">
+            This panel's toggle is prevented by logic.
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="card mb-3 mt-3">
       <div class="card-header">
-        Collapse
+        NgBootstrap Collapse
       </div>
       <div class="card-body">
         <button type="button"
@@ -230,7 +204,7 @@
         <div id="collapseExample" class="mt-3" [ngbCollapse]="isCollapsed">
           <div class="card">
             <div class="card-body">
-              You can collapse this card by clicking Toggle
+              You can collapse this card by clicking Toggle. This uses NgBootstrap's collapse directive.
             </div>
           </div>
         </div>

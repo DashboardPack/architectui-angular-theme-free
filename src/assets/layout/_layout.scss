@@ -2,8 +2,16 @@
 @import "layout-variables";
 @import "generic/generic-base";
 @import "header/header-base";
+@import "header/themes/header-dark";
+@import "header/themes/header-light";
+@import "header/modifiers/header-dots";
+@import "header/modifiers/header-userarea";
 @import "sidebar/sidebar-base";
+@import "sidebar/themes/sidebar-dark";
+@import "sidebar/themes/sidebar-light";
+@import "sidebar/modifiers/closed-sidebar";
 @import "main/main-base";
+@import "main/themes/main-white";
 @import "footer/footer-base";
 @import "elements/page-title/page-title-base";
 @import "elements/search-box/search-box";

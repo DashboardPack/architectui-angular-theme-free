@@ -1,1 +1,59 @@
-@import "assets/base";
+@use "assets/base";
+
+/* Fix content jumping issue */
+.app-main__inner {
+  position: relative !important;
+  display: block !important;
+  flex: none !important;
+  min-height: calc(100vh - 120px) !important;
+}
+
+.router-outlet-container {
+  position: relative !important;
+  display: block !important;
+  min-height: inherit !important;
+  overflow: visible !important;
+}
+
+/* Stabilize tab content positioning */
+.tab-content {
+  position: relative;
+}
+
+.tab-pane {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* Force immediate positioning for all routed components */
+router-outlet + *,
+.router-outlet-container > *,
+app-accordions,
+app-tabs,
+app-carousel,
+app-modals,
+app-pagination,
+app-progress-bar,
+app-tooltips-popovers {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  display: block !important;
+}
+
+/* Prevent ONLY route animations on initial load, keep sidebar transitions */
+router-outlet + * {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+}
+
+/* Re-enable route animations after initial load */
+.animations-ready router-outlet + * {
+  animation-duration: initial !important;
+  animation-delay: initial !important;
+}
+
+/* Remove this section - transitions are now defined in component styles */
+

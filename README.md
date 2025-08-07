@@ -1,35 +1,144 @@
-# ArchitectUI - Angular 11 Bootstrap 5
+# ArchitectUI Angular - Free Admin Dashboard Template
 
-This admin dashboard was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
+**A modern, responsive admin dashboard template built with Angular 20, Bootstrap 5, and Chart.js**
 
-ArchitectUI is among the most popular admin panels based on Angular that you can use for any SaaS or webapp. It comes in other versions too, such as [Vue](https://dashboardpack.com/theme-details/architectui-dashboard-vue-pro), [React](https://dashboardpack.com/theme-details/architectui-dashboard-react-pro) and [HTML/jQuery](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/). 
+ArchitectUI Angular is a professional admin dashboard template perfect for building modern web applications, SaaS platforms, and administrative interfaces. This free version provides a solid foundation with essential components and features to get your project started quickly.
 
-Pro version for ArchitectUI based on Angular 11 is available [here](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro).
+## Features
 
-## ArchitectUI Preview
+- **Modern Angular 20.1.4** - Built with the latest Angular framework
+- **Bootstrap 5.3.7** - Responsive design with modern Bootstrap components
+- **Interactive Charts** - Powered by Chart.js v4 with ng2-charts integration
+- **NgRx State Management** - Centralized state management for scalable applications
+- **TypeScript 5.8.3** - Type-safe development experience
+- **ESLint Integration** - Modern code linting and quality assurance
+- **Mobile Responsive** - Optimized for all device sizes
+- **Clean Code Architecture** - Well-structured, maintainable codebase
 
-![ArchitectUI Angular 11 admin dashboard template](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-angular-free.jpg)
+## What's Included
 
-## Development server
+- **Dashboard Analytics** - Interactive dashboard with charts and widgets
+- **UI Elements** - Buttons, cards, dropdowns, icons, timeline, and more
+- **Components** - Tabs, accordions, modals, pagination, progress bars, tooltips
+- **Form Elements** - Complete form controls and layouts
+- **Data Tables** - Responsive table components
+- **Charts** - Line, bar, pie, doughnut, radar, polar area, and more chart types
+- **User Pages** - Login, register, and password recovery pages
+- **Responsive Layout** - Header, sidebar, footer layout system
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Live Demo
 
-## Code scaffolding
+Check out the live demo: **[ArchitectUI Angular Free Demo](https://demo.dashboardpack.com/architectui-angular-free/)**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Preview
 
-## Build
+![ArchitectUI Angular Dashboard Template](./architectui-angular-dashboard.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Quick Start
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js (version 18 or higher)
+- npm or yarn
+- Angular CLI
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/architectui-angular-free.git
+cd architectui-angular-free
+```
 
-## Further help
+2. Install dependencies:
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3. Start the development server:
+```bash
+ng serve
+```
+
+4. Open your browser and navigate to `http://localhost:4200`
+
+### Build for Production
+
+```bash
+ng build --prod
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## Development Commands
+
+| Command | Description |
+|---------|-------------|
+| `ng serve` | Start development server at http://localhost:4200 |
+| `ng build` | Build the project for production |
+| `ng test` | Run unit tests via Karma |
+| `ng lint` | Run ESLint code analysis |
+| `ng generate component <name>` | Generate a new component |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── DemoPages/           # Main application pages
+│   │   ├── Dashboards/      # Dashboard components
+│   │   ├── Elements/        # UI elements
+│   │   ├── Components/      # Interactive components
+│   │   ├── Forms/          # Form components
+│   │   ├── Tables/         # Table components
+│   │   ├── Charts/         # Chart components
+│   │   └── UserPages/      # Authentication pages
+│   ├── Layout/             # Layout components (header, sidebar, footer)
+│   ├── ThemeOptions/       # Theme configuration and state management
+│   └── shared/             # Shared modules and components
+├── assets/                 # Static assets (images, styles, etc.)
+└── environments/          # Environment configurations
+```
+
+## Browser Support
+
+- **Chrome** (latest)
+- **Firefox** (latest)
+- **Safari** (latest)
+- **Edge** (latest)
+
+## Resources & Related Templates
+
+### More Admin Dashboards
+Explore more premium admin dashboard templates at [Colorlib](https://colorlib.com):
+- [Angular Admin Templates](https://colorlib.com/wp/angular-admin-templates/) - Collection of the best Angular admin dashboards
+- [Bootstrap Admin Templates](https://colorlib.com/wp/bootstrap-admin-templates/) - Premium Bootstrap-based admin templates
+- [Free Admin Templates](https://colorlib.com/wp/free-admin-templates/) - High-quality free admin dashboard templates
+
+### Professional Versions
+- **ArchitectUI Angular Pro** - [Get the Pro Version](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro) - Premium version with advanced components, more pages, and premium support
+- **React Version** - [ArchitectUI React](https://dashboardpack.com/theme-details/architectui-dashboard-react-pro)
+- **Vue Version** - [ArchitectUI Vue](https://dashboardpack.com/theme-details/architectui-dashboard-vue-pro)
+- **HTML/jQuery Version** - [ArchitectUI HTML](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/)
+
+### DashboardPack
+Visit [DashboardPack.com](https://dashboardpack.com) for more premium admin dashboard templates and themes for various frameworks and technologies.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes and updates.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For questions and support:
+- Check the [issues page](../../issues) for common problems and solutions
+- Visit [DashboardPack](https://dashboardpack.com) for premium support options
+- Browse [Colorlib's admin templates](https://colorlib.com/wp/angular-admin-templates/) for more resources
+
+---
+
+Made with care by the DashboardPack team. Built on the foundation of Angular, Bootstrap, and modern web technologies.

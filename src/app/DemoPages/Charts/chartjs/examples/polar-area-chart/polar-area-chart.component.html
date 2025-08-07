@@ -3,9 +3,10 @@
     <div style="display: block">
       <canvas baseChart
         [data]="polarAreaChartData"
-        [labels]="polarAreaChartLabels"
-        [legend]="polarAreaLegend"
-        [chartType]="polarAreaChartType">
+        [options]="polarAreaChartOptions"
+        [type]="polarAreaChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
       </canvas>
     </div>
   </div>

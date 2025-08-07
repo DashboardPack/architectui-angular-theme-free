@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-dropdowns',
   templateUrl: './dropdowns.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
-export class DropdownsComponent implements OnInit {
+export class DropdownsComponent {
 
   heading = 'Dropdowns';
   subheading = 'Multiple styles, actions and effects are available for the ArchutectUI dropdown buttons.';
@@ -14,7 +14,5 @@ export class DropdownsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

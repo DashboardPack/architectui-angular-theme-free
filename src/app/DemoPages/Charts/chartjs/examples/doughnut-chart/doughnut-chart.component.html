@@ -2,9 +2,12 @@
   <div>
     <div style="display: block">
       <canvas baseChart
-        [data]="doughnutChartData"
-        [labels]="doughnutChartLabels"
-        [chartType]="doughnutChartType">
+        [data]="chartData"
+        [type]="doughnutChartType"
+        [options]="doughnutChartOptions"
+        [plugins]="doughnutChartPlugins"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
       </canvas>
     </div>
   </div>

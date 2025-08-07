@@ -1,52 +1,95 @@
-<div class="h-100 bg-plum-plate bg-animation">
-  <div class="d-flex h-100 justify-content-center align-items-center">
-    <div class="mx-auto app-login-box col-md-8">
-      <div class="app-logo-inverse mx-auto mb-3"></div>
-      <div class="modal-dialog w-100 mx-auto">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div class="h5 modal-title text-center">
-              <h4 class="mt-2">
-                <div>Welcome back,</div>
-                <span>Please sign in to your account below.</span>
-              </h4>
-            </div>
-            <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1__BV_description_" class="mb-3">
-              <div>
-                <input id="exampleInput1" type="email" placeholder="Enter email..." required="required"
-                  aria-required="true" class="form-control" aria-describedby="exampleInputGroup1__BV_description_">
-                <small tabindex="-1" id="exampleInputGroup1__BV_description_" class="form-text text-muted">We'll never
-                  share your email with anyone else.
-                </small>
+<div class="vh-100 bg-plum-plate bg-animation">
+  <div class="d-flex h-100 justify-content-center align-items-center p-3">
+    <div class="w-100 app-login-box" style="max-width: 500px;">
+      <!-- Logo -->
+      <div class="app-logo-inverse mx-auto mb-4 d-block" style="width: 60px; height: 60px; background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+      
+      <!-- Login Card -->
+      <div class="card shadow-lg border-0">
+        <div class="card-body p-4 p-md-5">
+          <!-- Header -->
+          <div class="text-center mb-4">
+            <h3 class="mb-2 fw-normal">Welcome back,</h3>
+            <p class="text-muted mb-0">Please sign in to your account below.</p>
+          </div>
+
+          <!-- Login Form -->
+          <form id="loginForm" (ngSubmit)="onSubmit()" #loginFormRef="ngForm">
+            <!-- Email Input -->
+            <div class="mb-3">
+              <label for="emailInput" class="form-label visually-hidden">Email address</label>
+              <input 
+                id="emailInput" 
+                type="email" 
+                class="form-control form-control-lg" 
+                placeholder="Enter email..." 
+                name="email"
+                ngModel
+                required 
+                autocomplete="email">
+              <div class="form-text text-muted small">
+                We'll never share your email with anyone else.
               </div>
             </div>
-            <div id="exampleInputGroup2" role="group" class="mb-3">
-              <div><input id="exampleInput2" type="password" placeholder="Enter password..." required="required"
-                  aria-required="true" class="form-control"></div>
+
+            <!-- Password Input -->
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label visually-hidden">Password</label>
+              <input 
+                id="passwordInput" 
+                type="password" 
+                class="form-control form-control-lg" 
+                placeholder="Enter password..." 
+                name="password"
+                ngModel
+                required 
+                autocomplete="current-password">
             </div>
-            <div class="custom-control custom-checkbox form-check">
-              <input id="exampleCheck" type="checkbox" name="check" autocomplete="off" class="form-check-input" value="true">
-              <label for="exampleCheck" class="form-label form-check-label">
+
+            <!-- Remember Me Checkbox -->
+            <div class="form-check mb-3">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="rememberCheck" 
+                name="rememberMe"
+                ngModel>
+              <label class="form-check-label" for="rememberCheck">
                 Keep me logged in
               </label>
             </div>
-            <div class="divider"></div>
-            <h6 class="mb-0">
-              No account?
-              <a [routerLink]="" class="text-primary">Sign up now</a>
-            </h6>
-          </div>
-          <div class="modal-footer clearfix">
-            <div class="float-start"><a [routerLink]="" class="btn-lg btn btn-link">Recover
-                Password</a></div>
-            <div class="float-end">
-              <button type="button" class="btn btn-primary btn-lg">Login to Dashboard</button>
+
+            <!-- Divider -->
+            <hr class="my-4">
+
+            <!-- Sign up link -->
+            <div class="text-center mb-0">
+              <p class="mb-0">
+                No account? 
+                <a [routerLink]="'/pages/register-boxed'" class="text-primary text-decoration-none fw-medium">Sign up now</a>
+              </p>
             </div>
+          </form>
+        </div>
+        
+        <!-- Footer with buttons -->
+        <div class="card-footer bg-transparent border-0 p-4 pt-0">
+          <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
+            <a [routerLink]="'/pages/forgot-password-boxed'" class="btn btn-link btn-lg text-decoration-none">
+              Recover Password
+            </a>
+            <button type="submit" class="btn btn-primary btn-lg px-4" form="loginForm">
+              Login to Dashboard
+            </button>
           </div>
         </div>
       </div>
-      <div class="text-center text-white opacity-8 mt-3">
-        Copyright © ArchitectUI 2019
+
+      <!-- Copyright -->
+      <div class="text-center text-white mt-4">
+        <p class="mb-0 opacity-75 small">
+          Copyright © ArchitectUI 2025
+        </p>
       </div>
     </div>
   </div>

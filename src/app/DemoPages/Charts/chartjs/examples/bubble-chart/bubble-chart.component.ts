@@ -1,82 +1,63 @@
-import {Component, OnInit} from '@angular/core';
-import {ChartOptions, ChartType, ChartDataSets} from 'chart.js';
-import {Color} from 'ng2-charts';
+import { Component } from '@angular/core';
+import { ChartType, ChartConfiguration, ChartEvent, ActiveElement } from 'chart.js';
 
 @Component({
   selector: 'app-bubble-chart',
   templateUrl: './bubble-chart.component.html',
+  standalone: false
 })
-export class BubbleChartComponent implements OnInit {
-  public bubbleChartOptions: ChartOptions = {
+export class BubbleChartComponent {
+  public chartData: ChartConfiguration<'bubble'>['data'] = {
+    datasets: [
+      {
+        data: [
+          { x: 10, y: 10, r: 10 },
+          { x: 15, y: 5, r: 15 },
+          { x: 26, y: 12, r: 23 },
+          { x: 7, y: 8, r: 8 },
+        ],
+        label: 'Series A',
+        backgroundColor: 'rgba(75,192,192,0.6)',
+        borderColor: 'rgba(75,192,192,1)',
+        borderWidth: 1,
+        hoverBackgroundColor: 'rgba(153,102,255,0.8)',
+        hoverBorderColor: 'rgba(153,102,255,1)',
+      },
+    ]
+  };
+
+  public bubbleChartOptions: ChartConfiguration<'bubble'>['options'] = {
     responsive: true,
     scales: {
-      xAxes: [
-        {
-          ticks: {
-            min: 0,
-            max: 30,
-          }
-        }
-      ],
-      yAxes: [
-        {
-          ticks: {
-            min: 0,
-            max: 30,
-          }
-        }
-      ]
+      x: {
+        min: 0,
+        max: 30
+      },
+      y: {
+        min: 0,
+        max: 30
+      }
+    },
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+      }
     }
   };
+
   public bubbleChartType: ChartType = 'bubble';
-  public bubbleChartLegend = true;
-
-  public bubbleChartData: ChartDataSets[] = [
-    {
-      data: [
-        {x: 10, y: 10, r: 10},
-        {x: 15, y: 5, r: 15},
-        {x: 26, y: 12, r: 23},
-        {x: 7, y: 8, r: 8},
-      ],
-      label: 'Series A',
-      backgroundColor: 'green',
-      borderColor: 'blue',
-      hoverBackgroundColor: 'purple',
-      hoverBorderColor: 'red',
-    },
-  ];
-
-  public bubbleChartColors: Color[] = [
-    {
-      backgroundColor: [
-        'red',
-        'green',
-        'blue',
-        'purple',
-        'yellow',
-        'brown',
-        'magenta',
-        'cyan',
-        'orange',
-        'pink'
-      ]
-    }
-  ];
+  public bubbleChartPlugins = [];
 
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
   // events
-  public chartClicked({event, active}: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+  public chartClicked({event, active}: { event?: ChartEvent, active?: object[] }): void {
   }
 
-  public chartHovered({event, active}: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+  public chartHovered({event, active}: { event?: ChartEvent, active?: object[] }): void {
   }
 
   private rand(max: number) {
@@ -93,6 +74,6 @@ export class BubbleChartComponent implements OnInit {
   public randomize(): void {
     const numberOfPoints = this.rand(5) + 5;
     const data = Array.apply(null, {length: numberOfPoints}).map(r => this.randomPoint(30));
-    this.bubbleChartData[0].data = data;
+    this.chartData.datasets[0].data = data;
   }
 }

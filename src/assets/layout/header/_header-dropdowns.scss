@@ -1,0 +1,191 @@
+// Header Dropdowns Styling - Simplified
+
+.dropdown-menu-lg {
+  width: 320px;
+  padding: 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  
+  @media (max-width: 576px) {
+    width: 280px;
+  }
+}
+
+.dropdown-menu-sm {
+  min-width: 200px;
+  padding: 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+// Clean dropdown header
+.dropdown-header {
+  background-color: #f8f9fa;
+  padding: 0.875rem 1.25rem;
+  margin: 0;
+  border-bottom: 1px solid #dee2e6;
+  border-radius: 0.5rem 0.5rem 0 0;
+  
+  &:first-child {
+    margin-top: 0 !important;
+  }
+  
+  h6 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #495057;
+  }
+}
+
+// Dropdown items
+.dropdown-item {
+  padding: 0.75rem 1.25rem;
+  color: #495057;
+  font-size: 0.875rem;
+  border: none;
+  transition: background-color 0.15s ease;
+  
+  &:hover {
+    background-color: #f8f9fa;
+  }
+  
+  &:active {
+    background-color: #e9ecef;
+  }
+  
+  // Icon styling
+  i {
+    width: 20px;
+    text-align: center;
+    color: #6c757d;
+  }
+  
+  // Badge positioning
+  .badge {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+// Icon circles for notifications
+.icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  
+  i {
+    color: inherit;
+  }
+}
+
+// Text utilities
+.text-gray-500 {
+  color: #6c757d !important;
+}
+
+// Badge positioning for notification icons
+.position-relative {
+  .badge.position-absolute {
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: 600;
+  }
+}
+
+// Header button styling
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  
+  // Hide dropdown arrows/chevrons
+  .dropdown-toggle::after {
+    display: none;
+  }
+  
+  // Consistent spacing for header buttons
+  .header-btn-lg {
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-link {
+    color: inherit;
+    position: relative;
+    
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+    
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}
+
+// User info in header
+.widget-heading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.125rem;
+  color: #495057;
+}
+
+.widget-subheading {
+  font-size: 0.75rem;
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+// Scrollbar for dropdown content
+.dropdown-menu {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+}
+
+// Override Bootstrap dropdown defaults
+.app-header-right {
+  .dropdown-menu {
+    padding: 0 !important;
+    margin: 0;
+    
+    // Ensure first and last items respect border radius
+    .dropdown-item:first-child {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+    
+    .dropdown-item:last-child {
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+  }
+}

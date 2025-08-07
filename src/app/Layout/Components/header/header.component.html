@@ -1,10 +1,18 @@
-<div [class]="'app-header header-shadow ' + (config$ | async).headerTheme">
+<div [class]="'app-header header-shadow ' + (config$ | async)?.headerTheme">
   <div class="logo-src"></div>
   <div class="app-header__content">
     <div class="app-header-left">
+      <button type="button" class="hamburger hamburger--elastic me-2"
+              [ngClass]="{'is-active' : globals.toggleSidebar}" (click)="toggleSidebar()">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+      </button>
       <app-search-box></app-search-box>
     </div>
     <div class="app-header-right">
+      <app-notifications-box></app-notifications-box>
+      <app-messages-box></app-messages-box>
       <app-user-box></app-user-box>
     </div>
   </div>

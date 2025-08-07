@@ -210,7 +210,7 @@
 
   .app-header.text-lighter {
     .logo-src {
-      background: url('/assets/images/logo.png');
+      background-image: url('../../../assets/images/logo.png');
     }
 
     .app-header__menu {
@@ -245,7 +245,7 @@
       .btn-actions-pane-right {
         margin: ($layout-spacer-x / 2) 0 0;
 
-        .d-inline-block.ml-2 {
+        .d-inline-block.ms-2 {
           width: 100% !important;
           text-align: left;
           margin: 0 !important;

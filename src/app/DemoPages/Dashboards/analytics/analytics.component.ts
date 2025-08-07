@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {Color} from 'ng2-charts/ng2-charts';
+import { Component } from '@angular/core';
 import { faTh, faCheck, faTrash, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { ChartConfiguration } from 'chart.js';
 
 
 @Component({
   selector: 'app-analytics',
   templateUrl: './analytics.component.html',
-})
-export class AnalyticsComponent implements OnInit {
+  standalone: false})
+export class AnalyticsComponent {
 
   faTh = faTh;
   faCheck = faCheck;
@@ -28,6 +28,26 @@ export class AnalyticsComponent implements OnInit {
     dots: true,
   };
 
+  public chartData: ChartConfiguration<'line'>['data'] = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+    datasets: [
+      {
+        label: 'Helpdesk Tickets',
+        data: [65, 59, 80, 81, 56, 55, 40, 48],
+        backgroundColor: 'rgba(247, 185, 36, 0.2)',
+        borderColor: '#f7b924',
+        borderWidth: 4,
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: '#fff',
+        pointBorderColor: '#f7b924',
+        pointBorderWidth: 3,
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }
+    ]
+  };
+  
   public datasets = [
     {
       label: 'My First dataset',
@@ -58,10 +78,7 @@ export class AnalyticsComponent implements OnInit {
         display: false,
       },
 
-    }
-  ];
-  public lineChartColors: Color[] = [
-    { // dark grey
+      // Colors now configured in dataset
       backgroundColor: 'rgba(247, 185, 36, 0.2)',
       borderColor: '#f7b924',
       borderCapStyle: 'round',
@@ -78,10 +95,10 @@ export class AnalyticsComponent implements OnInit {
       pointHitRadius: 10,
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: '#f7b924',
-    },
+    }
   ];
 
-  public lineChartColors2: Color[] = [
+  public lineChartColors2 = [
     { // dark grey
       backgroundColor: 'rgba(48, 177, 255, 0.2)',
       borderColor: '#30b1ff',
@@ -102,7 +119,7 @@ export class AnalyticsComponent implements OnInit {
     },
   ];
 
-  public lineChartColors3: Color[] = [
+  public lineChartColors3 = [
     { // dark grey
       backgroundColor: 'rgba(86, 196, 121, 0.2)',
       borderColor: '#56c479',
@@ -135,32 +152,32 @@ export class AnalyticsComponent implements OnInit {
       }
     },
     scales: {
-      yAxes: [{
+      y: {
         ticks: {
           display: false,
           beginAtZero: true
         },
-        gridLines: {
+        grid: {
           display: false
         }
-      }],
-      xAxes: [{
+      },
+      x: {
         ticks: {
           display: false
         },
-        gridLines: {
+        grid: {
           display: false
         }
-      }]
+      }
     },
-    legend: {
-      display: false
+    plugins: { 
+      legend: {
+        display: false
+      }
     },
     responsive: true,
     maintainAspectRatio: false
   };
 
-  ngOnInit() {
-  }
 
 }

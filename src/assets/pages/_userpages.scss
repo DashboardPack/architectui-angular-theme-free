@@ -3,13 +3,13 @@
 .app-logo {
   height: $logo-height;
   width: $logo-width;
-  background: url('/assets/images/logo-inverse.png');
+  background-image: url('../../assets/images/logo-inverse.png');
 }
 
 .app-logo-inverse {
   height: $logo-height;
   width: $logo-width;
-  background: url('/assets/images/logo.png');
+  background-image: url('../../assets/images/logo.png');
 }
 
 .app-login-box {

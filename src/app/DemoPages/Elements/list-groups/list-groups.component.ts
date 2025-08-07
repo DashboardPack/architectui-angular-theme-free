@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-list-groups',
   templateUrl: './list-groups.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
-export class ListGroupsComponent implements OnInit {
+export class ListGroupsComponent {
 
   heading = 'List Groups';
   subheading = 'These can be used with other components and elements to create stunning and unique new elements for your UIs.';
@@ -14,7 +14,5 @@ export class ListGroupsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

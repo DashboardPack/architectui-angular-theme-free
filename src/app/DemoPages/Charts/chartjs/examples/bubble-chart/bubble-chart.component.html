@@ -2,13 +2,14 @@
   <div>
     <div style="display: block">
       <canvas baseChart
-        [datasets]="bubbleChartData"
+        [data]="chartData"
+        [type]="bubbleChartType"
         [options]="bubbleChartOptions"
-        [colors]="bubbleChartColors"
-        [legend]="bubbleChartLegend"
-        [chartType]="bubbleChartType">
+        [plugins]="bubbleChartPlugins"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
       </canvas>
     </div>
-    <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+    <button class="btn btn-primary" (click)="randomize()">Update</button>
   </div>
 </div>

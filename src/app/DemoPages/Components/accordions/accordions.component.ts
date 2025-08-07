@@ -1,33 +1,46 @@
-import {Component, OnInit} from '@angular/core';
-import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-accordions',
   templateUrl: './accordions.component.html',
-})
-export class AccordionsComponent implements OnInit {
+  standalone: false})
+export class AccordionsComponent {
 
   heading = 'Accordions';
   subheading = 'Accordions represent collapsable component with extended functionality.';
   icon = 'pe-7s-diamond icon-gradient bg-warm-flame';
 
+  // NgBootstrap collapse state
   public isCollapsed = false;
 
-  public beforeChange($event: NgbPanelChangeEvent) {
+  // Basic accordion panels (can be opened independently)
+  public panel1Open = true;  // Start with first panel open
+  public panel2Open = false;
 
-    if ($event.panelId === 'preventchange-2') {
-      $event.preventDefault();
-    }
+  // Accordion behavior (only one panel open at a time)
+  public activePanel: string | null = 'panel3'; // Start with first panel open
 
-    if ($event.panelId === 'preventchange-3' && $event.nextState === false) {
-      $event.preventDefault();
+  // Toggle panels (independent)
+  public toggle1Open = false;
+  public toggle2Open = false;
+
+  // Prevention example
+  public prevent1Open = false;
+  public prevent2Open = false;
+
+  public openAccordionPanel(panelId: string) {
+    // Toggle behavior: if clicking the same panel, close it; otherwise open the clicked one
+    if (this.activePanel === panelId) {
+      this.activePanel = null;
+    } else {
+      this.activePanel = panelId;
     }
-  };
+  }
+
+  public handlePreventToggle() {
+    // This demonstrates prevention logic - do nothing
+  }
 
   constructor() {
   }
-
-  ngOnInit() {
-  }
-
 }

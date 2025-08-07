@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
-  styles: []
+  standalone: false,  styles: []
 })
-export class IconsComponent implements OnInit {
+export class IconsComponent {
 
   heading = 'Icons';
   subheading = 'Wide icons selection including from flag icons to FontAwesome and other icons libraries.';
@@ -14,7 +14,5 @@ export class IconsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }

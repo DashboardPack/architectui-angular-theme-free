@@ -2,33 +2,88 @@
 <div class="col-md-8 mx-auto">
   <div class="card">
     <div class="card-header">
-      Basic
+      Basic Carousel
     </div>
     <div class="card-body">
-      <ngb-carousel *ngIf="images">
-        <ng-template ngbSlide>
-          <img [src]="images[0]" width="100%" alt="Random first slide">
-          <div class="carousel-caption">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img [src]="images[1]" width="100%" alt="Random second slide">
-          <div class="carousel-caption">
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img [src]="images[2]" width="100%" alt="Random third slide">
-          <div class="carousel-caption">
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-        </ng-template>
-      </ngb-carousel>
+      @if (images) {
+        <ngb-carousel>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img [src]="images[0]" class="d-block w-100" alt="Random first slide">
+            </div>
+            <div class="carousel-caption">
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img [src]="images[1]" class="d-block w-100" alt="Random second slide">
+            </div>
+            <div class="carousel-caption">
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img [src]="images[2]" class="d-block w-100" alt="Random third slide">
+            </div>
+            <div class="carousel-caption">
+              <h3>Third slide label</h3>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      }
+    </div>
+  </div>
+  
+  <!-- Advanced Carousel Examples -->
+  <div class="card mt-3">
+    <div class="card-header">
+      Carousel with Controls and Indicators
+    </div>
+    <div class="card-body">
+      @if (images) {
+        <ngb-carousel [interval]="3000" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+          @for (image of images; track image; let i = $index) {
+            <ng-template ngbSlide [id]="'slide-' + i">
+              <div class="picsum-img-wrapper">
+                <img [src]="image" class="d-block w-100" [alt]="'Slide ' + (i + 1)">
+              </div>
+              <div class="carousel-caption">
+                <h3>Slide {{ i + 1 }} label</h3>
+                <p>Dynamic carousel slide with automatic progression.</p>
+              </div>
+            </ng-template>
+          }
+        </ngb-carousel>
+      }
+    </div>
+  </div>
 
+  <!-- No Animation Carousel -->
+  <div class="card mt-3">
+    <div class="card-header">
+      Carousel without Animation
+    </div>
+    <div class="card-body">
+      @if (images) {
+        <ngb-carousel [animation]="false" [interval]="0">
+          @for (image of images; track image; let i = $index) {
+            <ng-template ngbSlide [id]="'no-anim-slide-' + i">
+              <div class="picsum-img-wrapper">
+                <img [src]="image" class="d-block w-100" [alt]="'No animation slide ' + (i + 1)">
+              </div>
+              <div class="carousel-caption">
+                <h3>No Animation - Slide {{ i + 1 }}</h3>
+                <p>This carousel transitions without animations for better performance.</p>
+              </div>
+            </ng-template>
+          }
+        </ngb-carousel>
+      }
     </div>
   </div>
 </div>

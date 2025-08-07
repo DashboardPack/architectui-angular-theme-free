@@ -1,44 +1,46 @@
-import {Component} from '@angular/core';
-import {select} from '@angular-redux/store';
+import {Component, ChangeDetectorRef, AfterViewInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {ConfigActions} from '../../ThemeOptions/store/config.actions';
+import { ConfigService } from '../../ThemeOptions/store/config.service';
 import {ThemeOptions} from '../../theme-options';
 import {animate, query, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-base-layout',
   templateUrl: './base-layout.component.html',
-  animations: [
-
-    trigger('architectUIAnimation', [
-      transition('* <=> *', [
-        query(':enter, :leave', [
-          style({
-            opacity: 0,
-            display: 'flex',
-            flex: '1',
-            transform: 'translateY(-20px)',
-            flexDirection: 'column'
-
-          }),
-        ]),
-        query(':enter', [
-          animate('200ms ease', style({opacity: 1, transform: 'translateY(0)'})),
-        ]),
-
-        query(':leave', [
-          animate('200ms ease', style({opacity: 0, transform: 'translateY(-20px)'})),
-         ], { optional: true })
-      ]),
-    ])
-  ]
+  standalone: false,
+  // Temporarily disable animations to fix jumping issue
+  animations: []
 })
 
-export class BaseLayoutComponent {
+export class BaseLayoutComponent implements AfterViewInit {
 
-  @select('config') public config$: Observable<any>;
+  public config$: Observable<any>;
 
-  constructor(public globals: ThemeOptions, public configActions: ConfigActions) {
+  constructor(
+    public globals: ThemeOptions,
+    private configService: ConfigService,
+    private cdr: ChangeDetectorRef
+  ) {
+    this.config$ = this.configService.config$;
+  }
+
+  ngAfterViewInit() {
+    // Fix ExpressionChangedAfterItHasBeenCheckedError
+    this.cdr.detectChanges();
+    
+    // Initialize Bootstrap components after view is stable
+    setTimeout(() => {
+      if (typeof window !== 'undefined' && (window as any).bootstrap) {
+        // Initialize any Bootstrap tooltips, popovers, etc. that might cause layout shifts
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new (window as any).bootstrap.Tooltip(tooltipTriggerEl);
+        });
+      }
+      
+      // Re-enable animations after layout is stable
+      document.body.classList.add('animations-ready');
+    }, 100);
   }
 
   toggleSidebarMobile() {

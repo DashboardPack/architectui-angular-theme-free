@@ -2,10 +2,12 @@
   <div>
     <div style="display: block">
       <canvas baseChart
-        [datasets]="radarChartData"
+        [data]="chartData"
+        [type]="radarChartType"
         [options]="radarChartOptions"
-        [labels]="radarChartLabels"
-        [chartType]="radarChartType">
+        [plugins]="radarChartPlugins"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
       </canvas>
     </div>
   </div>

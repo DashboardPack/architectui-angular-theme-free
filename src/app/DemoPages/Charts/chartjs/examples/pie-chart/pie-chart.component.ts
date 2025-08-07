@@ -1,52 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { ChartType, ChartOptions } from 'chart.js';
-import { Label } from 'ng2-charts';
-import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import { Component } from '@angular/core';
+import { ChartType, ChartConfiguration, ChartEvent, ActiveElement } from 'chart.js';
 
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
+  standalone: false,
   styleUrls: ['./pie-chart.component.scss']
 })
-export class PieChartComponent implements OnInit {
-  // Pie
-  public pieChartOptions: ChartOptions = {
+export class PieChartComponent {
+  public chartData: ChartConfiguration<'pie'>['data'] = {
+    labels: ['Downloads', 'In Store Sales', 'Mail Sales'],
+    datasets: [
+      {
+        data: [300, 500, 100],
+        backgroundColor: ['rgba(255,99,132,0.2)', 'rgba(54,162,235,0.2)', 'rgba(255,205,86,0.2)'],
+        borderColor: ['rgba(255,99,132,1)', 'rgba(54,162,235,1)', 'rgba(255,205,86,1)'],
+        borderWidth: 1
+      }
+    ]
+  };
+  
+  public pieChartOptions: ChartConfiguration<'pie'>['options'] = {
     responsive: true,
-    legend: {
-      position: 'top',
-    },
     plugins: {
-      datalabels: {
-        formatter: (value, ctx) => {
-          const label = ctx.chart.data.labels[ctx.dataIndex];
-          return label;
-        },
-      },
+      legend: {
+        position: 'top',
+      }
     }
   };
-  public pieChartLabels: Label[] = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
-  public pieChartData: number[] = [300, 500, 100];
+  
   public pieChartType: ChartType = 'pie';
-  public pieChartLegend = true;
-  public pieChartPlugins = [pluginDataLabels];
-  public pieChartColors = [
-    {
-      backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
-    },
-  ];
+  public pieChartPlugins = [];
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
   // events
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+  public chartClicked({ event, active }: { event?: ChartEvent, active?: object[] }): void {
   }
 
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+  public chartHovered({ event, active }: { event?: ChartEvent, active?: object[] }): void {
   }
 
   changeLabels() {
@@ -56,22 +49,24 @@ export class PieChartComponent implements OnInit {
       'patrol', 'satisfied', 'academy', 'acceptance', 'ivory', 'aquarium', 'building', 'store', 'replace', 'language',
       'redeem', 'honest', 'intention', 'silk', 'opera', 'sleep', 'innocent', 'ignore', 'suite', 'applaud', 'funny'];
     const randomWord = () => words[Math.trunc(Math.random() * words.length)];
-    this.pieChartLabels = Array.apply(null, { length: 3 }).map(_ => randomWord());
+    this.chartData.labels = Array.apply(null, { length: 3 }).map(_ => randomWord());
   }
 
   addSlice() {
-    this.pieChartLabels.push(['Line 1', 'Line 2', 'Line 3']);
-    this.pieChartData.push(400);
-    this.pieChartColors[0].backgroundColor.push('rgba(196,79,244,0.3)');
+    this.chartData.labels!.push('New Slice');
+    this.chartData.datasets[0].data.push(400);
+    (this.chartData.datasets[0].backgroundColor as string[]).push('rgba(196,79,244,0.3)');
   }
 
   removeSlice() {
-    this.pieChartLabels.pop();
-    this.pieChartData.pop();
-    this.pieChartColors[0].backgroundColor.pop();
+    this.chartData.labels!.pop();
+    this.chartData.datasets[0].data.pop();
+    (this.chartData.datasets[0].backgroundColor as string[]).pop();
   }
 
   changeLegendPosition() {
-    this.pieChartOptions.legend.position = this.pieChartOptions.legend.position === 'left' ? 'top' : 'left';
+    if (this.pieChartOptions?.plugins?.legend) {
+      this.pieChartOptions.plugins.legend.position = this.pieChartOptions.plugins.legend.position === 'left' ? 'top' : 'left';
+    }
   }
 }

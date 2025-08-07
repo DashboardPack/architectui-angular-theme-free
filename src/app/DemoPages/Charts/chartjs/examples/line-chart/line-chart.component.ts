@@ -1,103 +1,101 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartDataSets, ChartOptions } from 'chart.js';
-import { Color, BaseChartDirective, Label } from 'ng2-charts';
-import * as pluginAnnotations from 'chartjs-plugin-annotation';
+import { Component, ViewChild } from '@angular/core';
+import { ChartConfiguration, ChartType, ChartEvent, ActiveElement } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html'
+  templateUrl: './line-chart.component.html',
+  standalone: false
 })
-export class LineChartComponent implements OnInit {
-  public lineChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
-    { data: [180, 480, 770, 90, 1000, 270, 400], label: 'Series C', yAxisID: 'y-axis-1' }
-  ];
-  public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public lineChartOptions: (ChartOptions & { annotation: any }) = {
-    responsive: true,
-    scales: {
-      // We use this empty structure as a placeholder for dynamic theming.
-      xAxes: [{}],
-      yAxes: [
-        {
-          id: 'y-axis-0',
-          position: 'left',
-        },
-        {
-          id: 'y-axis-1',
-          position: 'right',
-          gridLines: {
-            color: 'rgba(255,0,0,0.3)',
-          },
-          ticks: {
-            fontColor: 'red',
-          }
-        }
-      ]
-    },
-    annotation: {
-      annotations: [
-        {
-          type: 'line',
-          mode: 'vertical',
-          scaleID: 'x-axis-0',
-          value: 'March',
-          borderColor: 'orange',
-          borderWidth: 2,
-          label: {
-            enabled: true,
-            fontColor: 'orange',
-            content: 'LineAnno'
-          }
-        },
-      ],
-    },
+export class LineChartComponent {
+  public chartData: ChartConfiguration<'line'>['data'] = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        data: [65, 59, 80, 81, 56, 55, 40],
+        label: 'Series A',
+        backgroundColor: 'rgba(77,83,96,0.2)',
+        borderColor: 'rgba(77,83,96,1)',
+        pointBackgroundColor: 'rgba(77,83,96,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(77,83,96,1)',
+        fill: 'origin'
+      },
+      {
+        data: [28, 48, 40, 19, 86, 27, 90],
+        label: 'Series B',
+        backgroundColor: 'rgba(255,0,0,0.3)',
+        borderColor: 'red',
+        pointBackgroundColor: 'red',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'red',
+        fill: 'origin'
+      },
+      {
+        data: [180, 480, 770, 90, 1000, 270, 400],
+        label: 'Series C',
+        yAxisID: 'y1',
+        backgroundColor: 'rgba(255,255,0,0.3)',
+        borderColor: 'yellow',
+        pointBackgroundColor: 'yellow',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'yellow',
+        fill: 'origin'
+      }
+    ]
   };
-  public lineChartColors: Color[] = [
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+  
+  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+    responsive: true,
+    elements: {
+      line: {
+        tension: 0.5
+      }
     },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
+    scales: {
+      x: {
+        display: true
+      },
+      y: {
+        display: true,
+        position: 'left'
+      },
+      y1: {
+        display: true,
+        position: 'right',
+        grid: {
+          color: 'rgba(255,0,0,0.3)',
+        },
+        ticks: {
+          color: 'red'
+        }
+      }
     },
-    { // red
-      backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    plugins: {
+      legend: {
+        display: true
+      }
     }
-  ];
-  public lineChartLegend = true;
-  public lineChartType = 'line';
-  public lineChartPlugins = [pluginAnnotations];
+  };
+  
+  public lineChartType: ChartType = 'line';
+  public lineChartPlugins = [];
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
   public randomize(): void {
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        this.lineChartData[i].data[j] = this.generateNumber(i);
+    for (let i = 0; i < this.chartData.datasets.length; i++) {
+      for (let j = 0; j < this.chartData.datasets[i].data.length; j++) {
+        this.chartData.datasets[i].data[j] = this.generateNumber(i);
       }
     }
-    this.chart.update();
+    this.chart?.update();
   }
 
   private generateNumber(i: number) {
@@ -105,12 +103,10 @@ export class LineChartComponent implements OnInit {
   }
 
   // events
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+  public chartClicked({ event, active }: { event?: ChartEvent, active?: object[] }): void {
   }
 
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+  public chartHovered({ event, active }: { event?: ChartEvent, active?: object[] }): void {
   }
 
   public hideOne() {
@@ -119,21 +115,25 @@ export class LineChartComponent implements OnInit {
   }
 
   public pushOne() {
-    this.lineChartData.forEach((x, i) => {
+    this.chartData.datasets.forEach((x, i) => {
       const num = this.generateNumber(i);
       const data: number[] = x.data as number[];
       data.push(num);
     });
-    this.lineChartLabels.push(`Label ${this.lineChartLabels.length}`);
+    this.chartData.labels!.push(`Label ${this.chartData.labels!.length}`);
   }
 
   public changeColor() {
-    this.lineChartColors[2].borderColor = 'green';
-    this.lineChartColors[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+    // Update color directly in the dataset
+    if (this.chartData.datasets[2]) {
+      this.chartData.datasets[2].borderColor = 'green';
+      this.chartData.datasets[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+    }
   }
 
   public changeLabel() {
-    this.lineChartLabels[2] = ['1st Line', '2nd Line'];
-    // this.chart.update();
+    if (this.chartData.labels) {
+      this.chartData.labels[2] = 'Updated Label';
+    }
   }
 }

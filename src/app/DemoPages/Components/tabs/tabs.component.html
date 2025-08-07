@@ -1,270 +1,192 @@
-<!-- <app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
 
 <div class="row">
   <div class="col-md-6">
     <div class="card main-card mb-3">
       <div class="card-header">
-        Tabset
+        Basic Tabs
       </div>
       <div class="card-body">
-        <ul ngbNav #nav="ngbNav" class="nav-tabs">
-          <li ngbNavItem>
-            <a ngbNavLink><span>Simple</span></a>
-            <ng-template ngbTabContent>
-              <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
-                retro synth
-                master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                retro keffiyeh
-                dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                salvia cillum
-                iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-            </ng-template>
+        <!-- Basic Tabs using Bootstrap 5 -->
+        <ul class="nav nav-tabs" id="basicTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="basic-tab1-tab" data-bs-toggle="tab" data-bs-target="#basic-tab1" type="button" role="tab" aria-controls="basic-tab1" aria-selected="true">Simple</button>
           </li>
-          <li ngbNavItem>
-            <a ngbNavLink><b>Fancy</b> title</a>
-            <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
-              coffee squid.
-              <p class="mt-3">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
-                loko farm-to-table
-                craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-                ullamco ad vinyl
-                cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
-                helvetica VHS salvia
-                yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-                sustainable jean
-                shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown,
-                tumblr butcher vero
-                sint qui sapiente accusamus tattooed echo park.</p>
-            </ng-template>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="basic-tab2-tab" data-bs-toggle="tab" data-bs-target="#basic-tab2" type="button" role="tab" aria-controls="basic-tab2" aria-selected="false"><b>Fancy</b> title</button>
           </li>
-          <li ngbNavItem [disabled]="disabled">
-            <a ngbNavLink><span>Disabled</span></a>
-            <ng-template ngbTabContent>
-              <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
-                Nulla facilisi.
-                Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
-                congue et odio.
-                Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et.
-                Sed diam urna,
-                egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
-                nisl enim, nec
-                tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque
-                penatibus et
-                magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet
-                ultricies in eget neque.
-                Phasellus nec tortor vel tellus pulvinar feugiat.</p>
-            </ng-template>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="basic-tab3-tab" data-bs-toggle="tab" data-bs-target="#basic-tab3" type="button" role="tab" aria-controls="basic-tab3" aria-selected="false" [disabled]="disabled">Disabled</button>
           </li>
         </ul>
-        <div [ngbNavOutlet]="nav"></div>
-      </div>
-    </div>
-    <div class="card main-card mb-3">
-      <div class="card-header">
-        Pills
-      </div>
-      <div class="card-body">
-        <ul type="pills" ngbNav #nav1="ngbNav" class="nav-tabs">
-          <li ngbNavItem title="Simple">
-            <a ngbNavLink><span>Simple</span></a>
-            <ng-template ngbTabContent>
-              <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
-                retro synth
-                master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                retro keffiyeh
-                dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                salvia cillum
-                iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-            </ng-template>
-          </li>
-          <li ngbNavItem>
-            <a ngbNavLink><b>Fancy</b> title</a>
-            <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
-              coffee squid.
-              <p class="mt-3">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
-                loko farm-to-table
-                craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-                ullamco ad vinyl
-                cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
-                helvetica VHS salvia
-                yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-                sustainable jean
-                shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown,
-                tumblr butcher vero
-                sint qui sapiente accusamus tattooed echo park.</p>
-            </ng-template>
-          </li>
-          <li ngbNavItem [disabled]="disabled">
-            <a ngbNavLink><span>Disabled</span></a>
-            <ng-template ngbTabContent>
-              <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
-                Nulla facilisi.
-                Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
-                congue et odio.
-                Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et.
-                Sed diam urna,
-                egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
-                nisl enim, nec
-                tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque
-                penatibus et
-                magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet
-                ultricies in eget neque.
-                Phasellus nec tortor vel tellus pulvinar feugiat.
-              </p>
-            </ng-template>
-          </li>
-        </ul>
-        <div [ngbNavOutlet]="nav1"></div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card main-card mb-3">
-      <div class="card-header">
-        Justified
-      </div>
-      <div class="card-body">
-        <ul [justify]="currentJustify" ngbNav #nav2="ngbNav" class="nav-tabs">
-          <li ngbNavItem>
-            <a ngbNavLink><span>Simple</span></a>
-            <ng-template ngbTabContent>
-              <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
-                retro synth
-                master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                retro keffiyeh
-                dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                salvia cillum
-                iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-            </ng-template>
-          </li>
-          <li ngbNavItem>
-            <a ngbNavLink><b>Fancy</b> title</a>
-            <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
-              coffee squid.
-              <p class="mt-3">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
-                loko farm-to-table
-                craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-                ullamco ad vinyl
-                cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
-                helvetica VHS salvia
-                yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-                sustainable jean
-                shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown,
-                tumblr butcher vero
-                sint qui sapiente accusamus tattooed echo park.</p>
-            </ng-template>
-          </li>
-          <li ngbNavItem title="A very long nav title">
-            <a ngbNavLink><span>A very long nav title</span></a>
-            <ng-template ngbTabContent>
-              <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
-                Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget
-                tincidunt eu, congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et
-                molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque.
-                Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec tristique ipsum euismod facilisis.
-                Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et magnis dis parturient
-                montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque.
-                Phasellus nec tortor vel tellus pulvinar feugiat.</p>
-            </ng-template>
-          </li>
-        </ul>
-        <div [ngbNavOutlet]="nav2"></div>
-
-        <div class="divider"></div>
-
-        <div class="text-center">
-          <div class="btn-group btn-group-toggle" ngbRadioGroup [(ngModel)]="currentJustify">
-            <label ngbButtonLabel class="btn-outline-primary btn-sm">
-              <input ngbButton type="radio" value="start">Start
-            </label>
-            <label ngbButtonLabel class="btn-outline-primary btn-sm">
-              <input ngbButton type="radio" value="center">Center
-            </label>
-            <label ngbButtonLabel class="btn-outline-primary btn-sm">
-              <input ngbButton type="radio" value="end">End
-            </label>
-            <label ngbButtonLabel class="btn-outline-primary btn-sm">
-              <input ngbButton type="radio" value="fill">Fill
-            </label>
-            <label ngbButtonLabel class="btn-outline-primary btn-sm">
-              <input ngbButton type="radio" value="justified">Justified
-            </label>
+        <div class="tab-content" id="basicTabContent">
+          <div class="tab-pane fade show active" id="basic-tab1" role="tabpanel" aria-labelledby="basic-tab1-tab">
+            <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
+              retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+              retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+              salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+          </div>
+          <div class="tab-pane fade" id="basic-tab2" role="tabpanel" aria-labelledby="basic-tab2-tab">
+            <p class="mt-3">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+              Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
+              loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+              ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+          </div>
+          <div class="tab-pane fade" id="basic-tab3" role="tabpanel" aria-labelledby="basic-tab3-tab">
+            <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
+              Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
+              congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et.</p>
           </div>
         </div>
       </div>
     </div>
+    
     <div class="card main-card mb-3">
       <div class="card-header">
-        Orientation
+        Pills Style
       </div>
       <div class="card-body">
-        <ul type="pills" [orientation]="currentOrientation" ngbNav #nav3="ngbNav" class="nav-tabs">
-          <li ngbNavItem>
-            <a ngbNavLink><span>Simple</span></a>
-            <ng-template ngbTabContent>
-              <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
-                retro synth
-                master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                retro keffiyeh
-                dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                salvia cillum
-                iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-            </ng-template>
+        <!-- Pills Style Tabs -->
+        <ul class="nav nav-pills" id="pillsTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-tab1-tab" data-bs-toggle="pill" data-bs-target="#pills-tab1" type="button" role="tab" aria-controls="pills-tab1" aria-selected="true">Simple</button>
           </li>
-          <li ngbNavItem>
-            <a ngbNavLink><b>Fancy</b> title</a>
-            <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
-              coffee squid.
-              <p class="mt-3">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
-                loko farm-to-table
-                craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-                ullamco ad vinyl
-                cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
-                helvetica VHS salvia
-                yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-                sustainable jean
-                shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown,
-                tumblr butcher vero
-                sint qui sapiente accusamus tattooed echo park.</p>
-            </ng-template>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-tab2-tab" data-bs-toggle="pill" data-bs-target="#pills-tab2" type="button" role="tab" aria-controls="pills-tab2" aria-selected="false"><b>Fancy</b> title</button>
           </li>
-          <li ngbNavItem [disabled]="disabled">
-            <a ngbNavLink><span>Disabled</span></a>
-            <ng-template ngbTabContent>
-              <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
-                Nulla facilisi.
-                Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
-                congue et odio.
-                Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et.
-                Sed diam urna,
-                egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
-                nisl enim, nec
-                tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque
-                penatibus et
-                magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet
-                ultricies in eget neque.
-                Phasellus nec tortor vel tellus pulvinar feugiat.
-              </p>
-            </ng-template>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-tab3-tab" data-bs-toggle="pill" data-bs-target="#pills-tab3" type="button" role="tab" aria-controls="pills-tab3" aria-selected="false" [disabled]="disabled">Disabled</button>
           </li>
         </ul>
-        <div [ngbNavOutlet]="nav3"></div>
+        <div class="tab-content" id="pillsTabContent">
+          <div class="tab-pane fade show active" id="pills-tab1" role="tabpanel" aria-labelledby="pills-tab1-tab">
+            <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
+              retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+              retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+              salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+          </div>
+          <div class="tab-pane fade" id="pills-tab2" role="tabpanel" aria-labelledby="pills-tab2-tab">
+            <p class="mt-3">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+              Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
+              loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+              ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+          </div>
+          <div class="tab-pane fade" id="pills-tab3" role="tabpanel" aria-labelledby="pills-tab3-tab">
+            <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
+              Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
+              congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Justified Tabs
+      </div>
+      <div class="card-body">
+        <!-- Justified Tabs -->
+        <ul class="nav nav-tabs" 
+            [class.nav-justified]="currentJustify === 'justified'" 
+            [class.nav-fill]="currentJustify === 'fill'"
+            [class.justify-content-center]="currentJustify === 'center'"
+            [class.justify-content-end]="currentJustify === 'end'" 
+            id="justifiedTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="just-tab1-tab" data-bs-toggle="tab" data-bs-target="#just-tab1" type="button" role="tab" aria-controls="just-tab1" aria-selected="true">Simple</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="just-tab2-tab" data-bs-toggle="tab" data-bs-target="#just-tab2" type="button" role="tab" aria-controls="just-tab2" aria-selected="false"><b>Fancy</b> title</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="just-tab3-tab" data-bs-toggle="tab" data-bs-target="#just-tab3" type="button" role="tab" aria-controls="just-tab3" aria-selected="false">A very long nav title</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="justifiedTabContent">
+          <div class="tab-pane fade show active" id="just-tab1" role="tabpanel" aria-labelledby="just-tab1-tab">
+            <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
+              retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+              retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.</p>
+          </div>
+          <div class="tab-pane fade" id="just-tab2" role="tabpanel" aria-labelledby="just-tab2-tab">
+            <p class="mt-3">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+              Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
+              loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+              ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+          </div>
+          <div class="tab-pane fade" id="just-tab3" role="tabpanel" aria-labelledby="just-tab3-tab">
+            <p class="mt-3">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.
+              Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget
+              tincidunt eu, congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et
+              molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque.</p>
+          </div>
+        </div>
 
         <div class="divider"></div>
 
         <div class="text-center">
-          <div class="btn-group btn-group-toggle" ngbRadioGroup [(ngModel)]="currentOrientation">
-            <label ngbButtonLabel class="btn-outline-primary btn-sm">
-              <input ngbButton type="radio" value="horizontal">Horizontal
-            </label>
-            <label ngbButtonLabel class="btn-outline-primary btn-sm">
-              <input ngbButton type="radio" value="vertical">Vertical
-            </label>
+          <div class="btn-group btn-group-toggle" role="group" aria-label="Tab justify options">
+            <input type="radio" class="btn-check" name="justify" id="justify-start" value="start" 
+                   [(ngModel)]="currentJustify" autocomplete="off">
+            <label class="btn btn-outline-primary btn-sm" for="justify-start">Start</label>
+            
+            <input type="radio" class="btn-check" name="justify" id="justify-center" value="center" 
+                   [(ngModel)]="currentJustify" autocomplete="off">
+            <label class="btn btn-outline-primary btn-sm" for="justify-center">Center</label>
+            
+            <input type="radio" class="btn-check" name="justify" id="justify-end" value="end" 
+                   [(ngModel)]="currentJustify" autocomplete="off">
+            <label class="btn btn-outline-primary btn-sm" for="justify-end">End</label>
+            
+            <input type="radio" class="btn-check" name="justify" id="justify-fill" value="fill" 
+                   [(ngModel)]="currentJustify" autocomplete="off">
+            <label class="btn btn-outline-primary btn-sm" for="justify-fill">Fill</label>
+            
+            <input type="radio" class="btn-check" name="justify" id="justify-justified" value="justified" 
+                   [(ngModel)]="currentJustify" autocomplete="off">
+            <label class="btn btn-outline-primary btn-sm" for="justify-justified">Justified</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Vertical Tabs (Pills)
+      </div>
+      <div class="card-body">
+        <!-- Vertical Pills -->
+        <div class="row">
+          <div class="col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+              <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+              <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <p>This is the home tab content. Raw denim you probably haven't heard of them jean shorts Austin. 
+                   Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg 
+                   carles vegan helvetica.</p>
+              </div>
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <p>This is the profile tab content. Food truck fixie locavore, accusamus mcsweeney's marfa nulla 
+                   single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level 
+                   wes anderson artisan four loko farm-to-table craft beer twee.</p>
+              </div>
+              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <p>This is the settings tab content. Sed commodo, leo at suscipit dictum, quam est porttitor sapien, 
+                   eget sodales nibh elit id diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. 
+                   Duis lectus turpis, luctus eget tincidunt eu, congue et odio.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
- -->

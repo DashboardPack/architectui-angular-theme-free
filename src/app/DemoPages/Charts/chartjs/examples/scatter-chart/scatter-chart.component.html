@@ -2,10 +2,12 @@
   <div>
     <div style="display: block">
       <canvas baseChart
-        [datasets]="scatterChartData"
+        [data]="chartData"
+        [type]="scatterChartType"
         [options]="scatterChartOptions"
-        [labels]="scatterChartLabels"
-        [chartType]="scatterChartType">
+        [plugins]="scatterChartPlugins"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
       </canvas>
     </div>
   </div>

@@ -1,9 +1,13 @@
 <div class="d-block">
-  <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-          [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+  <canvas baseChart 
+          [data]="chartData" 
+          [type]="barChartType"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          (chartHover)="chartHovered($event)"
           (chartClick)="chartClicked($event)"></canvas>
 </div>
 <div class="divider"></div>
 <div class="text-center">
-  <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+  <button class="btn btn-primary" (click)="randomize()">Update</button>
 </div>

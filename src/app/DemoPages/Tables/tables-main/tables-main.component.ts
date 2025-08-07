@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-tables-main',
-  templateUrl: './tables-main.component.html'
+  templateUrl: './tables-main.component.html',
+  standalone: false
 })
-export class TablesMainComponent implements OnInit {
+export class TablesMainComponent {
 
   heading = 'Bootstrap 5 Tables';
   subheading = 'Tables are the backbone of almost all web applications.';
@@ -13,7 +14,5 @@ export class TablesMainComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
 
 }
