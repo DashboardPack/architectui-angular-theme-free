@@ -1,7 +1,7 @@
 {
   "name": "architectui-angular-free",
-  "version": "2.0.0",
-  "description": "Modern Angular 20 admin dashboard template with Bootstrap 5, Chart.js, and NgRx",
+  "version": "3.0.0",
+  "description": "Modern Angular 20 admin dashboard template with Bootstrap 5, Chart.js, NgRx, and enhanced UI components",
   "keywords": [
     "angular",
     "angular-20",
@@ -17,7 +17,12 @@
     "ngrx",
     "typescript",
     "free",
-    "open-source"
+    "open-source",
+    "pwa-ready",
+    "ui-components",
+    "header-dropdowns",
+    "sidebar-navigation",
+    "deployment-ready"
   ],
   "author": "DashboardPack",
   "repository": {

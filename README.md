@@ -14,6 +14,9 @@ ArchitectUI Angular is a professional admin dashboard template perfect for build
 - **ESLint Integration** - Modern code linting and quality assurance
 - **Mobile Responsive** - Optimized for all device sizes
 - **Clean Code Architecture** - Well-structured, maintainable codebase
+- **Enhanced Header Dropdowns** - Beautiful notifications, messages, and user settings
+- **Smart Sidebar Navigation** - Text-based logo and proper chevron directions
+- **Production Ready** - Complete deployment configurations included
 
 ## What's Included
 
@@ -46,7 +49,7 @@ Check out the live demo: **[ArchitectUI Angular Free Demo](https://demo.dashboar
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/architectui-angular-free.git
+git clone https://github.com/DashboardPack/architectui-angular-free.git
 cd architectui-angular-free
 ```
 
@@ -202,4 +205,6 @@ For questions and support:
 
 ---
 
-Made with care by the DashboardPack team. Built on the foundation of Angular, Bootstrap, and modern web technologies.
+**Version 3.0.0** - August 2025
+
+Made with care by the DashboardPack team. Built on the foundation of Angular 20, Bootstrap 5, and modern web technologies.

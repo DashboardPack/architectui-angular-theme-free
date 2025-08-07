@@ -5,6 +5,89 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] - 2025-08-07
+
+### 🎉 Major Release - Enhanced UI & Deployment Ready
+
+This major release brings significant UI improvements, enhanced header components, production-ready deployment configurations, and complete Bootstrap 5 integration.
+
+### ✨ Added
+
+#### **Enhanced Header Dropdowns**
+- **Notifications Dropdown**: Rich notification system with unread counters, color-coded icons, and timestamps
+- **Messages Dropdown**: Message preview with user avatars, online status indicators, and conversation management  
+- **User Settings Dropdown**: Enhanced profile dropdown with account management, settings access, and security toggles
+- Clean, simplified design following "less is more" principles for better readability
+
+#### **Improved Sidebar Navigation**
+- **Text-Based Logo System**: Smart logo that shows "A" when collapsed and full "ArchitectUI" when expanded
+- **Fixed Chevron Directions**: Proper arrow directions (→ when closed, ↓ when open) with smooth animations
+- **Hover States**: Enhanced hover interactions for better user experience
+- **Responsive Animations**: Smooth transitions between collapsed and expanded states
+
+#### **Production Deployment Support**
+- **Subdirectory Deployment**: Built-in support for deploying to subdirectories like `/architectui-angular-free/`
+- **Multiple Server Configurations**: Support for Apache, Nginx, IIS, and Node.js deployments
+- **Cloudways Integration**: Dedicated Cloudways deployment guide and optimized configurations
+- **Direct URL Access**: Fixed Angular routing for direct URL access and page refreshes
+- **Custom Build Scripts**: `npm run build:prod` with correct base href configuration
+
+#### **Documentation & Deployment**
+- **Live Demo Integration**: Added live demo link to README
+- **Comprehensive Deployment Guides**: Step-by-step instructions for various hosting providers
+- **Server Configuration Files**: Ready-to-use `.htaccess`, `web.config`, and nginx configurations
+- **Troubleshooting Guides**: Detailed solutions for common deployment issues
+
+### 🔧 Fixed
+
+- **Bootstrap 4 Dependencies**: Removed all remaining Bootstrap 4 traces and deprecated classes
+- **Chevron Arrow Directions**: Fixed sidebar menu arrows pointing in correct directions with proper animations
+- **Logo Visibility**: Resolved tiny/invisible logo issue in collapsed sidebar state
+- **Direct URL Access**: Fixed 404 errors when accessing routes directly or refreshing pages
+- **Asset Loading**: Resolved CSS/JS loading issues in subdirectory deployments
+- **Form Components**: Updated all remaining form controls to use proper Bootstrap 5 syntax
+- **Spacing Classes**: Fixed all deprecated Bootstrap spacing utility classes (`ml-*`/`mr-*` to `ms-*`/`me-*`)
+
+### 🎨 Improved
+
+- **Header Layout**: Better spacing and alignment of header components with proper gaps
+- **Dropdown Styling**: Enhanced dropdown appearance with clean shadows, borders, and consistent spacing
+- **Icon Consistency**: Unified icon usage across all components
+- **Mobile Responsiveness**: Optimized mobile experience for header dropdowns and navigation
+- **Animation Performance**: Smooth CSS transitions and animations throughout the interface
+
+### 📚 Documentation
+
+- **CLOUDWAYS-DEPLOYMENT.md**: Complete Cloudways deployment guide with server-specific configurations
+- **SERVER-CONFIG.md**: Multi-server configuration guide for Apache, Nginx, IIS, and Node.js
+- **Updated README**: Added live demo link, enhanced deployment instructions, and feature highlights
+
+### 🛠️ Technical Improvements
+
+- **Build Configuration**: Enhanced Angular build process with automatic `.htaccess` inclusion
+- **Component Architecture**: Improved separation of concerns and cleaner component structure
+- **SCSS Organization**: Better styling architecture with modular dropdown and sidebar styles
+- **Deployment Automation**: Streamlined build and deployment process with proper base href handling
+
+### 🔄 Migration Guide
+
+#### From v2.x to v3.0:
+
+1. **Update Dependencies**: `npm install` (no breaking changes)
+2. **Bootstrap Components**: All form components automatically updated
+3. **Deployment**: Use `npm run build:prod` for subdirectory deployment
+4. **Server Configuration**: Use provided configuration files for your server type
+
+### 🎯 New Features
+
+- Smart responsive logo system with text-based approach
+- Enhanced notification and messaging system in header
+- Comprehensive deployment support for major hosting platforms  
+- Production-ready server configurations
+- Improved user experience with better navigation feedback
+
+---
+
 ## [2.0.0] - 2025-08-06
 
 ### Major Version Release - Angular 20 Migration
