@@ -11,8 +11,8 @@ export class PageTitleComponent {
   faStar = faStar;
   faPlus = faPlus;
 
-  @Input() heading;
-  @Input() subheading;
-  @Input() icon;
+  @Input() heading: string = '';
+  @Input() subheading: string = '';
+  @Input() icon: string = '';
 
 }

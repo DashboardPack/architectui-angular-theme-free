@@ -1,4 +1,4 @@
-<div [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme" 
+<div [class]="'app-sidebar sidebar-shadow ' + (config$ | async)?.sidebarTheme" 
      (mouseenter)="onSidebarMouseEnter()"
      (mouseleave)="onSidebarMouseLeave()">
   <div class="app-header__logo">

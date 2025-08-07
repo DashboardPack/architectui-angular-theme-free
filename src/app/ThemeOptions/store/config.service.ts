@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from './config.state';
+import { AppState, ConfigState } from './config.state';
 import * as ConfigActions from './config.actions.ngrx';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
-  config$: Observable<any>;
+  config$: Observable<ConfigState>;
 
   constructor(private store: Store<AppState>) {
     this.config$ = this.store.select('config');

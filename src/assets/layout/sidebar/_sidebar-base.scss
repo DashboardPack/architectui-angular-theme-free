@@ -260,6 +260,11 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     }
   }
 
+  // When menu is open, rotate arrow down
+  &.vsm-open .vsm-arrow {
+    transform: rotate(0deg);
+  }
+
   & .vsm-dropdown {
     position: relative;
 

@@ -14,7 +14,7 @@ export class ChartBoxes3Component {
   subheading = 'Highly configurable boxes best used for showing numbers in an user friendly way.';
   icon = 'pe-7s-wallet icon-gradient bg-plum-plate';
 
-  @ViewChild(BaseChartDirective, { static: false }) chart: BaseChartDirective;
+  @ViewChild(BaseChartDirective, { static: false }) chart!: BaseChartDirective;
 
   constructor() {
     // Generate sample data

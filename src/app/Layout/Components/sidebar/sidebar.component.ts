@@ -2,6 +2,7 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {ThemeOptions} from '../../../theme-options';
 import {Observable} from 'rxjs';
 import { ConfigService } from '../../../ThemeOptions/store/config.service';
+import { ConfigState } from '../../../ThemeOptions/store/config.state';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -41,7 +42,7 @@ export class SidebarComponent implements OnInit {
   // Supported menu types: dashboardsMenu, pagesMenu, elementsMenu, componentsMenu, 
   // tablesMenu, formsMenu, chartsMenu, widgetsMenu
 
-  public config$: Observable<any>;
+  public config$: Observable<ConfigState>;
 
   constructor(
     public globals: ThemeOptions, 
@@ -51,8 +52,8 @@ export class SidebarComponent implements OnInit {
     this.config$ = this.configService.config$;
   }
 
-  private newInnerWidth: number;
-  private innerWidth: number;
+  private newInnerWidth = 0;
+  private innerWidth = 0;
   activeId = 'dashboardsMenu';
 
   toggleSidebar() {
@@ -113,8 +114,8 @@ export class SidebarComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.newInnerWidth = event.target.innerWidth;
+  onResize(event: Event) {
+    this.newInnerWidth = (event.target as Window).innerWidth;
 
     if (this.newInnerWidth < 1200) {
       this.globals.toggleSidebar = true;
