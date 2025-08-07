@@ -26,9 +26,13 @@ ArchitectUI Angular is a professional admin dashboard template perfect for build
 - **User Pages** - Login, register, and password recovery pages
 - **Responsive Layout** - Header, sidebar, footer layout system
 
+## Live Demo
+
+Check out the live demo: **[ArchitectUI Angular Free Demo](https://demo.dashboardpack.com/architectui-angular-free/)**
+
 ## Preview
 
-![ArchitectUI Angular Dashboard Template](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-angular-free.jpg)
+![ArchitectUI Angular Dashboard Template](./architectui-angular-dashboard.png)
 
 ## Quick Start
 
