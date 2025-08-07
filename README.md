@@ -76,9 +76,70 @@ The build artifacts will be stored in the `dist/` directory.
 |---------|-------------|
 | `ng serve` | Start development server at http://localhost:4200 |
 | `ng build` | Build the project for production |
+| `npm run build:prod` | Build for subdirectory deployment with correct base href |
 | `ng test` | Run unit tests via Karma |
 | `ng lint` | Run ESLint code analysis |
 | `ng generate component <name>` | Generate a new component |
+
+## Production Deployment
+
+### For Subdirectory Deployment
+When deploying to a subdirectory like `https://demo.dashboardpack.com/architectui-angular-free/`:
+
+```bash
+npm run build:prod
+```
+
+This command:
+- Builds with production optimizations
+- Sets base href to `/architectui-angular-free/`
+- Outputs to `dist/architectui-angular-free/`
+
+Then upload the contents of `dist/architectui-angular-free/` to your server's subdirectory.
+
+### For Root Domain Deployment
+When deploying to a root domain like `https://yourdomain.com/`:
+
+```bash
+ng build --configuration production
+```
+
+### Server Configuration
+
+#### Apache (.htaccess)
+An `.htaccess` file is included in the project root. Copy it to your deployment folder along with the built files.
+
+#### Nginx
+Add this to your server configuration:
+```nginx
+location /architectui-angular-free/ {
+    try_files $uri $uri/ /architectui-angular-free/index.html;
+}
+```
+
+### Important Deployment Notes
+
+1. **After building with `npm run build:prod`:**
+   - Upload all contents from `dist/architectui-angular-free/browser/`
+   - The `.htaccess` file is automatically included in the build
+   - Verify the base href in index.html is `/architectui-angular-free/`
+
+2. **File Structure on Server:**
+   ```
+   /architectui-angular-free/
+   ├── index.html (with correct base href)
+   ├── favicon.ico
+   ├── .htaccess (handles direct URL access)
+   ├── main-*.js
+   ├── polyfills-*.js
+   ├── scripts-*.js
+   ├── styles-*.css
+   ├── assets/
+   └── media/
+   ```
+
+3. **Direct URL Access Fix:**
+   The `.htaccess` file ensures that direct links like `/architectui-angular-free/dashboards/analytics` work correctly by redirecting all routes to `index.html`, allowing Angular to handle the routing.
 
 ## Project Structure
 
