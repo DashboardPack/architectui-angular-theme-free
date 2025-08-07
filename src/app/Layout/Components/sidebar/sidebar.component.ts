@@ -27,11 +27,11 @@ import {ActivatedRoute} from '@angular/router';
     /* Arrow rotation - override existing transform */
     .vsm-item.has-sub .vsm-arrow {
       transition: transform 0.3s ease !important;
-      transform: rotate(180deg) !important;
+      transform: rotate(270deg) !important;  /* Point right */
     }
     
     .vsm-item.has-sub.vsm-open .vsm-arrow {
-      transform: rotate(90deg) !important;
+      transform: rotate(360deg) !important;  /* Point down */
     }
   `]
 })

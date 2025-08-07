@@ -212,7 +212,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
       font-weight: normal;
 
       .vsm-arrow {
-        transform: rotate(-90deg);
+        transform: rotate(270deg); // Match the default right-pointing rotation
         font-weight: bold;
       }
     }
@@ -252,17 +252,17 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     font-style: normal;
     opacity: .3;
     transition: all 300ms;
-    transform: rotate(-90deg); // Point right by default
+    transform: rotate(270deg); // ROTATE 270 DEGREES TO POINT RIGHT
 
     &:after {
-      content: '\e688';
+      content: '\e688'; // Original chevron icon
       font-family: 'Pe-icon-7-stroke';
     }
   }
 
   // When menu is open, rotate arrow down
   &.vsm-open .vsm-arrow {
-    transform: rotate(0deg);
+    transform: rotate(360deg); // ADD 90 MORE DEGREES TO POINT DOWN (270 + 90 = 360)
   }
 
   & .vsm-dropdown {

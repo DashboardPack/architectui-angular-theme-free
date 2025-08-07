@@ -2,6 +2,32 @@
   "name": "architectui-angular-free",
   "version": "2.0.0",
   "description": "Modern Angular 20 admin dashboard template with Bootstrap 5, Chart.js, and NgRx",
+  "keywords": [
+    "angular",
+    "angular-20",
+    "admin",
+    "dashboard",
+    "template",
+    "bootstrap",
+    "bootstrap-5",
+    "admin-template",
+    "angular-dashboard",
+    "responsive",
+    "chart.js",
+    "ngrx",
+    "typescript",
+    "free",
+    "open-source"
+  ],
+  "author": "DashboardPack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DashboardPack/architectui-angular-free.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DashboardPack/architectui-angular-free/issues"
+  },
+  "homepage": "https://dashboardpack.com",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -75,6 +101,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
     "ts-node": "~10.9.2",
-    "typescript": "~5.8.0"
+    "typescript": "~5.8.3"
   }
 }
