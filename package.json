@@ -32,6 +32,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href /architectui-angular-free/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "echo 'E2E testing can be added with Cypress, Playwright, or WebDriver if needed'"
