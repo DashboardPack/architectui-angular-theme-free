@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, afterNextRender} from '@angular/core';
 import {ThemeOptions} from '../../../theme-options';
 import {Observable} from 'rxjs';
 import { ConfigService } from '../../../ThemeOptions/store/config.service';
@@ -45,11 +45,19 @@ export class SidebarComponent implements OnInit {
   public config$: Observable<ConfigState>;
 
   constructor(
-    public globals: ThemeOptions, 
+    public globals: ThemeOptions,
     private activatedRoute: ActivatedRoute,
     private configService: ConfigService
   ) {
     this.config$ = this.configService.config$;
+
+    // Use afterNextRender for zoneless compatibility (replaces setTimeout)
+    afterNextRender(() => {
+      this.innerWidth = window.innerWidth;
+      if (this.innerWidth < 1200) {
+        this.globals.toggleSidebar = true;
+      }
+    });
   }
 
   private newInnerWidth = 0;
@@ -79,16 +87,9 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.innerWidth = window.innerWidth;
-      if (this.innerWidth < 1200) {
-        this.globals.toggleSidebar = true;
-      }
-    });
-
     // Get the extraParameter from the route to determine which menu should be open
     this.extraParameter = this.activatedRoute.snapshot.firstChild?.data['extraParameter'];
-    
+
     // Initialize open menus based on current route
     if (this.extraParameter) {
       this.openMenus = [this.extraParameter];

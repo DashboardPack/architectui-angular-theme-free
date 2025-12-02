@@ -1,9 +1,5 @@
 {
   "compileOnSave": false,
-  "exclude": [
-    "src/app/DemoPages/Charts/**/*",
-    "src/app/charts.module.ts"
-  ],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -21,11 +17,7 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022",
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "module": "ES2022"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

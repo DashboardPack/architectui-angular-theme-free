@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, signal} from '@angular/core';
 
 @Component({
   selector: 'app-standard',
   templateUrl: './standard.component.html',
-  standalone: false,  styles: []
+  standalone: false,
+  styles: []
 })
 export class StandardComponent {
 
@@ -11,7 +12,8 @@ export class StandardComponent {
   subheading = 'Wide selection of buttons that feature different styles for backgrounds, borders and hover options!';
   icon = 'pe-7s-plane icon-gradient bg-tempting-azure';
 
-  progress: boolean | number = false;
+  // Use signal for zoneless change detection
+  progress = signal<boolean | number>(false);
 
   model = {
     left: true,
@@ -20,23 +22,18 @@ export class StandardComponent {
   };
 
   startLoading() {
-    this.progress = 0; // starts spinner
+    this.progress.set(0); // starts spinner
 
     setTimeout(() => {
-      this.progress = 0.5; // sets progress bar to 50%
+      this.progress.set(0.5); // sets progress bar to 50%
 
       setTimeout(() => {
-        this.progress = 1; // sets progress bar to 100%
+        this.progress.set(1); // sets progress bar to 100%
 
         setTimeout(() => {
-          this.progress = false; // stops spinner
+          this.progress.set(false); // stops spinner
         }, 200);
       }, 500);
     }, 400);
   }
-
-  constructor() {
-  }
-
-
 }

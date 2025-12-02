@@ -1,22 +1,28 @@
 <div class="d-block">
   <canvas baseChart
-          [data]="chartData"
-          [options]="lineChartOptions"
-          [type]="lineChartType"
-          [plugins]="lineChartPlugins"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
+    [data]="chartData"
+    [options]="lineChartOptions"
+    [type]="lineChartType"
+    [plugins]="lineChartPlugins"
+    (chartHover)="chartHovered($event)"
+  (chartClick)="chartClicked($event)"></canvas>
 </div>
 <div class="table-responsive">
   <table class="table mt-3 table-condensed table-hover table-bordered">
     <thead>
-    <tr>
-      <th *ngFor="let label of chartData.labels">{{label}}</th>
-    </tr>
+      <tr>
+        @for (label of chartData.labels; track label) {
+          <th>{{label}}</th>
+        }
+      </tr>
     </thead>
-    <tr *ngFor="let d of chartData.datasets; let i=index" [class]="'line-'+i">
-      <td *ngFor="let label of chartData.labels; let j=index">{{d && d.data[j]}}</td>
-    </tr>
+    @for (d of chartData.datasets; track d; let i = $index) {
+      <tr [class]="'line-'+i">
+        @for (label of chartData.labels; track label; let j = $index) {
+          <td>{{d && d.data[j]}}</td>
+        }
+      </tr>
+    }
   </table>
 </div>
 <div class="text-center">
