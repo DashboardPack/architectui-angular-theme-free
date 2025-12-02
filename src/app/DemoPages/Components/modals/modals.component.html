@@ -7,9 +7,11 @@
         Basic
       </div>
       <div class="card-body">
-        <span *ngIf="closeResult" class="kt-section__sub">
-          <pre>{{closeResult}}</pre>
-        </span>
+        @if (closeResult) {
+          <span class="kt-section__sub">
+            <pre>{{closeResult}}</pre>
+          </span>
+        }
         <div class="divider"></div>
         <ng-template #content let-c="close" let-d="dismiss">
           <div class="modal-header">
@@ -37,10 +39,10 @@
         Scrollable Fixed Content
       </div>
       <div class="card-body">
-        <ng-template #content let-c="close" let-d="dismiss">
+        <ng-template #contentScrollable let-c="close" let-d="dismiss">
           <div class="modal-header">
             <h4 class="modal-title">Scrollable fixed content</h4>
-            <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')">>
+            <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')">
             </button>
           </div>
           <div class="modal-body">
@@ -68,7 +70,7 @@
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </ng-template>
-        <button class="btn btn-primary" (click)="open(content)">Launch demo modal</button>
+        <button class="btn btn-primary" (click)="open(contentScrollable)">Launch demo modal</button>
       </div>
     </div>
     <div class="card main-card mb-3">

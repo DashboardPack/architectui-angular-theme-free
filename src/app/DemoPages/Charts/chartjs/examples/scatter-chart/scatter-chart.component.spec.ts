@@ -1,23 +1,25 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Chart, ScatterController, LinearScale, PointElement, Legend, Tooltip } from 'chart.js';
 
 import { ScatterChartComponent } from './scatter-chart.component';
 import { BaseChartDirective } from 'ng2-charts';
+
+// Register Chart.js components for testing
+Chart.register(ScatterController, LinearScale, PointElement, Legend, Tooltip);
 
 describe('ScatterChartComponent', () => {
   let component: ScatterChartComponent;
   let fixture: ComponentFixture<ScatterChartComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ScatterChartComponent],
       imports: [
         BaseChartDirective,
       ],
     })
       .compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ScatterChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
