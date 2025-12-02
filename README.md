@@ -1,19 +1,20 @@
 # ArchitectUI Angular - Free Admin Dashboard Template
 
-**A modern, responsive admin dashboard template built with Angular 20, Bootstrap 5, and Chart.js**
+**A modern, responsive admin dashboard template built with Angular 21, Bootstrap 5, and Chart.js**
 
 ArchitectUI Angular is a professional admin dashboard template perfect for building modern web applications, SaaS platforms, and administrative interfaces. This free version provides a solid foundation with essential components and features to get your project started quickly.
 
 ## Features
 
-- **Modern Angular 20.1.4** - Built with the latest Angular framework
-- **Bootstrap 5.3.7** - Responsive design with modern Bootstrap components
+- **Angular 21 Zoneless** - Built with the latest Angular framework, fully zoneless for maximum performance
+- **Bootstrap 5.3.8** - Responsive design with modern Bootstrap components
 - **Interactive Charts** - Powered by Chart.js v4 with ng2-charts integration
 - **NgRx State Management** - Centralized state management for scalable applications
-- **TypeScript 5.8.3** - Type-safe development experience
+- **Angular Signals** - Modern reactive state management with signals
+- **TypeScript 5.9.3** - Type-safe development experience
 - **ESLint Integration** - Modern code linting and quality assurance
 - **Mobile Responsive** - Optimized for all device sizes
-- **Clean Code Architecture** - Well-structured, maintainable codebase
+- **98% Smaller Polyfills** - Reduced from 91KB to 1.6KB by removing zone.js
 
 ## What's Included
 
@@ -38,9 +39,9 @@ Check out the live demo: **[ArchitectUI Angular Free Demo](https://demo.dashboar
 
 ### Prerequisites
 
-- Node.js (version 18 or higher)
+- Node.js (version 18.19 or higher, 20.x recommended)
 - npm or yarn
-- Angular CLI
+- Angular CLI 21+
 
 ### Installation
 
@@ -65,7 +66,7 @@ ng serve
 ### Build for Production
 
 ```bash
-ng build --prod
+ng build --configuration production
 ```
 
 The build artifacts will be stored in the `dist/` directory.
