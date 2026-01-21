@@ -1,4 +1,16 @@
 // Header Base
+@use "../../../assets/themes/blue-alt/variables" as theme;
+@use "../../../assets/layout/layout-variables" as *;
+// Modifiers
+
+@use "modifiers/header-dots" as *;
+@use "modifiers/header-userarea" as *;
+@use "header-dropdowns" as *;
+
+// Header Themes
+
+@use "themes/header-light" as *;
+@use "themes/header-dark" as *;
 
 .app-header {
   height: $app-header-height;
@@ -15,7 +27,7 @@
   }
 
   &.header-shadow {
-    box-shadow: $box-shadow-default;
+    box-shadow: theme.$box-shadow-default;
   }
 
   .app-header__content {
@@ -30,7 +42,7 @@
     .app-header-left {
       display: flex;
       align-items: center;
-      padding: 0 0 0 ($layout-spacer-x / 2);
+      padding: 0 0 0 calc(theme.$layout-spacer-x / 2);
       
       .hamburger {
         padding: 10px;
@@ -68,7 +80,7 @@
     }
 
     & > .widget-subheading {
-      font-size: $font-size-xs;
+      font-size: theme.$font-size-xs;
     }
   }
 }
@@ -81,13 +93,4 @@
   align-items: center;
 }
 
-// Modifiers
 
-@import "modifiers/header-dots";
-@import "modifiers/header-userarea";
-@import "header-dropdowns";
-
-// Header Themes
-
-@import "themes/header-light";
-@import "themes/header-dark";

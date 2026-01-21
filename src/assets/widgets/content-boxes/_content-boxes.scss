@@ -1,5 +1,5 @@
 // Content Boxes
-
+@use "../../../setup" as *;
 // Variables
 
 $widget-spacer: $spacer;
@@ -48,7 +48,7 @@ $widget-spacer: $spacer;
     margin-top: $widget-spacer;
 
     .progress-sub-label {
-      margin-top: ($widget-spacer / 3);
+      margin-top: calc($widget-spacer / 3);
       opacity: .5;
       display: flex;
       align-content: center;

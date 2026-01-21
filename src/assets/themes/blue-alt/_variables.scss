@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use "sass:map";
+
 // GENERIC
 
 $enable-caret: true;
@@ -26,7 +29,7 @@ $black: #000;
 
 $grays: ();
 
-$grays: map-merge(
+$grays: map.merge(
                 (
                         "100": $gray-100,
                         "200": $gray-200,
@@ -80,7 +83,7 @@ $custom-colors: (
   "alternate": $alt
 );
 
-$theme-colors: map-merge( $theme-colors, $custom-colors);
+$theme-colors: map.merge( $theme-colors, $custom-colors);
 
 
 // BOOTSTRAP OVERWRITES
@@ -88,9 +91,9 @@ $theme-colors: map-merge( $theme-colors, $custom-colors);
 $headings-font-weight: 400;
 
 $font-size-base: 0.88rem;
-$font-size-lg: ($font-size-base * 1.35);
-$font-size-sm: ($font-size-base * 1.1);
-$font-size-xs: ($font-size-base / 1.1);
+$font-size-lg: calc($font-size-base * 1.35);
+$font-size-sm: calc($font-size-base * 1.1);
+$font-size-xs: calc($font-size-base / 1.1);
 
 $btn-transition: color .15s, background-color .15s, border-color .15s, box-shadow .15s;
 $btn-focus-width: 0;
@@ -101,27 +104,27 @@ $pagination-focus-box-shadow: none;
 $body-color: $gray-700;
 
 $card-cap-bg: $white;
-$card-border-color: rgba(darken($primary, 25%), .125);
+$card-border-color: rgba(color.scale($primary, $lightness: -25%), .125);
 
 $dropdown-min-width: 15rem;
 $dropdown-link-hover-bg: #d1f3ff;
 $dropdown-item-padding-y: .4rem;
 $dropdown-padding-y: .65rem;
 
-$box-shadow-default: 0 0.46875rem 2.1875rem rgba(darken($primary, 50%), .03), 0 0.9375rem 1.40625rem rgba(darken($primary, 50%), .03), 0 0.25rem 0.53125rem rgba(darken($primary, 50%), .05), 0 0.125rem 0.1875rem rgba(darken($primary, 50%), .03);
+$box-shadow-default: 0 0.46875rem 2.1875rem rgba(color.scale($primary, $lightness: -50%), .03), 0 0.9375rem 1.40625rem rgba(color.scale($primary, $lightness: -50%), .03), 0 0.25rem 0.53125rem rgba(color.scale($primary, $lightness: -50%), .05), 0 0.125rem 0.1875rem rgba(color.scale($primary, $lightness: -50%), .03);
 
-$box-shadow-default-right: 0.46875rem 0 2.1875rem rgba(darken($primary, 50%), .03),
-0.9375rem 0 1.40625rem rgba(darken($primary, 50%), .03),
-0.25rem 0 0.53125rem rgba(darken($primary, 50%), .05),
-0.125rem 0 0.1875rem rgba(darken($primary, 50%), .03);
+$box-shadow-default-right: 0.46875rem 0 2.1875rem rgba(color.scale($primary, $lightness: -50%), .03),
+0.9375rem 0 1.40625rem rgba(color.scale($primary, $lightness: -50%), .03),
+0.25rem 0 0.53125rem rgba(color.scale($primary, $lightness: -50%), .05),
+0.125rem 0 0.1875rem rgba(color.scale($primary, $lightness: -50%), .03);
 
-$box-shadow-default-inverse: 0 -0.46875rem 2.1875rem rgba(darken($primary, 50%), .03), 0 -0.9375rem 1.40625rem rgba(darken($primary, 50%), .03), 0 -0.25rem 0.53125rem rgba(darken($primary, 50%), .05), 0 -0.125rem 0.1875rem rgba(darken($primary, 50%), .03);
+$box-shadow-default-inverse: 0 -0.46875rem 2.1875rem rgba(color.scale($primary, $lightness: -50%), .03), 0 -0.9375rem 1.40625rem rgba(color.scale($primary, $lightness: -50%), .03), 0 -0.25rem 0.53125rem rgba(color.scale($primary, $lightness: -50%), .05), 0 -0.125rem 0.1875rem rgba(color.scale($primary, $lightness: -50%), .03);
 
-$box-shadow-lg-default: 0 0.76875rem 2.4875rem rgba($gray-800, .3), 0 1.3375rem 1.70625rem rgba($gray-800, .3), 0 0.55rem 0.53125rem rgba(darken($gray-800, 50%), .05), 0 0.225rem 0.4375rem rgba($gray-800, .3);
+$box-shadow-lg-default: 0 0.76875rem 2.4875rem rgba($gray-800, .3), 0 1.3375rem 1.70625rem rgba($gray-800, .3), 0 0.55rem 0.53125rem rgba(color.scale($gray-800, $lightness: -50%), .05), 0 0.225rem 0.4375rem rgba($gray-800, .3);
 
 $form-check-input-margin-y: 0.3rem;
 
-$input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
+$input-group-addon-bg: color.scale($dropdown-link-hover-bg, $lightness:  3%);
 
 // Tables
 
@@ -150,18 +153,20 @@ $form-feedback-valid-color: $success;
 $form-feedback-invalid-color: $danger;
 $progress-bar-bg: $primary;
 $input-btn-focus-color: rgba($component-active-bg, .25);
-$input-focus-border-color: lighten($component-active-bg, 25%);
+$input-focus-border-color: color.scale($component-active-bg, $lightness:  25%);
 $custom-control-indicator-checked-bg: $component-active-bg;
-$custom-control-indicator-active-bg: lighten($component-active-bg, 35%);
+$custom-control-indicator-active-bg: color.scale($component-active-bg, $lightness:  35%);
 $custom-checkbox-indicator-indeterminate-bg: $component-active-bg;
 $custom-range-thumb-bg: $component-active-bg;
-$custom-range-thumb-active-bg: lighten($component-active-bg, 35%);
+$custom-range-thumb-active-bg: color.scale($component-active-bg, $lightness:  35%);
 $dropdown-link-active-bg: $component-active-bg;
 $nav-pills-link-active-bg: $component-active-bg;
 $pagination-active-bg: $component-active-bg;
 $list-group-active-bg: $component-active-bg;
 
 $list-group-border-color: rgba($primary, .08);
+
+$layout-spacer-x: 1.5rem;
 
 // Mixins
 

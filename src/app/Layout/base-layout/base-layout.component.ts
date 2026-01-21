@@ -1,7 +1,9 @@
-import {Component, afterNextRender} from '@angular/core';
-import {Observable} from 'rxjs';
+import { Component, afterNextRender } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ConfigService } from '../../ThemeOptions/store/config.service';
-import {ThemeOptions} from '../../theme-options';
+import { ThemeOptions } from '../../theme-options';
+import * as bootstrap from 'bootstrap';
+(window as any).bootstrap = bootstrap;
 
 @Component({
   selector: 'app-base-layout',
@@ -19,24 +21,30 @@ export class BaseLayoutComponent {
     private configService: ConfigService
   ) {
     this.config$ = this.configService.config$;
+  }
 
-    // Use afterNextRender for zoneless compatibility (replaces setTimeout + detectChanges)
-    afterNextRender(() => {
-      if (typeof window !== 'undefined' && (window as any).bootstrap) {
-        // Initialize any Bootstrap tooltips, popovers, etc. that might cause layout shifts
-        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new (window as any).bootstrap.Tooltip(tooltipTriggerEl);
-        });
-      }
-
-      // Re-enable animations after layout is stable
-      document.body.classList.add('animations-ready');
+  ngAfterContentInit() {
+    queueMicrotask(() => {
+      this.initializeTooltips();
     });
   }
 
+  initializeTooltips() {
+    if (typeof window !== 'undefined' && (window as any).bootstrap) {
+      const tooltipTriggerList = Array.from(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      tooltipTriggerList.forEach(el =>
+        new (window as any).bootstrap.Tooltip(el)
+      );
+    }
+
+    document.body.classList.add('animations-ready');
+  }
+
+
   toggleSidebarMobile() {
-    this.globals.toggleSidebarMobile = !this.globals.toggleSidebarMobile;
+    this.globals.toggleSidebarMobile.set(!this.globals.toggleSidebarMobile());
   }
 }
 

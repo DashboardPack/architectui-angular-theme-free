@@ -1,10 +1,11 @@
 // DEMO
-
+@use "../../setup" as *;
+@use "../../assets/themes/blue-alt/variables" as theme;
 // Icons demo
 
 .font-icon-wrapper {
   text-align: center;
-  border: $gray-200 solid 1px;
+  border: theme.$gray-200 solid 1px;
   @include border-radius($border-radius);
   margin: 0 0 10px;
   padding: 5px;
@@ -36,7 +37,7 @@
 
   p {
     color: $gray-500;
-    font-size: ($font-size-sm / 1.2);
+    font-size: calc($font-size-sm / 1.2);
     margin: 5px 0 0;
   }
 }
@@ -77,7 +78,7 @@
   height: 150px;
   line-height: 150px;
   text-align: center;
-  margin: 0 $layout-spacer-x;
+  margin: 0 theme.$layout-spacer-x;
   transition: all .2s;
 }
 

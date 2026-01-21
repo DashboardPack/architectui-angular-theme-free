@@ -1,5 +1,6 @@
 // Modals
-
+@use "../../assets/themes/blue-alt/variables" as theme;
+@use "../../setup" as *;
 .modal-header,
 .modal-footer {
   background: $gray-100;
@@ -10,6 +11,6 @@
 }
 
 .modal-dialog {
-  box-shadow: $box-shadow-lg-default;
+  box-shadow: theme.$box-shadow-lg-default;
   @include border-radius($border-radius);
 }

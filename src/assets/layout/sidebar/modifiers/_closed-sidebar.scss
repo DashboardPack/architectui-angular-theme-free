@@ -1,3 +1,6 @@
+@use "../../../../setup" as *;
+@use "../../../../assets/themes/blue-alt/variables" as theme;
+@use "../../layout-variables" as *;
 // Closed Sidebar
 
 @keyframes fadeInScale {
@@ -58,7 +61,7 @@
 
 
     .v-sidebar-menu {
-      padding: 0 ($layout-spacer-x / 3);
+      padding: 0 calc(theme.$layout-spacer-x / 3);
 
       .vsm-dropdown {
         display: none;

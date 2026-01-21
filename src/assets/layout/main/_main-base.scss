@@ -1,3 +1,7 @@
+@use "../../../setup" as *;
+@use "../layout-variables" as *;
+
+@use "themes/main-white";
 // Main Base
 
 .app-main__outer {
@@ -16,4 +20,4 @@
 
 // Themes
 
-@import "themes/main-white";
+

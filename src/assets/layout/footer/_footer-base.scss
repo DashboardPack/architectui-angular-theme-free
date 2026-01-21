@@ -1,10 +1,11 @@
 // Footer base
+@use "../layout-variables" as *;
 
 .app-footer {
   height: $app-header-height;
 
   .app-footer__inner {
-    padding: 0 $layout-spacer-x 0 ($layout-spacer-x / 2);
+    padding: 0 $layout-spacer-x 0 calc($layout-spacer-x / 2);
     height: $app-header-height;
 
     display: flex;

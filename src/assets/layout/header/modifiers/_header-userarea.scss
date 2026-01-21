@@ -1,8 +1,10 @@
+@use "../../../../setup" as *;
+@use "../../../../assets/themes/blue-alt/variables" as theme;
 // Header User Area
 
 .header-btn-lg {
-  padding: 0 0 0 ($layout-spacer-x);
-  margin-left: ($layout-spacer-x);
+  padding: 0 0 0 (theme.$layout-spacer-x);
+  margin-left: (theme.$layout-spacer-x);
   display: flex;
   align-items: center;
   position: relative;

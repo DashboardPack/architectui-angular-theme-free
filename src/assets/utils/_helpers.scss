@@ -1,6 +1,8 @@
 // Helpers imports
-@import "helpers/opacity";
-@import "helpers/grayscale";
+@use "../../setup" as *;
+@forward "helpers/opacity";
+@forward "helpers/grayscale";
+$border-radius: 0.5rem;
 
 // Resets
 

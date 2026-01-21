@@ -1,5 +1,6 @@
 // Tooltips & Popovers
 
+@use "../../assets/themes/blue-alt/variables" as theme;
 .popover,
 .tooltip {
   opacity: 0;
@@ -13,5 +14,5 @@
 // Popover
 
 .popover {
-  box-shadow: $box-shadow-default;
+  box-shadow: theme.$box-shadow-default;
 }

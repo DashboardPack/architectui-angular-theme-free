@@ -1,3 +1,6 @@
+@use "../../setup" as *;
+@use "../../assets/themes/blue-alt/variables" as theme;
+
 .vertical-timeline {
   width: 100%;
   position: relative;
@@ -43,7 +46,7 @@
 .vertical-timeline-element-content {
   position: relative;
   margin-left: 90px;
-  font-size: $font-size-xs;
+  font-size: theme.$font-size-xs;
 
   &:after {
     content: "";
@@ -52,16 +55,16 @@
   }
 
   .timeline-title {
-    font-size: $font-size-xs;
+    font-size: theme.$font-size-xs;
     text-transform: uppercase;
-    margin: 0 0 ($spacer / 2);
+    margin: 0 0 calc($spacer / 2);
     padding: 2px 0 0;
     font-weight: bold;
   }
 
   p {
     color: $gray-600;
-    margin: 0 0 ($spacer / 2);
+    margin: 0 0 calc($spacer / 2);
   }
 
   .vertical-timeline-element-date {
@@ -72,7 +75,7 @@
     padding-right: 10px;
     text-align: right;
     color: $gray-500;
-    font-size: $font-size-xs / 1.05;
+    font-size: calc(theme.$font-size-xs / 1.05);
     white-space: nowrap;
   }
 }
@@ -167,15 +170,15 @@
 // Simple Dots Timeline
 
 .vertical-time-simple {
-  padding: ($spacer / 2) 0;
+  padding: calc($spacer / 2) 0;
 
   .vertical-timeline-element {
-    margin: 0 0 ($spacer / 2);
+    margin: 0 0 calc($spacer / 2);
   }
 
   .timeline-title {
     font-weight: normal;
-    font-size: $font-size-lg / 1.2;
+    font-size: calc($font-size-lg / 1.2);
     padding: 0;
   }
 
@@ -231,40 +234,6 @@
   animation: cd-bounce-1 .8s
 }
 
-@-webkit-keyframes cd-bounce-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(.5)
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale(1.2)
-  }
-
-  100% {
-    -webkit-transform: scale(1)
-  }
-
-}
-
-@-moz-keyframes cd-bounce-1 {
-  0% {
-    opacity: 0;
-    -moz-transform: scale(.5)
-  }
-
-  60% {
-    opacity: 1;
-    -moz-transform: scale(1.2)
-  }
-
-  100% {
-    -moz-transform: scale(1)
-  }
-
-}
-
 @keyframes cd-bounce-1 {
   0% {
     opacity: 0;
@@ -272,7 +241,7 @@
     -moz-transform: scale(.5);
     -ms-transform: scale(.5);
     -o-transform: scale(.5);
-    transform: scale(.5)
+    transform: scale(.5);
   }
 
   60% {
@@ -281,7 +250,7 @@
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
-    transform: scale(1.2)
+    transform: scale(1.2);
   }
 
   100% {
@@ -289,7 +258,7 @@
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
-    transform: scale(1)
+    transform: scale(1);
   }
 
 }
@@ -306,7 +275,9 @@
 }
 
 @media only screen and (min-width: 1170px) {
-  .vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content.bounce-in, .vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content.bounce-in {
+
+  .vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content.bounce-in,
+  .vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse .6s;
     -moz-animation: cd-bounce-2-inverse .6s;
     animation: cd-bounce-2-inverse .6s
@@ -324,40 +295,6 @@
 
 }
 
-@-webkit-keyframes cd-bounce-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-100px)
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(20px)
-  }
-
-  100% {
-    -webkit-transform: translateX(0)
-  }
-
-}
-
-@-moz-keyframes cd-bounce-2 {
-  0% {
-    opacity: 0;
-    -moz-transform: translateX(-100px)
-  }
-
-  60% {
-    opacity: 1;
-    -moz-transform: translateX(20px)
-  }
-
-  100% {
-    -moz-transform: translateX(0)
-  }
-
-}
-
 @keyframes cd-bounce-2 {
   0% {
     opacity: 0;
@@ -365,7 +302,7 @@
     -moz-transform: translateX(-100px);
     -ms-transform: translateX(-100px);
     -o-transform: translateX(-100px);
-    transform: translateX(-100px)
+    transform: translateX(-100px);
   }
 
   60% {
@@ -374,7 +311,7 @@
     -moz-transform: translateX(20px);
     -ms-transform: translateX(20px);
     -o-transform: translateX(20px);
-    transform: translateX(20px)
+    transform: translateX(20px);
   }
 
   100% {
@@ -382,44 +319,11 @@
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
-    transform: translateX(0)
+    transform: translateX(0);
   }
 
 }
 
-@-webkit-keyframes cd-bounce-2-inverse {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100px)
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(-20px)
-  }
-
-  100% {
-    -webkit-transform: translateX(0)
-  }
-
-}
-
-@-moz-keyframes cd-bounce-2-inverse {
-  0% {
-    opacity: 0;
-    -moz-transform: translateX(100px)
-  }
-
-  60% {
-    opacity: 1;
-    -moz-transform: translateX(-20px)
-  }
-
-  100% {
-    -moz-transform: translateX(0)
-  }
-
-}
 
 @keyframes cd-bounce-2-inverse {
   0% {
@@ -428,7 +332,7 @@
     -moz-transform: translateX(100px);
     -ms-transform: translateX(100px);
     -o-transform: translateX(100px);
-    transform: translateX(100px)
+    transform: translateX(100px);
   }
 
   60% {
@@ -437,7 +341,7 @@
     -moz-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     -o-transform: translateX(-20px);
-    transform: translateX(-20px)
+    transform: translateX(-20px);
   }
 
   100% {
@@ -445,7 +349,7 @@
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
-    transform: translateX(0)
+    transform: translateX(0);
   }
 
 }

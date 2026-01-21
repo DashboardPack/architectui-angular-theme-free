@@ -1,10 +1,12 @@
 // Search Box
-
+@use "../../../../setup" as *;
 $search-box-size: 42px;
+$nav-link-padding-x: 15px;
+$font-size-base : 0.88rem;  
 
 .search-wrapper {
   position: relative;
-  margin-right: ($nav-link-padding-x / 1.5);
+  margin-right: calc($nav-link-padding-x / 1.5);
   opacity: 0;
   animation: searchReveal 0.5s ease-out 0.3s forwards;
 

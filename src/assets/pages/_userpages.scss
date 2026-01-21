@@ -1,5 +1,6 @@
 // User Pages
-
+@use "../../assets/layout/layout-variables" as *;
+@use "../../assets/themes/blue-alt/variables" as theme;
 .app-logo {
   height: $logo-height;
   width: $logo-width;
@@ -26,7 +27,7 @@
     }
 
     span {
-      font-size: $font-size-lg;
+      font-size: theme.$font-size-lg;
     }
   }
 }

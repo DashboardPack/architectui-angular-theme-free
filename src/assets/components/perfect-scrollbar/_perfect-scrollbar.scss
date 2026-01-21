@@ -1,3 +1,5 @@
+@use "../../../setup" as *;
+@use "../../../assets/themes/blue-alt/variables" as theme;
 // Scrollbar
 
 .scrollbar-sidebar,
@@ -48,7 +50,7 @@
     bottom: auto;
     top: 0;
     left: 0;
-    height: $layout-spacer-x;
+    height: theme.$layout-spacer-x;
     position: absolute;
     z-index: 10;
     content: '';

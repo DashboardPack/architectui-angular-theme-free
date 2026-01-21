@@ -1,5 +1,7 @@
 // Chart boxes
-
+@use "../../../setup" as *;
+@use "sass:color";
+@use "../../../assets/themes/blue-alt/variables" as theme;
 // Variables
 
 $widget-spacer: $spacer;
@@ -25,7 +27,7 @@ $widget-spacer: $spacer;
     margin-right: $widget-spacer;
 
     .react-sweet-progress-symbol {
-      font-size: $font-size-xs;
+      font-size: theme.$font-size-xs;
     }
   }
 
@@ -63,7 +65,7 @@ $widget-spacer: $spacer;
     & + .widget-chart-flex,
     & + .widget-description,
     & + .widget-subheading {
-      margin-top: -($widget-spacer / 2);
+      margin-top: (-(calc($widget-spacer / 2)));
     }
   }
 
@@ -77,7 +79,7 @@ $widget-spacer: $spacer;
     }
 
     & + .widget-numbers {
-      margin-top: ($widget-spacer / 2);
+      margin-top: calc($widget-spacer / 2);
     }
   }
 
@@ -91,10 +93,10 @@ $widget-spacer: $spacer;
     &:hover {
       z-index: 15;
       transform: scale(1.15);
-      box-shadow: 0 0.46875rem 4.1875rem rgba(darken($primary, 50%), .05),
-      0 0.9375rem 2.40625rem rgba(darken($primary, 50%), .05),
-      0 0.25rem 1.3125rem rgba(darken($primary, 50%), .06),
-      0 0.125rem 1.1875rem rgba(darken($primary, 50%), .06);
+      box-shadow: 0 0.46875rem 4.1875rem rgba(color.scale($primary, $lightness: -50%), .05),
+      0 0.9375rem 2.40625rem rgba(color.scale($primary, $lightness: -50%), .05),
+      0 0.25rem 1.3125rem rgba(color.scale($primary, $lightness: -50%), .06),
+      0 0.125rem 1.1875rem rgba(color.scale($primary, $lightness: -50%), .06);
       cursor: pointer;
       background: $white;
     }
@@ -102,8 +104,8 @@ $widget-spacer: $spacer;
 
   .widget-chart-actions {
     position: absolute;
-    right: $widget-spacer / 2;
-    top: $widget-spacer / 2;
+    right: calc($widget-spacer / 2);
+    top: calc($widget-spacer / 2);
     z-index: 12;
 
     .btn-link {
@@ -319,7 +321,7 @@ $widget-spacer: $spacer;
       height: 70px;
       opacity: .8;
       position: relative;
-      margin: $widget-spacer auto (-($widget-spacer / 2));
+      margin: $widget-spacer auto (-(calc($widget-spacer / 2)));
     }
 
     .widget-chart-wrapper-lg {
@@ -348,7 +350,7 @@ $widget-spacer: $spacer;
     font-weight: bold;
     opacity: .6;
     text-transform: uppercase;
-    padding-bottom: ($widget-spacer / 3)
+    padding-bottom: calc($widget-spacer / 3)
   }
 
   svg {

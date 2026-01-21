@@ -31,19 +31,19 @@ export class HeaderComponent {
 
 
   toggleSidebar() {
-    this.globals.toggleSidebar = !this.globals.toggleSidebar;
+    this.globals.toggleSidebar.set(!this.globals.toggleSidebar());
     // Clear hover state when toggling
-    if (this.globals.toggleSidebar) {
-      this.globals.sidebarHover = false;
+    if (this.globals.toggleSidebar()) {
+      this.globals.sidebarHover.set(false);
     }
   }
 
   toggleSidebarMobile() {
-    this.globals.toggleSidebarMobile = !this.globals.toggleSidebarMobile;
+    this.globals.toggleSidebarMobile.set(!this.globals.toggleSidebarMobile());
   }
 
   toggleHeaderMobile() {
-    this.globals.toggleHeaderMobile = !this.globals.toggleHeaderMobile;
+    this.globals.toggleHeaderMobile.set(!this.globals.toggleHeaderMobile());
   }
 
 }
