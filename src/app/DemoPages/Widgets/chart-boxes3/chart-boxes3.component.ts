@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, viewChild} from '@angular/core';
 import { ChartData, ChartDataset, ChartOptions, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -14,7 +14,7 @@ export class ChartBoxes3Component {
   subheading = 'Highly configurable boxes best used for showing numbers in an user friendly way.';
   icon = 'pe-7s-wallet icon-gradient bg-plum-plate';
 
-  @ViewChild(BaseChartDirective, { static: false }) chart!: BaseChartDirective;
+  readonly chart = viewChild.required(BaseChartDirective);
 
   constructor() {
     // Generate sample data
@@ -218,8 +218,9 @@ export class ChartBoxes3Component {
   // Update data method
   public refreshData(): void {
     this.generateSampleData();
-    if (this.chart) {
-      this.chart.update();
+    const chart = this.chart();
+    if (chart) {
+      chart.update();
     }
   }
 }

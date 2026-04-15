@@ -1,9 +1,9 @@
 <div [ngClass]="{
-'closed-sidebar' : globals.toggleSidebar,
-'closed-sidebar-md' : globals.toggleSidebarMobile,
-'closed-sidebar-open': globals.sidebarHover || globals.toggleSidebarMobile,
-'header-menu-open' : globals.toggleHeaderMobile,
-'fixed-footer' : globals.toggleFixedFooter
+'closed-sidebar' : globals.toggleSidebar(),
+'closed-sidebar-md' : globals.toggleSidebarMobile(),
+'closed-sidebar-open': globals.sidebarHover() || globals.toggleSidebarMobile(),
+'header-menu-open' : globals.toggleHeaderMobile(),
+'fixed-footer' : globals.toggleFixedFooter()
 }" [class]="'app-container app-theme-white'">
   <app-header></app-header>
   <app-sidebar></app-sidebar>

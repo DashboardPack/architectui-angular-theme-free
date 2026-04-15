@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, viewChild } from '@angular/core';
 import { ChartConfiguration, ChartType, ChartEvent, ActiveElement } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -84,7 +84,7 @@ export class LineChartComponent {
   public lineChartType: ChartType = 'line';
   public lineChartPlugins = [];
 
-  @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   constructor() { }
 
@@ -95,7 +95,7 @@ export class LineChartComponent {
         this.chartData.datasets[i].data[j] = this.generateNumber(i);
       }
     }
-    this.chart?.update();
+    this.chart()?.update();
   }
 
   private generateNumber(i: number) {
@@ -110,8 +110,8 @@ export class LineChartComponent {
   }
 
   public hideOne() {
-    const isHidden = this.chart.isDatasetHidden(1);
-    this.chart.hideDataset(1, !isHidden);
+    const isHidden = this.chart().isDatasetHidden(1);
+    this.chart().hideDataset(1, !isHidden);
   }
 
   public pushOne() {
