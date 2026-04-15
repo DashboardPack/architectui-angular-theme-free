@@ -49,7 +49,7 @@ export class PieChartComponent {
       'patrol', 'satisfied', 'academy', 'acceptance', 'ivory', 'aquarium', 'building', 'store', 'replace', 'language',
       'redeem', 'honest', 'intention', 'silk', 'opera', 'sleep', 'innocent', 'ignore', 'suite', 'applaud', 'funny'];
     const randomWord = () => words[Math.trunc(Math.random() * words.length)];
-    this.chartData.labels = Array.apply(null, { length: 3 }).map(_ => randomWord());
+    this.chartData.labels = Array.from({ length: 3 }, () => randomWord());
   }
 
   addSlice() {

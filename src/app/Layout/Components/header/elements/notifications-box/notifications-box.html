@@ -12,8 +12,8 @@
         <small class="text-muted">{{ unreadCount }} new</small>
       </div>
       <div style="max-height: 300px; overflow-y: auto;">
-        @for (notification of notifications; track notification) {
-          <a href="#" class="dropdown-item d-flex align-items-start py-2">
+        @for (notification of notifications; track notification.id) {
+          <button type="button" class="dropdown-item d-flex align-items-start py-2">
             <div class="me-3">
               <div class="icon-circle" [ngClass]="notification.iconBg">
                 <i [class]="notification.icon" style="font-size: 14px;"></i>
@@ -23,12 +23,12 @@
               <div class="small text-gray-500">{{ notification.time }}</div>
               <span [class.fw-bold]="!notification.read">{{ notification.message }}</span>
             </div>
-          </a>
+          </button>
         }
       </div>
-      <a href="#" class="dropdown-item text-center small text-primary py-2 border-top">
+      <button type="button" class="dropdown-item text-center small text-primary py-2 border-top">
         View All
-      </a>
+      </button>
     </div>
   </div>
 </div>

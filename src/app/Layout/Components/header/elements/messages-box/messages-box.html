@@ -12,8 +12,8 @@
         <small class="text-muted">{{ unreadCount }} unread</small>
       </div>
       <div style="max-height: 300px; overflow-y: auto;">
-        @for (message of messages; track message) {
-          <a href="#" class="dropdown-item d-flex align-items-center py-2">
+        @for (message of messages; track message.id) {
+          <button type="button" class="dropdown-item d-flex align-items-center py-2">
             <img [src]="message.avatar" alt="" class="rounded-circle me-3" width="40">
             <div class="flex-grow-1">
               <div class="d-flex justify-content-between">
@@ -24,12 +24,12 @@
                 {{ message.preview }}
               </p>
             </div>
-          </a>
+          </button>
         }
       </div>
-      <a href="#" class="dropdown-item text-center small text-primary py-2 border-top">
+      <button type="button" class="dropdown-item text-center small text-primary py-2 border-top">
         View All Messages
-      </a>
+      </button>
     </div>
   </div>
 </div>

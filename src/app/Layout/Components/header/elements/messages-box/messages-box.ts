@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-messages-box',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messages-box.scss'],
   standalone: false
 })
-export class MessagesBoxComponent implements OnInit {
+export class MessagesBoxComponent {
   messages = [
     {
       id: 1,
@@ -44,10 +44,5 @@ export class MessagesBoxComponent implements OnInit {
 
   get unreadCount(): number {
     return this.messages.filter(m => !m.read).length;
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
   }
 }
