@@ -7,10 +7,11 @@ ArchitectUI Angular is a professional admin dashboard template perfect for build
 ## Features
 
 - **Angular 21 Zoneless** - Built with the latest Angular framework, fully zoneless for maximum performance
-- **Bootstrap 5.3.8** - Responsive design with modern Bootstrap components
-- **Interactive Charts** - Powered by Chart.js v4 with ng2-charts integration
-- **NgRx State Management** - Centralized state management for scalable applications
-- **Angular Signals** - Modern reactive state management with signals
+- **Bootstrap 5.3.8** - Loaded directly from npm with theme variable overrides; no vendored copy to maintain
+- **Font Awesome 7** - Latest icon set via `@fortawesome/fontawesome-free@7`, no v4 compatibility shim
+- **Interactive Charts** - Powered by Chart.js v4 with ng2-charts v10
+- **NgRx 21 State Management** - Centralized state management aligned with Angular 21
+- **Angular Signals everywhere** - Shared UI state and `viewChild()` queries use signals for true zoneless reactivity
 - **TypeScript 5.9.3** - Type-safe development experience
 - **ESLint Integration** - Modern code linting and quality assurance
 - **Mobile Responsive** - Optimized for all device sizes
@@ -188,7 +189,18 @@ Visit [DashboardPack.com](https://dashboardpack.com) for more premium admin dash
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes and updates.
+See [CHANGELOG.md](CHANGELOG.md) for the full change history.
+
+The current release (3.2.0) brings:
+
+- Font Awesome 4 → **Font Awesome 7** (no compatibility shim; classes are pure FA7)
+- Vendored Bootstrap 5.0.2 SCSS removed; theme now layers overrides on top of npm **Bootstrap 5.3.8**
+- All shared UI state on `ThemeOptions` is now `signal<boolean>`; chart `@ViewChild` queries migrated to `viewChild()`
+- NgRx bumped to **21.1.0** so a fresh `npm install` works again (fixes [#35](https://github.com/DashboardPack/architectui-angular-theme-free/issues/35))
+- ng2-charts → 10, jasmine-core → 6, `@types/node` → 25
+- Header dropdown items are now `<button>` elements (a11y), not `<a href="#">`
+- Dead components and empty lifecycle hooks removed; `any` types tightened in shared layout code
+- `npm run lint` is clean (0 errors, 0 warnings)
 
 ## License
 

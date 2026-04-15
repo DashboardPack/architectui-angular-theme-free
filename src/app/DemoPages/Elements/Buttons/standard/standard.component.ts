@@ -21,19 +21,15 @@ export class StandardComponent {
     right: false
   };
 
-  startLoading() {
-    this.progress.set(0); // starts spinner
+  async startLoading() {
+    const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-    setTimeout(() => {
-      this.progress.set(0.5); // sets progress bar to 50%
-
-      setTimeout(() => {
-        this.progress.set(1); // sets progress bar to 100%
-
-        setTimeout(() => {
-          this.progress.set(false); // stops spinner
-        }, 200);
-      }, 500);
-    }, 400);
+    this.progress.set(0);
+    await wait(400);
+    this.progress.set(0.5);
+    await wait(500);
+    this.progress.set(1);
+    await wait(200);
+    this.progress.set(false);
   }
 }

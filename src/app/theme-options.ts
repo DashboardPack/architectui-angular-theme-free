@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeOptions {
-  sidebarHover = false;
-  toggleSidebar = false;
-  toggleSidebarMobile = false;
-  toggleHeaderMobile = false;
-  toggleFixedFooter = false;
+  sidebarHover = signal(false);
+  toggleSidebar = signal(false);
+  toggleSidebarMobile = signal(false);
+  toggleHeaderMobile = signal(false);
+  toggleFixedFooter = signal(false);
 }

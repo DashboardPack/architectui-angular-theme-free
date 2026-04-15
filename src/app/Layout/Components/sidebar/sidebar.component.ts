@@ -36,7 +36,7 @@ import {ActivatedRoute} from '@angular/router';
   `]
 })
 export class SidebarComponent implements OnInit {
-  public extraParameter: any;
+  public extraParameter: string | undefined;
   public openMenus: string[] = [];
   
   // Supported menu types: dashboardsMenu, pagesMenu, elementsMenu, componentsMenu, 
@@ -51,11 +51,10 @@ export class SidebarComponent implements OnInit {
   ) {
     this.config$ = this.configService.config$;
 
-    // Use afterNextRender for zoneless compatibility (replaces setTimeout)
     afterNextRender(() => {
       this.innerWidth = window.innerWidth;
       if (this.innerWidth < 1200) {
-        this.globals.toggleSidebar = true;
+        this.globals.toggleSidebar.set(true);
       }
     });
   }
@@ -65,24 +64,21 @@ export class SidebarComponent implements OnInit {
   activeId = 'dashboardsMenu';
 
   toggleSidebar() {
-    this.globals.toggleSidebar = !this.globals.toggleSidebar;
-    // If we're closing the sidebar, also clear the hover state
-    if (this.globals.toggleSidebar) {
-      this.globals.sidebarHover = false;
+    this.globals.toggleSidebar.set(!this.globals.toggleSidebar());
+    if (this.globals.toggleSidebar()) {
+      this.globals.sidebarHover.set(false);
     }
   }
 
   onSidebarMouseEnter() {
-    // Only allow hover to open sidebar if it's in collapsed state
-    if (this.globals.toggleSidebar) {
-      this.globals.sidebarHover = true;
+    if (this.globals.toggleSidebar()) {
+      this.globals.sidebarHover.set(true);
     }
   }
 
   onSidebarMouseLeave() {
-    // Only remove hover state if sidebar is in collapsed state
-    if (this.globals.toggleSidebar) {
-      this.globals.sidebarHover = false;
+    if (this.globals.toggleSidebar()) {
+      this.globals.sidebarHover.set(false);
     }
   }
 
@@ -107,22 +103,15 @@ export class SidebarComponent implements OnInit {
   }
 
   onNavigate() {
-    // Close sidebar on mobile when navigating
     if (window.innerWidth < 1200) {
-      this.globals.toggleSidebarMobile = true;
-      this.globals.sidebarHover = false;
+      this.globals.toggleSidebarMobile.set(true);
+      this.globals.sidebarHover.set(false);
     }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.newInnerWidth = (event.target as Window).innerWidth;
-
-    if (this.newInnerWidth < 1200) {
-      this.globals.toggleSidebar = true;
-    } else {
-      this.globals.toggleSidebar = false;
-    }
-
+    this.globals.toggleSidebar.set(this.newInnerWidth < 1200);
   }
 }

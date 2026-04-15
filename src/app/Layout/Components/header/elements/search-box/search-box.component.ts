@@ -1,16 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-search-box',
   templateUrl: './search-box.component.html',
-  standalone: false,})
-export class SearchBoxComponent implements OnInit {
-
-  public isActive: any;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  standalone: false,
+})
+export class SearchBoxComponent {
+  public isActive = false;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-notifications-box',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notifications-box.scss'],
   standalone: false
 })
-export class NotificationsBoxComponent implements OnInit {
+export class NotificationsBoxComponent {
   notifications = [
     {
       id: 1,
@@ -44,10 +44,5 @@ export class NotificationsBoxComponent implements OnInit {
 
   get unreadCount(): number {
     return this.notifications.filter(n => !n.read).length;
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
   }
 }

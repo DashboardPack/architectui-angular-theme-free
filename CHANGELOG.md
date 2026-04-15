@@ -5,6 +5,79 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0] - 2026-04-15
+
+### Font Awesome 4 to Font Awesome 7, Bootstrap 5.3.8 consolidation, signals everywhere
+
+This release removes two major sources of legacy weight: the Font
+Awesome 4 CSS/font set and the vendored Bootstrap 5.0.2 SCSS copy
+that had been shipped alongside npm Bootstrap 5.3.8. Shared UI
+state now uses Angular signals throughout, and `npm install` works
+again on a fresh clone.
+
+### Added
+
+- `@fortawesome/fontawesome-free@^7.1.0` as a runtime dependency
+- `src/typings.d.ts` with typed global for the Bootstrap JS bundle on `window`
+- `stylePreprocessorOptions.includePaths: ["node_modules"]` in `angular.json` so SCSS can `@import "bootstrap/scss/..."` directly
+
+### Changed
+
+- **BREAKING (customizations)**: Icon classes migrated from Font Awesome 4 syntax (`fa fa-X`) to Font Awesome 7 (`fa-solid fa-X` / `fa-regular fa-X` / `fa-brands fa-X`). No v4 compatibility shim is loaded; any custom icon usage on top of this template must be updated.
+- **BREAKING (customizations)**: `ThemeOptions` properties (`toggleSidebar`, `sidebarHover`, `toggleSidebarMobile`, `toggleHeaderMobile`, `toggleFixedFooter`) are now `signal<boolean>` instead of plain booleans. Reads become `x()`, writes become `x.set(...)`.
+- `@ViewChild(BaseChartDirective)` migrated to `viewChild()` / `viewChild.required()` signal queries in chart-boxes3 and line-chart.
+- `src/assets/base.scss` rewritten to import Bootstrap 5.3.8 from `node_modules` using the layered ordering (functions → overrides → variables → variables-dark → maps → mixins → utilities → components → utilities/api).
+- Header dropdown items (user-box, messages-box, notifications-box) switched from `<a href="#">` to `<button type="button">` for accessibility; `@for` tracking changed to `track item.id`.
+- `BaseLayoutComponent.config$` typed as `Observable<ConfigState>` instead of `Observable<any>`; bootstrap tooltip init now uses typed `window.bootstrap` instead of `(window as any).bootstrap`.
+- `SidebarComponent.extraParameter` typed as `string | undefined` instead of `any`.
+- `SearchBoxComponent.isActive` typed as `boolean` instead of `any`.
+- `StandardComponent.startLoading` refactored from 3-level nested `setTimeout` to an async helper with sequential awaits.
+- `PieChartComponent`: legacy `Array.apply(null, {length: N})` replaced with `Array.from({length: N}, ...)`.
+- `index.html` `<title>` updated from "Angular 11" to "Angular 21".
+
+### Fixed
+
+- `npm install` on a fresh clone (NgRx 20 peer-depended on Angular 20 while the project was on Angular 21; bumped NgRx to 21.1.0). Fixes [#35](https://github.com/DashboardPack/architectui-angular-theme-free/issues/35).
+- Icons showcase page (`src/app/DemoPages/Elements/icons/icons.component.html`) now renders actual icons. The FA4 template emitted only `<i class="fa fa-fw">` (fixed-width spacer with no icon name), so every showcase entry was a blank square. 659 of 661 entries now render real FA7 icons with the correct prefix; 2 defunct brand icons (`meanpath`, `tripadvisor`) were removed.
+- Bootstrap was being double-rendered into the final CSS bundle. `angular.json` was loading stock Bootstrap 5.3.8 while `base.scss` was simultaneously importing the themed vendored 5.0.2 copy on top.
+
+### Removed
+
+- `font-awesome@4.7.0` dependency
+- Vendored Bootstrap 5.0.2 SCSS tree at `src/assets/components/bootstrap5/` (115 files, ~620 KB)
+- Duplicate `node_modules/bootstrap/scss/bootstrap.scss` entry from `angular.json` (base.scss now owns Bootstrap loading)
+- Orphan `src/assets/components/icons/fontawesome/_fontawesome.scss` partial (unreferenced after FA4 removal)
+- Unused `simple-dashboard.component.ts`, `test-simple.component.ts`, `test.module.ts` (no importers)
+- No-op `animations: []` declarations + associated unused `@angular/animations` imports
+- Empty `ngOnInit() {}` stubs from `FooterComponent`, `MessagesBoxComponent`, `NotificationsBoxComponent`, `UserBoxComponent`, `LogoComponent`, `PagesLayoutComponent`
+
+### Dependencies Updated
+
+- `@fortawesome/fontawesome-free`: `^7.0.0` (devDep) → `^7.1.0` (runtime dep)
+- `@ngrx/store`: `^20.1.0` → `^21.1.0`
+- `@ngrx/store-devtools`: `^20.1.0` → `^21.1.0`
+- `ng2-charts`: `^8.0.0` → `^10.0.0`
+- `@types/jasmine`: `^5.1.13` → `^6.0.0`
+- `@types/node`: `^24.10.1` → `^25.6.0`
+- `jasmine-core`: `~5.9.0` → `~6.2.0`
+- `@typescript-eslint/*`: `^8.48.1` → `^8.58.2`
+
+### Migration Notes
+
+- If you've added custom icons with `fa fa-X`, rename them to `fa-solid fa-X`; for old `-o` outlined variants, use `fa-regular fa-X`.
+- If your code reads or writes `ThemeOptions.toggleSidebar` etc. directly, change reads to `.toggleSidebar()` and writes to `.toggleSidebar.set(value)`.
+- If you've vendored anything from `src/assets/components/bootstrap5/`, replace those imports with `bootstrap/scss/...` paths; theme variable overrides in `src/assets/themes/blue-alt/_variables.scss` are unchanged and now apply to Bootstrap 5.3.8.
+- TypeScript stays at 5.9.3 and ESLint at 9.x — Angular 21 build tooling does not yet accept TS 6 or ESLint 10.
+
+### Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+---
+
 ## [3.1.0] - 2025-12-02
 
 ### Major Version Release - Angular 21 with Zoneless Architecture
