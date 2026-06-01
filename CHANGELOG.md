@@ -20,6 +20,7 @@ build pipeline requires `>=5.9 <6.0`.
 ### Added
 
 - In-app documentation section at `/docs` — a lazy-loaded `DocsModule` with its own layout, grouped sidebar nav, and a dependency-free syntax-highlighting `code-block` component. Pages: Introduction, Getting Started, Folder Structure, Deployment, Layout System, Theming, State & Signals, Components, Charts, Build & Tooling, and Changelog. A "Documentation" link was added to the main sidebar.
+- "Upgrade to Pro" link in the sidebar (native Bootstrap pill badge) pointing to the ArchitectUI Angular Pro product page with UTM tracking (`utm_source=architectui-angular-free`, `utm_medium=sidebar`, `utm_campaign=go-pro`).
 - `eslint.config.js` flat config (replaces `.eslintrc.json`), built from the `angular-eslint` and `typescript-eslint` umbrella presets
 - `@angular/build@^21.2.13` as the project's build/serve/test/i18n builder (Vite + esbuild, no webpack)
 
