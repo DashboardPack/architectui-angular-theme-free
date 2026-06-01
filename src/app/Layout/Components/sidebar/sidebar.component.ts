@@ -33,24 +33,6 @@ import {ActivatedRoute} from '@angular/router';
     .vsm-item.has-sub.vsm-open .vsm-arrow {
       transform: rotate(360deg) !important;  /* Point down */
     }
-
-    /* "Upgrade to Pro" call-to-action */
-    .vsm-link-pro .vsm-icon {
-      color: #f7b924;
-    }
-
-    .badge-pro {
-      display: inline-block;
-      margin-left: 6px;
-      padding: 1px 7px;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: #fff;
-      background-image: linear-gradient(120deg, #f7b924, #fd7e14);
-      border-radius: 10px;
-      vertical-align: middle;
-    }
   `]
 })
 export class SidebarComponent implements OnInit {
