@@ -64,8 +64,8 @@ ng test
 # Run linting
 ng lint
 
-# Build for production
-ng build --prod
+# Build for production (production is the default configuration)
+ng build
 ```
 
 ## Code Style

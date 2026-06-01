@@ -13,9 +13,11 @@ ArchitectUI Angular is a professional admin dashboard template perfect for build
 - **NgRx 21 State Management** - Centralized state management aligned with Angular 21
 - **Angular Signals everywhere** - Shared UI state and `viewChild()` queries use signals for true zoneless reactivity
 - **TypeScript 5.9.3** - Type-safe development experience
-- **ESLint Integration** - Modern code linting and quality assurance
+- **Vite + esbuild build** - Fast dev server and builds via `@angular/build`; zero webpack in the dependency tree
+- **ESLint 10 (flat config)** - Modern code linting via `eslint.config.js` with angular-eslint
 - **Mobile Responsive** - Optimized for all device sizes
 - **98% Smaller Polyfills** - Reduced from 91KB to 1.6KB by removing zone.js
+- **Clean security audit** - `npm audit` reports 0 vulnerabilities
 
 ## What's Included
 
@@ -40,7 +42,7 @@ Check out the live demo: **[ArchitectUI Angular Free Demo](https://demo.dashboar
 
 ### Prerequisites
 
-- Node.js (version 18.19 or higher, 20.x recommended)
+- Node.js `^20.19.0`, `^22.12.0`, or `>=24` (22.x LTS recommended; see `.nvmrc`)
 - npm or yarn
 - Angular CLI 21+
 
@@ -191,16 +193,16 @@ Visit [DashboardPack.com](https://dashboardpack.com) for more premium admin dash
 
 See [CHANGELOG.md](CHANGELOG.md) for the full change history.
 
-The current release (3.2.0) brings:
+The current release (3.3.0) brings:
 
-- Font Awesome 4 → **Font Awesome 7** (no compatibility shim; classes are pure FA7)
-- Vendored Bootstrap 5.0.2 SCSS removed; theme now layers overrides on top of npm **Bootstrap 5.3.8**
-- All shared UI state on `ThemeOptions` is now `signal<boolean>`; chart `@ViewChild` queries migrated to `viewChild()`
-- NgRx bumped to **21.1.0** so a fresh `npm install` works again (fixes [#35](https://github.com/DashboardPack/architectui-angular-theme-free/issues/35))
-- ng2-charts → 10, jasmine-core → 6, `@types/node` → 25
-- Header dropdown items are now `<button>` elements (a11y), not `<a href="#">`
-- Dead components and empty lifecycle hooks removed; `any` types tightened in shared layout code
-- `npm run lint` is clean (0 errors, 0 warnings)
+- **Build system: webpack → Vite.** Swapped `@angular-devkit/build-angular` for the standalone `@angular/build` (Vite 7 + esbuild), removing ~395 packages and all webpack from the dependency tree
+- **`npm audit` is clean (0 vulnerabilities)** — dropping the legacy dev server eliminated the `webpack-dev-server` and `uuid` advisories at the root
+- **ESLint 9 → 10** with a migration from legacy `.eslintrc.json` to flat config (`eslint.config.js`)
+- Every dependency refreshed to its latest compatible release: Angular 21.2.15, `@ng-bootstrap` 20.0.0 (stable), Font Awesome 7.2.0, Sass 1.100.0, and more
+- Removed the unused `chartjs-adapter-luxon` dead dependency
+- TypeScript stays on 5.9.x (the Angular 21 build pipeline requires `>=5.9 <6.0`)
+
+Previous release (3.2.0): Font Awesome 4 → 7, vendored Bootstrap SCSS removed in favor of npm Bootstrap 5.3.8, and Angular signals adopted across shared UI state.
 
 ## License
 

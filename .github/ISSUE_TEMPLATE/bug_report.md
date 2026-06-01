@@ -26,8 +26,8 @@ If applicable, add screenshots to help explain your problem.
  - OS: [e.g. Windows, macOS, Linux]
  - Browser: [e.g. Chrome, Safari, Firefox]
  - Version: [e.g. 22]
- - Angular Version: [e.g. 20.1.4]
- - Node Version: [e.g. 18.0.0]
+ - Angular Version: [e.g. 21.2.15]
+ - Node Version: [e.g. 22.12.0]
 
 **Additional context**
 Add any other context about the problem here.

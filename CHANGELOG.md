@@ -5,6 +5,50 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.3.0] - 2026-06-01
+
+### Dependency refresh, ESLint 10 flat-config migration, webpack → Vite build system
+
+Brings every dependency up to its latest compatible release, migrates
+linting to ESLint 10 (which removed the legacy `.eslintrc.*` format)
+using `@angular-eslint` flat config, switches the build system from the
+bundled `@angular-devkit/build-angular` to the standalone, Vite/esbuild-only
+`@angular/build`, and removes two dead dependencies. `npm audit` is now
+clean (0 vulnerabilities). TypeScript stays on 5.9.x because the Angular 21
+build pipeline requires `>=5.9 <6.0`.
+
+### Added
+
+- `eslint.config.js` flat config (replaces `.eslintrc.json`), built from the `angular-eslint` and `typescript-eslint` umbrella presets
+- `@angular/build@^21.2.13` as the project's build/serve/test/i18n builder (Vite + esbuild, no webpack)
+
+### Changed
+
+- **Build system**: all `angular.json` targets switched from `@angular-devkit/build-angular:*` to `@angular/build:*` (`application`, `dev-server`, `extract-i18n`, `karma`). `ng serve` now runs on Vite with no webpack in the dependency tree (~395 packages removed).
+- `@angular/*` 21.0.x → 21.2.15; `@angular/cdk` → 21.2.13
+- Angular CLI tooling (`@angular/cli`, `@angular/compiler-cli`, `@angular/language-service`) → 21.2.x
+- `@ng-bootstrap/ng-bootstrap` 20.0.0-rc.0 → 20.0.0 (stable release)
+- Font Awesome packages (`fontawesome-free`, `fontawesome-svg-core`, `free-solid-svg-icons`) → 7.2.0
+- `@ngx-loading-bar/*` → 7.0.1, `lodash-es` → 4.18.1, `sass` → 1.100.0
+- ESLint 9 → 10.4.1; `@typescript-eslint/*` → 8.60 (now via the `typescript-eslint` umbrella); `@angular-eslint/*` → 21.4.0 (now via the `angular-eslint` umbrella); `karma-jasmine-html-reporter` → 2.2.0; `@types/node` → 25.9.1
+- `karma.conf.js`: dropped the `@angular-devkit/build-angular` framework and karma plugin (the build integration is now injected by `@angular/build:karma`)
+- `.nvmrc` Node 18 → 22 (Angular 21 and ESLint 10 require Node ≥ 20.19)
+
+### Removed
+
+- `@angular-devkit/build-angular` — replaced by `@angular/build`; this also removes webpack, `webpack-dev-server`, `@angular-devkit/build-webpack`, `sockjs`, and the transitive `uuid` chain
+- `chartjs-adapter-luxon` — unused dead dependency (no `luxon` or adapter imports anywhere in `src/`, and its required `luxon` peer was never installed)
+- Granular `@angular-eslint/*` and `@typescript-eslint/*` packages, consolidated into the `angular-eslint` / `typescript-eslint` umbrella packages
+- `.eslintrc.json` (superseded by `eslint.config.js`)
+
+### Security
+
+- `npm audit` now reports **0 vulnerabilities**. Removing the webpack build pipeline eliminated the moderate advisories GHSA-79cf-xcqc-c78w (`webpack-dev-server <=5.2.3`) and GHSA-w5hq-g745-h8pq (`uuid` via `sockjs`), both of which were only reachable through the legacy dev server.
+
+### Notes
+
+- TypeScript intentionally pinned to `~5.9.3`: `@angular/build@21` requires `typescript >=5.9 <6.0`, so TS 6.0 is not adopted yet
+
 ## [3.2.0] - 2026-04-15
 
 ### Font Awesome 4 to Font Awesome 7, Bootstrap 5.3.8 consolidation, signals everywhere

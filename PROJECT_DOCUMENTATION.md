@@ -1,22 +1,23 @@
 # ArchitectUI Angular Free - Project Documentation
 
 ## Overview
-ArchitectUI Angular Free is a modern admin dashboard template built with Angular 20.1.4 and Bootstrap 5.3.7. This free version provides a complete foundation for building responsive administrative interfaces with a clean, professional design.
+ArchitectUI Angular Free is a modern admin dashboard template built with Angular 21 (zoneless) and Bootstrap 5.3.8. This free version provides a complete foundation for building responsive administrative interfaces with a clean, professional design.
 
 ## Technical Stack
 
 ### Core Dependencies
-- **Angular 20.1.4** - Latest Angular framework with standalone components support
-- **Bootstrap 5.3.7** - Modern CSS framework for responsive design
-- **NgRx Store 18.1.1** - State management solution (replaced Angular-Redux)
-- **TypeScript 5.8.3** - Type-safe JavaScript development
-- **Chart.js 4.4.7 + ng2-charts 6.0.1** - Data visualization
-- **NgBootstrap 19.0.1** - Native Angular Bootstrap components
+- **Angular 21.2.15** - Zoneless framework; NgModule-based architecture (`standalone: false` is the generation default)
+- **Bootstrap 5.3.8** - Modern CSS framework for responsive design (loaded from npm with theme overrides; no vendored copy)
+- **NgRx Store 21.1.0** - State management solution (replaced Angular-Redux)
+- **TypeScript 5.9.3** - Type-safe JavaScript development (pinned to 5.9.x; the Angular 21 build pipeline requires `>=5.9 <6.0`)
+- **Chart.js 4.5.1 + ng2-charts 10.0.0** - Data visualization
+- **ng-bootstrap 20.0.0** - Native Angular Bootstrap components
+- **Font Awesome 7.2.0** - Icon set via `@fortawesome/fontawesome-free` (no v4 compatibility shim)
 
 ### Development Tools
-- **Angular CLI 20.1.4** - Project scaffolding and build tools
-- **ESLint** - Code linting (replaced deprecated TSLint)
-- **Vite** - Fast development server and bundler
+- **Angular CLI 21.2.13** - Project scaffolding and developer tooling
+- **@angular/build 21.2.13 (Vite 7 + esbuild)** - Build system and dev server; there is **no webpack** in the dependency tree
+- **ESLint 10** - Code linting via flat config (`eslint.config.js`) using `angular-eslint` / `typescript-eslint`
 
 ## Project Structure
 
@@ -73,64 +74,67 @@ src/
 # Install dependencies
 npm install
 
-# Development server (http://localhost:4200)
+# Development server (http://localhost:4200) — runs on Vite
 ng serve
 
-# Production build
-ng build --prod
+# Production build (production is the default configuration)
+ng build
 
-# Run unit tests
+# Production build for subdirectory deployment (sets base-href)
+npm run build:prod
+
+# Run unit tests (Karma, zoneless)
 ng test
 
-# Run e2e tests
-ng e2e
-
-# Lint code
+# Lint code (ESLint flat config)
 ng lint
 
-# Generate component
+# Generate component (standalone: false by default)
 ng generate component component-name
 ```
+
+> **Note:** No e2e runner is wired up in this template. The `e2e` npm script is a placeholder — add Cypress, Playwright, or WebDriver if you need end-to-end tests.
 
 ## Configuration Files
 
 ### angular.json
-- Build configurations for development and production
+- Build configurations for development and production (`@angular/build` builders)
 - Asset paths and style imports
-- Bundle size warnings: 13MB initial, 15MB maximum
+- Bundle budgets: 2 MB warning / 5 MB error (initial); 6 KB warning / 10 KB error (per-component styles)
 
 ### tsconfig.json
 - TypeScript compiler options
-- ES2022 target with ES2022 module system
-- Strict type checking enabled
+- ES2022 target with ES2022 modules, `moduleResolution: bundler`
+- `strict: false` (TypeScript strict mode is off), but Angular `strictTemplates`, `strictInjectionParameters`, and `strictInputAccessModifiers` are enabled
 
 ### package.json
 - All project dependencies and versions
 - NPM scripts for common tasks
 
-## Recent Migration (August 2025)
+## Version History
 
-The project was successfully migrated from Angular 11 to Angular 20 with:
+See [CHANGELOG.md](CHANGELOG.md) for the complete, authoritative history. Highlights:
 
-### Major Updates
-- **Angular 11 → 20.1.4** - Latest framework version
-- **Bootstrap 4.6 → 5.3.7** - Modern Bootstrap without jQuery
-- **Angular-Redux → NgRx Store** - Official state management
-- **TSLint → ESLint** - Modern linting solution
-- **Chart.js 2 → 4** - Latest charting library
+### Current architecture (Angular 21)
+- **Angular 21, zoneless** - runs without zone.js; shared UI state and `viewChild()` queries use signals
+- **Bootstrap 5.3.8** - layered on top of the npm package; the old vendored Bootstrap 5.0.2 SCSS copy was removed
+- **Font Awesome 7** - replaced Font Awesome 4 (no compatibility shim)
+- **@angular/build (Vite + esbuild)** - replaced `@angular-devkit/build-angular`, removing webpack/webpack-dev-server from the dependency tree
+- **ESLint 10 flat config** - migrated from ESLint 9 + legacy `.eslintrc.json`
 
-### Migration Fixes Applied
-- Updated control flow syntax to new `@if`, `@for`, `@switch` directives
-- Fixed NgBootstrap carousel compatibility
-- Resolved $localize polyfill configuration
-- Updated all SCSS asset paths to relative imports
-- Fixed chart component initialization
-- Modernized authentication pages with Bootstrap 5
+### Original Angular 11 → Angular 20 migration
+- **Angular 11 → 20** - framework modernization
+- **Bootstrap 4.6 → 5.3** - modern Bootstrap without jQuery
+- **Angular-Redux → NgRx Store** - official state management
+- **TSLint → ESLint** - modern linting solution
+- **Chart.js 2 → 4** - latest charting library
+- Control flow migrated to `@if` / `@for` / `@switch`; SCSS paths made relative; auth pages rebuilt on Bootstrap 5
 
-### Removed Dependencies
-- PerfectScrollbar (incompatibility with Angular 20)
+### Removed along the way
+- PerfectScrollbar (framework incompatibility)
 - jQuery (no longer needed with Bootstrap 5)
-- Popper.js (integrated in Bootstrap 5)
+- Standalone `popper.js` (Bootstrap 5 bundles Popper; `@popperjs/core` remains only as ng-bootstrap's peer dependency)
+- `@angular-devkit/build-angular`, webpack, and the legacy dev server (see Angular 21 architecture above)
 
 ## Browser Support
 
@@ -143,10 +147,10 @@ Configured in `.browserslistrc`:
 
 ## Performance Considerations
 
-### Bundle Sizes
-- Main bundle: ~1.17 MB
-- Styles: ~460 KB
-- Initial load: ~1.74 MB total
+### Bundle Sizes (production build)
+- Main bundle: ~1.14 MB raw (~262 KB transfer)
+- Styles: ~385 KB raw (~52 KB transfer)
+- Initial total: ~1.61 MB raw (~335 KB transfer)
 
 ### Optimization Tips
 - Lazy load feature modules
@@ -181,7 +185,7 @@ Configured in `.browserslistrc`:
 
 1. **Bundle Size Warnings** - Large initial bundle size due to comprehensive component library
 2. **Deprecation Warnings** - Some SCSS functions show deprecation warnings (will be addressed in future updates)
-3. **PerfectScrollbar Removed** - Custom scrollbar styling removed due to Angular 20 incompatibility
+3. **PerfectScrollbar Removed** - Custom scrollbar styling was removed during the framework modernization (incompatible with modern Angular)
 
 ## Practical Usage Examples
 
@@ -209,7 +213,6 @@ const routes: Routes = [
 ```typescript
 // my-dashboard.component.ts
 import { Component } from '@angular/core';
-import { Color } from 'ng2-charts';
 
 @Component({
   selector: 'app-my-dashboard',
@@ -688,7 +691,7 @@ export class SalesChartComponent {
 ## Best Practices
 
 1. **Component Development**
-   - Use standalone components for new features
+   - Generate NgModule-based components (`standalone: false`) to match this template's architecture
    - Follow Angular style guide conventions
    - Implement proper TypeScript typing
 
@@ -774,4 +777,4 @@ This is the free version of ArchitectUI Angular theme. Check the original reposi
 
 ---
 
-*Last Updated: August 2025 - Angular 20 Migration*
+*Last Updated: June 2026 - Angular 21 + Vite (`@angular/build`). See [CHANGELOG.md](CHANGELOG.md) for full version history.*
