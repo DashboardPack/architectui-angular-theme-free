@@ -1,0 +1,32 @@
+<h1>Build &amp; Tooling</h1>
+<p class="docs-lead">
+  The template builds and serves with <code>@angular/build</code> — Angular's
+  standalone Vite + esbuild pipeline. There is no webpack in the dependency tree.
+</p>
+
+<h2>Build system</h2>
+<p>Every <code>angular.json</code> target uses the <code>@angular/build</code> builders:</p>
+<app-code-block lang="ts" [code]="builders"></app-code-block>
+<ul>
+  <li><strong>Dev server</strong> runs on Vite with fast HMR (<code>ng serve</code>).</li>
+  <li><strong>Production builds</strong> use esbuild (<code>ng build</code>).</li>
+  <li>Bundle budgets are enforced: 2&nbsp;MB warning / 5&nbsp;MB error for the initial bundle.</li>
+</ul>
+
+<h2>Linting</h2>
+<p>ESLint 10 with flat config (<code>eslint.config.js</code>) using angular-eslint and typescript-eslint:</p>
+<app-code-block lang="ts" [code]="eslint"></app-code-block>
+<p>Run it with <code>ng lint</code>.</p>
+
+<h2>Testing</h2>
+<p>
+  Unit tests run on Karma + Jasmine via <code>@angular/build:karma</code>, in a
+  zoneless test setup. Run them with <code>ng test</code> (add
+  <code>--watch=false --browsers=ChromeHeadless</code> for CI).
+</p>
+
+<div class="docs-note">
+  Keeping the build on <code>@angular/build</code> means no webpack/webpack-dev-server,
+  faster cold starts, and a clean <code>npm audit</code>. See the
+  <a routerLink="/docs/changelog">Changelog</a> for the migration details.
+</div>

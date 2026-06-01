@@ -29,6 +29,7 @@ ArchitectUI Angular is a professional admin dashboard template perfect for build
 - **Charts** - Line, bar, pie, doughnut, radar, polar area, and more chart types
 - **User Pages** - Login, register, and password recovery pages
 - **Responsive Layout** - Header, sidebar, footer layout system
+- **In-App Documentation** - Lazy-loaded `/docs` section covering setup, structure, theming, state, components, charts, and tooling
 
 ## Live Demo
 

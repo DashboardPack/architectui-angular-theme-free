@@ -1,0 +1,66 @@
+.code-block {
+  position: relative;
+  margin: 1rem 0;
+
+  &:hover .code-block__copy,
+  .code-block__copy:focus {
+    opacity: 1;
+  }
+}
+
+.code-block__copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 2;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #495057;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, background 0.15s ease;
+
+  &:hover {
+    color: #212529;
+    background: #f1f3f5;
+  }
+}
+
+.code-block__pre {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #2b2f33;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+
+  code {
+    font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: inherit;
+    background: transparent;
+    padding: 0;
+    white-space: pre;
+  }
+}
+
+// Syntax tokens
+::ng-deep .code-block__pre {
+  .tok-key { color: #b45cd6; }
+  .tok-str { color: #16a34a; }
+  .tok-cmt { color: #94a3b8; font-style: italic; }
+  .tok-num { color: #d97706; }
+  .tok-typ { color: #0891b2; }
+  .tok-dec { color: #db2777; }
+  .tok-fn { color: #2563eb; font-weight: 500; }
+  .tok-flag { color: #d97706; }
+  .tok-tag { color: #2563eb; }
+  .tok-attr { color: #db2777; }
+  .tok-sel { color: #2563eb; }
+}

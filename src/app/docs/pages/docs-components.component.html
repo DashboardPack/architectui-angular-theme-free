@@ -1,0 +1,33 @@
+<h1>Components</h1>
+<p class="docs-lead">
+  Interactive components are provided by ng-bootstrap (imported via
+  <code>NgbModule</code> in <code>SharedModule</code>), styled with the template's
+  Bootstrap 5 theme.
+</p>
+
+<h2>Available components</h2>
+<p>Each has a live example under the <code>/components</code> routes:</p>
+<table class="docs-table">
+  <thead>
+    <tr><th>Component</th><th>Route</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tabs</td><td><code>/components/tabs</code></td></tr>
+    <tr><td>Accordions</td><td><code>/components/accordions</code></td></tr>
+    <tr><td>Modals</td><td><code>/components/modals</code></td></tr>
+    <tr><td>Carousel</td><td><code>/components/carousel</code></td></tr>
+    <tr><td>Pagination</td><td><code>/components/pagination</code></td></tr>
+    <tr><td>Progress Bar</td><td><code>/components/progress-bar</code></td></tr>
+    <tr><td>Tooltips &amp; Popovers</td><td><code>/components/tooltips-popovers</code></td></tr>
+  </tbody>
+</table>
+
+<h2>Example: opening a modal</h2>
+<p>Inject <code>NgbModal</code> and open a template reference:</p>
+<app-code-block lang="ts" [code]="modal"></app-code-block>
+
+<div class="docs-note">
+  Components live under <code>src/app/DemoPages/Components/</code> and are declared in
+  <code>components.module.ts</code>. Add new ones there and import
+  <code>SharedModule</code> to pick up ng-bootstrap, forms, and Font Awesome.
+</div>

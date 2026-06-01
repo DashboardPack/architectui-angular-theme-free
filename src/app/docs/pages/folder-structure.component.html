@@ -1,0 +1,40 @@
+<h1>Folder Structure</h1>
+<p class="docs-lead">
+  How the codebase is organized. The app uses Angular feature modules (NgModules)
+  rather than standalone components.
+</p>
+
+<app-code-block lang="text" [code]="tree"></app-code-block>
+
+<h2>Key concepts</h2>
+
+<h3>Feature modules</h3>
+<p>
+  Each functional area has its own NgModule (<code>elements.module.ts</code>,
+  <code>charts.module.ts</code>, and so on) that declares its page components and
+  imports <code>SharedModule</code>. <code>SharedModule</code> re-exports the common
+  Angular, Bootstrap, and Font Awesome modules so feature modules stay lean.
+</p>
+
+<h3>Layouts</h3>
+<p>
+  <code>BaseLayoutComponent</code> is the full dashboard shell (header, sidebar,
+  footer) used for dashboard routes. <code>PagesLayoutComponent</code> is a minimal
+  shell for the authentication pages. The documentation section ships its own
+  layout, independent of both.
+</p>
+
+<h3>Routing</h3>
+<p>
+  Top-level routes live in <code>app-routing.module.ts</code>. Dashboard pages are
+  registered eagerly via <code>components.barrel.ts</code>, while the documentation
+  section is <strong>lazy-loaded</strong> under <code>/docs</code> so it stays out
+  of the initial bundle.
+</p>
+
+<h3>State management</h3>
+<p>
+  Theme configuration is held in an NgRx store under <code>ThemeOptions/store/</code>.
+  Shared UI flags (sidebar toggles, hover state) live in <code>theme-options.ts</code>
+  as Angular signals for zoneless reactivity.
+</p>

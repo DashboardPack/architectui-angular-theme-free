@@ -1,0 +1,34 @@
+<h1>State &amp; Signals</h1>
+<p class="docs-lead">
+  The template uses NgRx for app-wide configuration and Angular signals for local
+  UI state — a deliberate split that fits a zoneless app.
+</p>
+
+<h2>NgRx store</h2>
+<p>
+  Theme configuration (<code>headerTheme</code>, <code>sidebarTheme</code>) is held in
+  an NgRx store registered at the root, with Redux DevTools enabled outside
+  production:
+</p>
+<app-code-block lang="ts" [code]="storeSetup"></app-code-block>
+<p>Components read and update it through a thin <code>ConfigService</code> wrapper:</p>
+<app-code-block lang="ts" [code]="service"></app-code-block>
+
+<h2>Signals for UI state</h2>
+<p>
+  Transient UI flags — sidebar toggles, hover state, fixed footer — live in the
+  <code>ThemeOptions</code> service as signals. In a zoneless app these signals are
+  what drive change detection:
+</p>
+<app-code-block lang="ts" [code]="signalsUsage"></app-code-block>
+
+<h2>Which to use</h2>
+<table class="docs-table">
+  <thead>
+    <tr><th>Use…</th><th>For…</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>NgRx store</td><td>App-wide, persisted configuration (themes, preferences)</td></tr>
+    <tr><td>Signals</td><td>Local or shared UI state that drives the view directly</td></tr>
+  </tbody>
+</table>

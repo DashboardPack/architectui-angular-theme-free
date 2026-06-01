@@ -1,0 +1,227 @@
+$docs-primary: #3f6ad8;
+$docs-border: #e9ecef;
+$docs-muted: #6c757d;
+$header-height: 60px;
+$sidebar-width: 270px;
+
+.docs-shell {
+  min-height: 100vh;
+  background: #f1f4f6;
+}
+
+// Header
+.docs-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  height: $header-height;
+  padding: 0 1.25rem;
+  background: #fff;
+  border-bottom: 1px solid $docs-border;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.docs-header__burger {
+  display: none;
+  margin-right: 0.75rem;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #495057;
+  background: none;
+  border: 0;
+}
+
+.docs-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #343a40;
+  text-decoration: none;
+
+  strong { font-weight: 700; }
+}
+
+.docs-header__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(120deg, #3f6ad8, #6f42c1);
+  border-radius: 0.45rem;
+}
+
+.docs-header__back {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: $docs-muted;
+  text-decoration: none;
+
+  &:hover { color: $docs-primary; }
+  i { font-size: 1.1rem; }
+}
+
+// Body layout
+.docs-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.docs-sidebar {
+  position: sticky;
+  top: $header-height;
+  flex: 0 0 $sidebar-width;
+  width: $sidebar-width;
+  height: calc(100vh - #{$header-height});
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  background: #fff;
+  border-right: 1px solid $docs-border;
+}
+
+.docs-sidebar__group + .docs-sidebar__group { margin-top: 1.5rem; }
+
+.docs-sidebar__title {
+  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #adb5bd;
+}
+
+.docs-sidebar__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.docs-sidebar__link {
+  display: block;
+  padding: 0.4rem 0.7rem;
+  margin-bottom: 0.1rem;
+  font-size: 0.9rem;
+  color: #495057;
+  text-decoration: none;
+  border-radius: 0.35rem;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:hover { background: #f1f3f5; color: #212529; }
+
+  &.active {
+    color: $docs-primary;
+    background: rgba(63, 106, 216, 0.1);
+    font-weight: 600;
+  }
+}
+
+.docs-backdrop {
+  display: none;
+}
+
+// Content + shared typography for doc pages
+.docs-content {
+  flex: 1 1 auto;
+  max-width: 860px;
+  padding: 2rem 2.5rem 4rem;
+
+  ::ng-deep {
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .docs-lead {
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+      color: $docs-muted;
+    }
+
+    h2 {
+      margin: 2.25rem 0 0.85rem;
+      font-size: 1.35rem;
+      font-weight: 500;
+      scroll-margin-top: $header-height + 10px;
+    }
+
+    h3 {
+      margin: 1.5rem 0 0.6rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    p { line-height: 1.7; color: #3a4149; }
+    ul, ol { line-height: 1.7; color: #3a4149; }
+    li { margin-bottom: 0.3rem; }
+
+    a { color: $docs-primary; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    code:not([class]) {
+      padding: 0.1rem 0.4rem;
+      font-size: 0.84em;
+      color: #d6336c;
+      background: #f1f3f5;
+      border-radius: 0.25rem;
+    }
+
+    .docs-table {
+      width: 100%;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 0.5rem 0.75rem;
+        text-align: left;
+        border: 1px solid $docs-border;
+      }
+      th { background: #f8f9fa; font-weight: 600; }
+    }
+
+    .docs-note {
+      padding: 0.85rem 1rem;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+      background: #eef4ff;
+      border-left: 3px solid $docs-primary;
+      border-radius: 0.35rem;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 991.98px) {
+  .docs-header__burger { display: inline-block; }
+
+  .docs-sidebar {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    z-index: 25;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  }
+  .docs-sidebar--open { transform: translateX(0); }
+
+  .docs-backdrop {
+    display: block;
+    position: fixed;
+    inset: $header-height 0 0 0;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .docs-content { padding: 1.5rem 1.25rem 3rem; }
+}

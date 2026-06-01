@@ -1,0 +1,17 @@
+<h1>Changelog</h1>
+<p class="docs-lead">
+  Notable changes per release. For the complete, authoritative history see
+  <code>CHANGELOG.md</code> in the project root.
+</p>
+
+@for (release of releases; track release.version) {
+  <section>
+    <h2>{{ release.version }} <small class="text-muted">— {{ release.date }}</small></h2>
+    <p>{{ release.summary }}</p>
+    <ul>
+      @for (change of release.changes; track change) {
+        <li>{{ change }}</li>
+      }
+    </ul>
+  </section>
+}

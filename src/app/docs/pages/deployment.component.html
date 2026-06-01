@@ -1,0 +1,37 @@
+<h1>Deployment</h1>
+<p class="docs-lead">
+  Build the template and serve the static output from any web server or CDN.
+</p>
+
+<h2>Root domain deployment</h2>
+<p>When deploying to a root domain such as <code>https://yourdomain.com/</code>:</p>
+<app-code-block lang="bash" [code]="buildRoot"></app-code-block>
+<p>Upload the contents of <code>dist/architectui-angular-free/browser/</code> to your web root.</p>
+
+<h2>Subdirectory deployment</h2>
+<p>
+  When deploying under a subdirectory such as
+  <code>https://example.com/architectui-angular-free/</code>, build with the matching
+  base href:
+</p>
+<app-code-block lang="bash" [code]="buildSub"></app-code-block>
+<p>This sets the base href to <code>/architectui-angular-free/</code> and outputs to the same folder.</p>
+
+<h2>Server configuration</h2>
+<p>
+  Because this is a single-page app, the server must fall back to
+  <code>index.html</code> for unknown routes so deep links work.
+</p>
+
+<h3>Apache (.htaccess)</h3>
+<p>An <code>.htaccess</code> file is included in the project; copy it alongside the built files:</p>
+<app-code-block lang="text" [code]="htaccess"></app-code-block>
+
+<h3>Nginx</h3>
+<p>Add a location block that rewrites to <code>index.html</code>:</p>
+<app-code-block lang="text" [code]="nginx"></app-code-block>
+
+<div class="docs-note">
+  After building with <code>npm run build:prod</code>, verify the base href in the
+  generated <code>index.html</code> matches your deployment path before uploading.
+</div>

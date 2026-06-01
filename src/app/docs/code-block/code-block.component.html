@@ -1,0 +1,10 @@
+<div class="code-block">
+  <button
+    type="button"
+    class="code-block__copy"
+    (click)="copy()"
+    [attr.aria-label]="copied() ? 'Copied to clipboard' : 'Copy code to clipboard'">
+    {{ copied() ? 'Copied' : 'Copy' }}
+  </button>
+  <pre class="code-block__pre"><code [innerHTML]="highlighted()"></code></pre>
+</div>

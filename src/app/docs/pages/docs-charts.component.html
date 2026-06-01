@@ -1,0 +1,21 @@
+<h1>Charts</h1>
+<p class="docs-lead">
+  Charts use Chart.js 4 through ng2-charts 10. The <code>baseChart</code> directive
+  binds a typed data and options object to a <code>&lt;canvas&gt;</code>.
+</p>
+
+<h2>Component</h2>
+<p>Define strongly-typed data and options with <code>ChartConfiguration</code>:</p>
+<app-code-block lang="ts" [code]="tsExample"></app-code-block>
+
+<h2>Template</h2>
+<p>Bind them to a canvas with the <code>baseChart</code> directive:</p>
+<app-code-block lang="html" [code]="htmlExample"></app-code-block>
+
+<h2>Notes</h2>
+<ul>
+  <li>Import <code>BaseChartDirective</code> (via the charts module) to use <code>baseChart</code>.</li>
+  <li>Typing the config with <code>ChartConfiguration&lt;'pie'&gt;</code> gives full type-safety per chart type.</li>
+  <li>Mutating <code>chartData</code> and refreshing the directive updates the chart reactively.</li>
+  <li>Live examples (pie, bubble, dynamic, …) live at <code>/charts/chartjs</code>.</li>
+</ul>

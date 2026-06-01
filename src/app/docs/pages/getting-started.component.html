@@ -1,0 +1,44 @@
+<h1>Getting Started</h1>
+<p class="docs-lead">
+  Install dependencies, run the dev server, and create a production build.
+</p>
+
+<h2>Prerequisites</h2>
+<ul>
+  <li><strong>Node.js</strong> <code>^20.19</code>, <code>^22.12</code>, or <code>&gt;=24</code> (22.x LTS recommended — see <code>.nvmrc</code>)</li>
+  <li><strong>npm</strong> (bundled with Node) or yarn</li>
+  <li><strong>Angular CLI 21+</strong> — optional globally; the local CLI is used via <code>npm run</code> / <code>npx</code></li>
+</ul>
+
+<h2>Installation</h2>
+<p>Install the project dependencies from the root of the template:</p>
+<app-code-block lang="bash" [code]="install"></app-code-block>
+
+<h2>Development server</h2>
+<p>Start the dev server, which runs on Vite with fast rebuilds:</p>
+<app-code-block lang="bash" [code]="serve"></app-code-block>
+<p>
+  Open <code>http://localhost:4200</code>. The app boots without zone.js —
+  change detection is signal-driven.
+</p>
+
+<h2>Production build</h2>
+<app-code-block lang="bash" [code]="build"></app-code-block>
+<p>
+  Output is written to <code>dist/architectui-angular-free/browser/</code>.
+  See <a routerLink="/docs/deployment">Deployment</a> for hosting instructions.
+</p>
+
+<h2>Tests &amp; linting</h2>
+<app-code-block lang="bash" [code]="quality"></app-code-block>
+
+<h2>Generating components</h2>
+<p>
+  Components are generated as NgModule-based (<code>standalone: false</code>) to match
+  the template's architecture:
+</p>
+<app-code-block lang="bash" [code]="generate"></app-code-block>
+<p>
+  Remember to add the new component to the matching feature module and a route.
+  See <a routerLink="/docs/folder-structure">Folder Structure</a> for where things live.
+</p>

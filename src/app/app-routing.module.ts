@@ -97,6 +97,11 @@ const routes: Routes = [
       {path: 'pages/forgot-password-boxed', component: ForgotPasswordBoxedComponent, data: {extraParameter: ''}},
     ]
   },
+  {
+    // Documentation section — lazy-loaded so it stays out of the initial bundle
+    path: 'docs',
+    loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule)
+  },
   {path: '**', redirectTo: ''}
 ];
 

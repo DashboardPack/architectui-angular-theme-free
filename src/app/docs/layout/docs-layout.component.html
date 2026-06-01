@@ -1,0 +1,51 @@
+<div class="docs-shell">
+  <header class="docs-header">
+    <button
+      type="button"
+      class="docs-header__burger"
+      (click)="toggleMenu()"
+      aria-label="Toggle documentation menu">
+      <i class="pe-7s-menu"></i>
+    </button>
+    <a routerLink="/docs" class="docs-header__brand" (click)="closeMenu()">
+      <span class="docs-header__logo">A</span>
+      <span>ArchitectUI <strong>Docs</strong></span>
+    </a>
+    <a routerLink="/" class="docs-header__back">
+      <i class="pe-7s-back"></i>
+      <span class="d-none d-sm-inline ms-1">Back to app</span>
+    </a>
+  </header>
+
+  <div class="docs-body">
+    <aside class="docs-sidebar" [class.docs-sidebar--open]="menuOpen()">
+      @for (group of nav; track group.title) {
+        <div class="docs-sidebar__group">
+          <h3 class="docs-sidebar__title">{{ group.title }}</h3>
+          <ul class="docs-sidebar__list">
+            @for (item of group.items; track item.route) {
+              <li>
+                <a
+                  [routerLink]="item.route"
+                  [routerLinkActiveOptions]="{ exact: !!item.exact }"
+                  routerLinkActive="active"
+                  class="docs-sidebar__link"
+                  (click)="closeMenu()">
+                  {{ item.label }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </aside>
+
+    @if (menuOpen()) {
+      <div class="docs-backdrop" (click)="closeMenu()"></div>
+    }
+
+    <main class="docs-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<h1>Layout System</h1>
+<p class="docs-lead">
+  The template ships two layout shells. Routes choose a shell by nesting under it
+  as a parent component.
+</p>
+
+<h2>The two layouts</h2>
+<table class="docs-table">
+  <thead>
+    <tr><th>Layout</th><th>Used for</th><th>Includes</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>BaseLayoutComponent</code></td>
+      <td>Dashboard / app pages</td>
+      <td>Header, sidebar, footer</td>
+    </tr>
+    <tr>
+      <td><code>PagesLayoutComponent</code></td>
+      <td>Auth pages (login, register, …)</td>
+      <td>Minimal — no sidebar or header</td>
+    </tr>
+  </tbody>
+</table>
+<p>Both live in <code>src/app/Layout/</code>. The documentation section ships its own layout, separate from both.</p>
+
+<h2>Choosing a layout in routes</h2>
+<app-code-block lang="ts" [code]="routing"></app-code-block>
+
+<h2>Layout components</h2>
+<p>
+  The shared chrome lives under <code>src/app/Layout/Components/</code>:
+  <code>header</code>, <code>sidebar</code>, <code>footer</code>, and
+  <code>page-title</code> (the gradient heading used at the top of each page).
+</p>
+
+<h2>Responsive sidebar &amp; signals</h2>
+<p>
+  Sidebar and header behavior is driven by Angular signals in the
+  <code>ThemeOptions</code> service. Because the app is zoneless, these signals are
+  what trigger UI updates — there is no <code>zone.js</code> change detection.
+</p>
+<app-code-block lang="ts" [code]="signals"></app-code-block>
+<div class="docs-note">
+  The sidebar automatically collapses below 1200px. See
+  <a routerLink="/docs/state">State &amp; Signals</a> for how signals and NgRx divide
+  responsibilities.
+</div>

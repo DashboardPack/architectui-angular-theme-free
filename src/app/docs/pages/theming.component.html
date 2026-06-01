@@ -1,0 +1,39 @@
+<h1>Theming</h1>
+<p class="docs-lead">
+  Styling is SCSS layered on top of Bootstrap 5.3.8, plus runtime header and
+  sidebar theme switching through the NgRx config store.
+</p>
+
+<h2>SCSS organization</h2>
+<app-code-block lang="text" [code]="scssTree"></app-code-block>
+<p>
+  Bootstrap is imported from <code>node_modules</code> (no vendored copy) using the
+  layered ordering — functions → overrides → variables → maps → mixins → utilities →
+  components. Put your customizations in the override partials, not in the Bootstrap
+  source.
+</p>
+
+<h2>Runtime header &amp; sidebar themes</h2>
+<p>
+  The header and sidebar accept a CSS class applied from the NgRx config store.
+  Update them through <code>ConfigService</code>:
+</p>
+<app-code-block lang="ts" [code]="runtimeTheme"></app-code-block>
+<p>Any Bootstrap background utility works as a theme value, for example:</p>
+<ul>
+  <li><code>bg-primary</code></li>
+  <li><code>bg-success</code></li>
+  <li><code>bg-info</code></li>
+  <li><code>bg-warning</code></li>
+  <li><code>bg-danger</code></li>
+</ul>
+<p>
+  The sidebar binds the stored value directly, e.g.
+  <code>[class]="'app-sidebar ' + (config$ | async)?.sidebarTheme"</code>, so the
+  change applies reactively.
+</p>
+
+<div class="docs-note">
+  Header/sidebar theme values are persisted in the NgRx store — see
+  <a routerLink="/docs/state">State &amp; Signals</a>.
+</div>
