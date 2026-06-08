@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
-  standalone: false,  styles: []
+  standalone: false,  changeDetection: ChangeDetectionStrategy.Eager,
+  styles: []
 })
 export class IconsComponent {
 

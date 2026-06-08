@@ -1,18 +1,18 @@
 # ArchitectUI Angular - Free Admin Dashboard Template
 
-**A modern, responsive admin dashboard template built with Angular 21, Bootstrap 5, and Chart.js**
+**A modern, responsive admin dashboard template built with Angular 22, Bootstrap 5, and Chart.js**
 
 ArchitectUI Angular is a professional admin dashboard template perfect for building modern web applications, SaaS platforms, and administrative interfaces. This free version provides a solid foundation with essential components and features to get your project started quickly.
 
 ## Features
 
-- **Angular 21 Zoneless** - Built with the latest Angular framework, fully zoneless for maximum performance
+- **Angular 22 Zoneless** - Built with the latest Angular framework, fully zoneless for maximum performance
 - **Bootstrap 5.3.8** - Loaded directly from npm with theme variable overrides; no vendored copy to maintain
 - **Font Awesome 7** - Latest icon set via `@fortawesome/fontawesome-free@7`, no v4 compatibility shim
 - **Interactive Charts** - Powered by Chart.js v4 with ng2-charts v10
-- **NgRx 21 State Management** - Centralized state management aligned with Angular 21
+- **NgRx State Management** - Centralized, type-safe state management for theme configuration
 - **Angular Signals everywhere** - Shared UI state and `viewChild()` queries use signals for true zoneless reactivity
-- **TypeScript 5.9.3** - Type-safe development experience
+- **TypeScript 6.0** - Type-safe development experience
 - **Vite + esbuild build** - Fast dev server and builds via `@angular/build`; zero webpack in the dependency tree
 - **ESLint 10 (flat config)** - Modern code linting via `eslint.config.js` with angular-eslint
 - **Mobile Responsive** - Optimized for all device sizes
@@ -194,14 +194,14 @@ Visit [DashboardPack.com](https://dashboardpack.com) for more premium admin dash
 
 See [CHANGELOG.md](CHANGELOG.md) for the full change history.
 
-The current release (3.3.0) brings:
+The current release (3.4.0) brings:
 
-- **Build system: webpack → Vite.** Swapped `@angular-devkit/build-angular` for the standalone `@angular/build` (Vite 7 + esbuild), removing ~395 packages and all webpack from the dependency tree
-- **`npm audit` is clean (0 vulnerabilities)** — dropping the legacy dev server eliminated the `webpack-dev-server` and `uuid` advisories at the root
-- **ESLint 9 → 10** with a migration from legacy `.eslintrc.json` to flat config (`eslint.config.js`)
-- Every dependency refreshed to its latest compatible release: Angular 21.2.15, `@ng-bootstrap` 20.0.0 (stable), Font Awesome 7.2.0, Sass 1.100.0, and more
-- Removed the unused `chartjs-adapter-luxon` dead dependency
-- TypeScript stays on 5.9.x (the Angular 21 build pipeline requires `>=5.9 <6.0`)
+- **Angular 22 + TypeScript 6.** Upgraded the framework from Angular 21 to **22.0.0** and TypeScript from 5.9 to **6.0**, via the `ng update` 21 → 22 migrations
+- **`npm audit` is clean (0 vulnerabilities)**; every dependency at its latest compatible release
+- `@fortawesome/angular-fontawesome` 4 → 5, `angular-eslint` 21 → 22
+- _Compatibility note:_ `@ng-bootstrap` and `@ngrx` haven't shipped Angular 22 builds yet — they're verified working on Angular 22 and installed via `legacy-peer-deps` (see `.npmrc`); they'll be bumped once 22-compatible releases land
+
+The previous release (3.3.0) migrated the build system from webpack to **Vite** (`@angular/build`) and ESLint 9 → 10 (flat config).
 
 Previous release (3.2.0): Font Awesome 4 → 7, vendored Bootstrap SCSS removed in favor of npm Bootstrap 5.3.8, and Angular signals adopted across shared UI state.
 

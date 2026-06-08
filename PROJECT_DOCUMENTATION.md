@@ -1,22 +1,22 @@
 # ArchitectUI Angular Free - Project Documentation
 
 ## Overview
-ArchitectUI Angular Free is a modern admin dashboard template built with Angular 21 (zoneless) and Bootstrap 5.3.8. This free version provides a complete foundation for building responsive administrative interfaces with a clean, professional design.
+ArchitectUI Angular Free is a modern admin dashboard template built with Angular 22 (zoneless) and Bootstrap 5.3.8. This free version provides a complete foundation for building responsive administrative interfaces with a clean, professional design.
 
 ## Technical Stack
 
 ### Core Dependencies
-- **Angular 21.2.15** - Zoneless framework; NgModule-based architecture (`standalone: false` is the generation default)
+- **Angular 22.0.0** - Zoneless framework; NgModule-based architecture (`standalone: false` is the generation default)
 - **Bootstrap 5.3.8** - Modern CSS framework for responsive design (loaded from npm with theme overrides; no vendored copy)
 - **NgRx Store 21.1.0** - State management solution (replaced Angular-Redux)
-- **TypeScript 5.9.3** - Type-safe JavaScript development (pinned to 5.9.x; the Angular 21 build pipeline requires `>=5.9 <6.0`)
+- **TypeScript 6.0.3** - Type-safe JavaScript development (Angular 22 requires `>=6.0 <6.1`)
 - **Chart.js 4.5.1 + ng2-charts 10.0.0** - Data visualization
 - **ng-bootstrap 20.0.0** - Native Angular Bootstrap components
 - **Font Awesome 7.2.0** - Icon set via `@fortawesome/fontawesome-free` (no v4 compatibility shim)
 
 ### Development Tools
-- **Angular CLI 21.2.13** - Project scaffolding and developer tooling
-- **@angular/build 21.2.13 (Vite 7 + esbuild)** - Build system and dev server; there is **no webpack** in the dependency tree
+- **Angular CLI 22.0.0** - Project scaffolding and developer tooling
+- **@angular/build 22.0.0 (Vite + esbuild)** - Build system and dev server; there is **no webpack** in the dependency tree
 - **ESLint 10** - Code linting via flat config (`eslint.config.js`) using `angular-eslint` / `typescript-eslint`
 
 ## Project Structure
@@ -115,8 +115,8 @@ ng generate component component-name
 
 See [CHANGELOG.md](CHANGELOG.md) for the complete, authoritative history. Highlights:
 
-### Current architecture (Angular 21)
-- **Angular 21, zoneless** - runs without zone.js; shared UI state and `viewChild()` queries use signals
+### Current architecture (Angular 22)
+- **Angular 22, zoneless** - runs without zone.js; shared UI state and `viewChild()` queries use signals (upgraded from Angular 21 on TypeScript 6)
 - **Bootstrap 5.3.8** - layered on top of the npm package; the old vendored Bootstrap 5.0.2 SCSS copy was removed
 - **Font Awesome 7** - replaced Font Awesome 4 (no compatibility shim)
 - **@angular/build (Vite + esbuild)** - replaced `@angular-devkit/build-angular`, removing webpack/webpack-dev-server from the dependency tree
@@ -134,7 +134,7 @@ See [CHANGELOG.md](CHANGELOG.md) for the complete, authoritative history. Highli
 - PerfectScrollbar (framework incompatibility)
 - jQuery (no longer needed with Bootstrap 5)
 - Standalone `popper.js` (Bootstrap 5 bundles Popper; `@popperjs/core` remains only as ng-bootstrap's peer dependency)
-- `@angular-devkit/build-angular`, webpack, and the legacy dev server (see Angular 21 architecture above)
+- `@angular-devkit/build-angular`, webpack, and the legacy dev server (see current architecture above)
 
 ## Browser Support
 
@@ -777,4 +777,4 @@ This is the free version of ArchitectUI Angular theme. Check the original reposi
 
 ---
 
-*Last Updated: June 2026 - Angular 21 + Vite (`@angular/build`). See [CHANGELOG.md](CHANGELOG.md) for full version history.*
+*Last Updated: June 2026 - Angular 22 + TypeScript 6 on Vite (`@angular/build`). See [CHANGELOG.md](CHANGELOG.md) for full version history.*

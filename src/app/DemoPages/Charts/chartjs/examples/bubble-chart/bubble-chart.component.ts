@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ChartType, ChartConfiguration, ChartEvent, ActiveElement } from 'chart.js';
 
 @Component({
   selector: 'app-bubble-chart',
   templateUrl: './bubble-chart.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class BubbleChartComponent {

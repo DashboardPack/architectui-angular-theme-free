@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-notifications-box',
   templateUrl: './notifications-box.html',
   styleUrls: ['./notifications-box.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class NotificationsBoxComponent {

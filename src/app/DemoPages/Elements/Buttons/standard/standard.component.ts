@@ -1,9 +1,10 @@
-import {Component, signal} from '@angular/core';
+import {Component, signal, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'app-standard',
   templateUrl: './standard.component.html',
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: []
 })
 export class StandardComponent {

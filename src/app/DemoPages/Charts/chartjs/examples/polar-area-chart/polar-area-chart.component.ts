@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ChartConfiguration, ChartType, ChartEvent, ActiveElement } from 'chart.js';
 
 @Component({
   selector: 'app-polar-area-chart',
   templateUrl: './polar-area-chart.component.html',
-  standalone: false,  styleUrls: ['./polar-area-chart.component.scss']
+  standalone: false,  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['./polar-area-chart.component.scss']
 })
 export class PolarAreaChartComponent {
   // PolarArea chart using ng2-charts v6 API

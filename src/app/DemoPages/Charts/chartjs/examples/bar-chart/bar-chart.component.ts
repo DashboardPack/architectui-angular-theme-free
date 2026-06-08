@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {ChartConfiguration, ChartType, ChartEvent, ActiveElement} from 'chart.js';
 
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false})
 export class BarChartComponent {
   public chartData: ChartConfiguration<'bar'>['data'] = {

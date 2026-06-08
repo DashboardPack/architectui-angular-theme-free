@@ -1,4 +1,4 @@
-import {Component, HostBinding} from '@angular/core';
+import {Component, HostBinding, ChangeDetectionStrategy} from '@angular/core';
 import {Observable} from 'rxjs';
 import { ConfigService } from '../../../ThemeOptions/store/config.service';
 import { ConfigState } from '../../../ThemeOptions/store/config.state';
@@ -8,6 +8,7 @@ import {ThemeOptions} from '../../../theme-options';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,})
 export class HeaderComponent {
 

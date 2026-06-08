@@ -16,6 +16,17 @@ interface Release {
 export class ChangelogComponent {
   protected readonly releases: Release[] = [
     {
+      version: '3.4.0',
+      date: '2026-06-08',
+      summary: 'Angular 22 + TypeScript 6 upgrade.',
+      changes: [
+        'Upgraded the framework from Angular 21 to 22.0.0 and TypeScript from 5.9 to 6.0 (via the ng update 21 → 22 migrations)',
+        '@fortawesome/angular-fontawesome 4 → 5, angular-eslint 21 → 22',
+        'npm audit remains clean (0 vulnerabilities)',
+        'ng-bootstrap and NgRx have no Angular 22 build yet — verified working and installed via legacy-peer-deps until their v22 releases land',
+      ],
+    },
+    {
       version: '3.3.0',
       date: '2026-06-01',
       summary: 'Dependency refresh, ESLint 10 flat config, and a webpack → Vite build system.',

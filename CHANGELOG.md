@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.0] - 2026-06-08
+
+### Angular 22 + TypeScript 6 upgrade
+
+Upgrades the framework to Angular 22 and TypeScript 6, with every other
+dependency taken to its latest compatible release. The `ng update`
+schematics ran the 21 → 22 migrations. `npm audit` remains clean (0
+vulnerabilities). Verified green through `ng build`, `ng lint`, `ng test`,
+and headless rendering of the ng-bootstrap and NgRx-driven pages.
+
+### Changed
+
+- **Angular 21.2.15 → 22.0.0** across all `@angular/*` packages (core, cli, build, cdk, compiler-cli, language-service, …)
+- **TypeScript 5.9 → 6.0.3** — Angular 22 requires `typescript >=6.0 <6.1`
+- `@fortawesome/angular-fontawesome` 4 → 5 (Angular 22 peer)
+- `angular-eslint` 21 → 22, `typescript-eslint` → 8.60.1
+- The Angular 22 update migration set `ChangeDetectionStrategy.Eager` on existing components to preserve classic change-detection behavior
+- Removed the now-invalid `baseUrl` compiler option from `tsconfig.json` (deprecated/removed in TypeScript 6; not needed with `moduleResolution: bundler`)
+
+### Added
+
+- `.npmrc` with `legacy-peer-deps=true` — see the compatibility note below
+- Opted out of angular-eslint 22's new `prefer-on-push-component-change-detection` rule in `eslint.config.js`, consistent with the migration's `Eager` strategy
+
+### Compatibility note (temporary)
+
+- **`@ng-bootstrap/ng-bootstrap` (20.0.0) and `@ngrx/store` / `@ngrx/store-devtools` (21.1.0) have not yet published Angular 22 builds** — their latest releases still peer-depend on Angular 21. They are verified working on Angular 22 (build + runtime: tabs, modals, accordions, and the NgRx theme store all render and function), and are installed via legacy peer resolution (`.npmrc`). Bump them to their Angular 22 releases and remove the `.npmrc` flag once available.
+
 ## [3.3.0] - 2026-06-01
 
 ### Dependency refresh, ESLint 10 flat-config migration, webpack → Vite build system

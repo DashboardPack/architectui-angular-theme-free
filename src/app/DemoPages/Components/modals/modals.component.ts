@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modals',
   templateUrl: './modals.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false})
 export class ModalsComponent {
 

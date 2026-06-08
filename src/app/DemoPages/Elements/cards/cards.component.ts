@@ -1,4 +1,4 @@
-import {Component, ViewChild, TemplateRef} from '@angular/core';
+import {Component, ViewChild, TemplateRef, ChangeDetectionStrategy} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 
 const PrimaryWhite = '#fff';
@@ -9,7 +9,8 @@ const SecondaryBlue = 'var(--primary)';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
-  standalone: false,  styles: []
+  standalone: false,  changeDetection: ChangeDetectionStrategy.Eager,
+  styles: []
 })
 export class CardsComponent {
 

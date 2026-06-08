@@ -1,4 +1,4 @@
-import {Component, afterNextRender} from '@angular/core';
+import {Component, afterNextRender, ChangeDetectionStrategy} from '@angular/core';
 import {Observable} from 'rxjs';
 import { ConfigService } from '../../ThemeOptions/store/config.service';
 import { ConfigState } from '../../ThemeOptions/store/config.state';
@@ -7,6 +7,7 @@ import {ThemeOptions} from '../../theme-options';
 @Component({
   selector: 'app-base-layout',
   templateUrl: './base-layout.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class BaseLayoutComponent {

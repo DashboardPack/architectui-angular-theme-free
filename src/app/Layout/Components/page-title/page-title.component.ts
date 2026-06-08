@@ -1,9 +1,10 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 import { faStar, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-page-title',
   templateUrl: './page-title.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class PageTitleComponent {

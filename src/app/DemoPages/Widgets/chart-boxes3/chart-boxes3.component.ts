@@ -1,4 +1,4 @@
-import {Component, viewChild} from '@angular/core';
+import {Component, viewChild, ChangeDetectionStrategy} from '@angular/core';
 import { ChartData, ChartDataset, ChartOptions, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -6,6 +6,7 @@ import { BaseChartDirective } from 'ng2-charts';
   selector: 'app-chart-boxes3',
   templateUrl: './chart-boxes3.component.html',
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: []
 })
 export class ChartBoxes3Component {

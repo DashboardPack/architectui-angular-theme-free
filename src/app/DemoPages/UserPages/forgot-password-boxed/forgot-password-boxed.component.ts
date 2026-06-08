@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-forgot-password-boxed',
   templateUrl: './forgot-password-boxed.component.html',
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: []
 })
 export class ForgotPasswordBoxedComponent {

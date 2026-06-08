@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false})
 export class PaginationComponent {
 

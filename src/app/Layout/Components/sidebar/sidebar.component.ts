@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit, afterNextRender} from '@angular/core';
+import {Component, HostListener, OnInit, afterNextRender, ChangeDetectionStrategy} from '@angular/core';
 import {ThemeOptions} from '../../../theme-options';
 import {Observable} from 'rxjs';
 import { ConfigService } from '../../../ThemeOptions/store/config.service';
@@ -9,6 +9,7 @@ import {ActivatedRoute} from '@angular/router';
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [`
     /* Override the existing styles with important to ensure animation works */
     .vsm-dropdown {

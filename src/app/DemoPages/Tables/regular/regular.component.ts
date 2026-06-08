@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 
 interface Country {
   name: string;
@@ -37,7 +37,8 @@ const COUNTRIES: Country[] = [
 @Component({
   selector: 'app-regular',
   templateUrl: './regular.component.html',
-  standalone: false,  styles: []
+  standalone: false,  changeDetection: ChangeDetectionStrategy.Eager,
+  styles: []
 })
 export class RegularComponent {
 

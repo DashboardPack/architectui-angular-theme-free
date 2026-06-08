@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ArchitectUI Angular is an admin dashboard template built with Angular 21 (zoneless), Bootstrap 5, Chart.js, and NgRx. It uses NgModules (not standalone components) with `standalone: false` set as the default for component generation.
+ArchitectUI Angular is an admin dashboard template built with Angular 22 (zoneless), Bootstrap 5, Chart.js, and NgRx. It uses NgModules (not standalone components) with `standalone: false` set as the default for component generation.
 
 ## Common Commands
 
@@ -64,11 +64,11 @@ NgRx store manages theme configuration:
 
 ## Key Technical Notes
 
-- **Angular 21 Zoneless**: App runs without zone.js for better performance
+- **Angular 22 Zoneless**: App runs without zone.js for better performance
 - Components use `standalone: false` (NgModule-based architecture)
 - Charts use ng2-charts with Chart.js v4
 - Angular animations are disabled in BaseLayoutComponent to prevent layout jumping
 - TypeScript strict mode is disabled (`strict: false` in tsconfig.json)
 - Use `afterNextRender()` instead of `setTimeout()` for DOM operations (zoneless compatible)
 - Use signals (`signal()`) for reactive state that needs UI updates without zone.js
-- Templates use Angular 21 control flow syntax (`@if`, `@for`) instead of `*ngIf`, `*ngFor`
+- Templates use Angular control flow syntax (`@if`, `@for`) instead of `*ngIf`, `*ngFor`

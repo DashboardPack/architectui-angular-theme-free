@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ChartType, ChartConfiguration, ChartEvent, ActiveElement } from 'chart.js';
 
 @Component({
   selector: 'app-scatter-chart',
   templateUrl: './scatter-chart.component.html',
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./scatter-chart.component.scss']
 })
 export class ScatterChartComponent {

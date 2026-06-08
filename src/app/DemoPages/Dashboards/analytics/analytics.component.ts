@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { faTh, faCheck, faTrash, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { ChartConfiguration } from 'chart.js';
 
@@ -6,6 +6,7 @@ import { ChartConfiguration } from 'chart.js';
 @Component({
   selector: 'app-analytics',
   templateUrl: './analytics.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false})
 export class AnalyticsComponent {
 

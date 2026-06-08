@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ChartType, ChartConfiguration, ChartEvent, ActiveElement } from 'chart.js';
 
 @Component({
   selector: 'app-radar-chart',
   templateUrl: './radar-chart.component.html',
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./radar-chart.component.scss']
 })
 export class RadarChartComponent {
