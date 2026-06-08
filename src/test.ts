@@ -1,6 +1,6 @@
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
-// Angular 21 zoneless testing - no zone.js required
+// Angular 22 zoneless testing - no zone.js required
 import { getTestBed } from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,

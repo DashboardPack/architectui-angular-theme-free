@@ -8,6 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
-// Angular 21 is zoneless by default - no provideZoneChangeDetection() needed
+// Angular 22 is zoneless by default - no provideZoneChangeDetection() needed
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
