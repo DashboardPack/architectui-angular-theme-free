@@ -37,7 +37,7 @@ Check out the live demo: **[ArchitectUI Angular Free Demo](https://demo.dashboar
 
 ## Preview
 
-![ArchitectUI Angular Dashboard Template](./architectui-angular-dashboard.png)
+![ArchitectUI Angular Dashboard Template](./architectui-angular-dashboard.webp)
 
 ## Quick Start
 
