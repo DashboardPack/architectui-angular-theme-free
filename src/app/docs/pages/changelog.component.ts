@@ -16,6 +16,17 @@ interface Release {
 export class ChangelogComponent {
   protected readonly releases: Release[] = [
     {
+      version: '3.4.1',
+      date: '2026-11-16',
+      summary: 'Dependency refresh and Bootstrap 5.3.9.',
+      changes: [
+        'Bootstrap 5.3.8 → 5.3.9, Angular 22.2, ng-bootstrap 21, NgRx 22, ng2-charts 11',
+        'Removed legacy-peer-deps — every dependency now peers Angular 22; npm audit is clean',
+        'Held back: TypeScript 6.0.x (Angular 22 requires <6.1) and jasmine-core 6.2 (karma-jasmine 5.1 needs it)',
+        'Fixed horizontal overflow on narrow screens (docs, pagination) and leftover wrong-framework demo copy',
+      ],
+    },
+    {
       version: '3.4.0',
       date: '2026-06-08',
       summary: 'Angular 22 + TypeScript 6 upgrade.',

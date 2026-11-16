@@ -7,7 +7,7 @@ ArchitectUI Angular is a professional admin dashboard template perfect for build
 ## Features
 
 - **Angular 22 Zoneless** - Built with the latest Angular framework, fully zoneless for maximum performance
-- **Bootstrap 5.3.8** - Loaded directly from npm with theme variable overrides; no vendored copy to maintain
+- **Bootstrap 5.3.9** - Loaded directly from npm with theme variable overrides; no vendored copy to maintain
 - **Font Awesome 7** - Latest icon set via `@fortawesome/fontawesome-free@7`, no v4 compatibility shim
 - **Interactive Charts** - Powered by Chart.js v4 with ng2-charts v10
 - **NgRx State Management** - Centralized, type-safe state management for theme configuration
@@ -194,12 +194,14 @@ Visit [DashboardPack.com](https://dashboardpack.com) for more premium admin dash
 
 See [CHANGELOG.md](CHANGELOG.md) for the full change history.
 
-The current release (3.4.0) brings:
+The current release (3.4.1) brings:
 
-- **Angular 22 + TypeScript 6.** Upgraded the framework from Angular 21 to **22.0.0** and TypeScript from 5.9 to **6.0**, via the `ng update` 21 → 22 migrations
-- **`npm audit` is clean (0 vulnerabilities)**; every dependency at its latest compatible release
-- `@fortawesome/angular-fontawesome` 4 → 5, `angular-eslint` 21 → 22
-- _Compatibility note:_ `@ng-bootstrap` and `@ngrx` haven't shipped Angular 22 builds yet — they're verified working on Angular 22 and installed via `legacy-peer-deps` (see `.npmrc`); they'll be bumped once 22-compatible releases land
+- **Bootstrap 5.3.9** and every dependency at its latest compatible release, including `@ng-bootstrap` 21, NgRx 22 and ng2-charts 11 (all on Angular 22 — the `legacy-peer-deps` workaround is gone)
+- **`npm audit` is clean (0 vulnerabilities)**
+- Fixed horizontal overflow on narrow screens (docs, pagination) and leftover wrong-framework wording in demo pages
+- _Held back:_ TypeScript 6.0.x (Angular 22 requires `<6.1`) and jasmine-core 6.2 (karma-jasmine 5.1 cannot load jasmine-core 7)
+
+Release 3.4.0 upgraded the framework to **Angular 22 + TypeScript 6** via the `ng update` 21 → 22 migrations.
 
 The previous release (3.3.0) migrated the build system from webpack to **Vite** (`@angular/build`) and ESLint 9 → 10 (flat config).
 
