@@ -57,3 +57,8 @@ router-outlet + * {
 
 /* Remove this section - transitions are now defined in component styles */
 
+
+/* Let pagination rows wrap on narrow screens instead of overflowing */
+.pagination {
+  flex-wrap: wrap;
+}
