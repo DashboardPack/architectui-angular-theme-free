@@ -131,6 +131,7 @@ $sidebar-width: 270px;
 // Content + shared typography for doc pages
 .docs-content {
   flex: 1 1 auto;
+  min-width: 0;
   max-width: 860px;
   padding: 2rem 2.5rem 4rem;
 

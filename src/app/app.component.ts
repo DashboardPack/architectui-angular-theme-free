@@ -7,5 +7,5 @@ import {Component, ChangeDetectionStrategy} from '@angular/core';
   standalone: false
 })
 export class AppComponent {
-  title = 'ArchitectUI - Angular 20 Bootstrap 5 & Material Design Admin Dashboard Template';
+  title = 'ArchitectUI - Angular 22 Bootstrap 5 Admin Dashboard Template';
 }

@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.1] - 2026-11-16
+
+### Dependency refresh and Bootstrap 5.3.9
+
+### Changed
+
+- **Bootstrap 5.3.8 → 5.3.9**
+- **Angular 22.0.0 → 22.2.x** (core, cli, build, cdk, compiler-cli, …)
+- `@ng-bootstrap/ng-bootstrap` 20 → 21, `@ngrx/store` and `@ngrx/store-devtools` 21 → 22, `ng2-charts` 10 → 11 (all now ship Angular 22 builds)
+- Font Awesome 7.3, Chart.js 4.6, Sass 1.108, ESLint 10.15, angular-eslint 22.7, typescript-eslint 8.72
+- Removed `.npmrc` (`legacy-peer-deps`) — no longer needed now that every dependency peers Angular 22
+- `npm audit` is clean (0 vulnerabilities); a scoped `minimatch` override covers typescript-estree
+
+### Held back
+
+- TypeScript stays on 6.0.x: `@angular/compiler-cli` 22 peers `>=6.0 <6.1`, so TypeScript 7 is blocked
+- `jasmine-core` stays on 6.2 and `@types/jasmine` on 6: `karma-jasmine` 5.1 (latest) cannot load jasmine-core 7 as an ES module
+
+### Fixed
+
+- Removed leftover "Vue" / "React" wording in demo page copy and the stale Angular 20 title; deleted the unused `dashboard.module.ts` placeholder
+- Horizontal overflow on narrow screens in the in-app docs and on the pagination demo
+
 ## [3.4.0] - 2026-06-08
 
 ### Angular 22 + TypeScript 6 upgrade

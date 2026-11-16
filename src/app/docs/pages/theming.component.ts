@@ -10,7 +10,7 @@ export class ThemingComponent {
   protected readonly scssTree = `src/
 ├── styles.scss              # global styles entry
 └── assets/
-    ├── base.scss            # Bootstrap 5.3.8 import + layered overrides
+    ├── base.scss            # Bootstrap 5.3.9 import + layered overrides
     ├── layout/              # layout-specific SCSS
     ├── components/          # Bootstrap component overrides
     └── themes/
