@@ -9,7 +9,7 @@ import {Component, ChangeDetectionStrategy} from '@angular/core';
 export class ControlsComponent {
 
   heading = 'Form Controls';
-  subheading = 'Wide selection of forms controls, using the Bootstrap 5 code base, but built with Vue.';
+  subheading = 'Wide selection of forms controls, using the Bootstrap 5 code base, but built with Angular.';
   icon = 'pe-7s-display1 icon-gradient bg-premium-dark';
 
   constructor() {
