@@ -1,13 +1,13 @@
 # ArchitectUI Angular Free - Project Documentation
 
 ## Overview
-ArchitectUI Angular Free is a modern admin dashboard template built with Angular 22 (zoneless) and Bootstrap 5.3.8. This free version provides a complete foundation for building responsive administrative interfaces with a clean, professional design.
+ArchitectUI Angular Free is a modern admin dashboard template built with Angular 22 (zoneless) and Bootstrap 5.3.9. This free version provides a complete foundation for building responsive administrative interfaces with a clean, professional design.
 
 ## Technical Stack
 
 ### Core Dependencies
 - **Angular 22.0.0** - Zoneless framework; NgModule-based architecture (`standalone: false` is the generation default)
-- **Bootstrap 5.3.8** - Modern CSS framework for responsive design (loaded from npm with theme overrides; no vendored copy)
+- **Bootstrap 5.3.9** - Modern CSS framework for responsive design (loaded from npm with theme overrides; no vendored copy)
 - **NgRx Store 21.1.0** - State management solution (replaced Angular-Redux)
 - **TypeScript 6.0.3** - Type-safe JavaScript development (Angular 22 requires `>=6.0 <6.1`)
 - **Chart.js 4.5.1 + ng2-charts 10.0.0** - Data visualization
@@ -117,7 +117,7 @@ See [CHANGELOG.md](CHANGELOG.md) for the complete, authoritative history. Highli
 
 ### Current architecture (Angular 22)
 - **Angular 22, zoneless** - runs without zone.js; shared UI state and `viewChild()` queries use signals (upgraded from Angular 21 on TypeScript 6)
-- **Bootstrap 5.3.8** - layered on top of the npm package; the old vendored Bootstrap 5.0.2 SCSS copy was removed
+- **Bootstrap 5.3.9** - layered on top of the npm package; the old vendored Bootstrap 5.0.2 SCSS copy was removed
 - **Font Awesome 7** - replaced Font Awesome 4 (no compatibility shim)
 - **@angular/build (Vite + esbuild)** - replaced `@angular-devkit/build-angular`, removing webpack/webpack-dev-server from the dependency tree
 - **ESLint 10 flat config** - migrated from ESLint 9 + legacy `.eslintrc.json`
